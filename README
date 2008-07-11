@@ -1,0 +1,18 @@
+
+rake annotate_models
+
+./script/plugin install http://dev.rubyonrails.org/svn/rails/plugins/acts_as_list/ 
+./script/plugin install http://dev.rubyonrails.org/svn/rails/plugins/acts_as_tree/
+./script/plugin install http://repo.pragprog.com/svn/Public/plugins/annotate_models/
+./script/plugin install svn://errtheblog.com/svn/plugins/auto_migrations
+./script/plugin install http://svn.techno-weenie.net/projects/plugins/acts_as_versioned/
+./script/plugin install http://svn.techno-weenie.net/projects/plugins/attachment_fu/ 
+
+EXPORT AND IMPORT DB
+http://www.railslodge.com/plugins/830-yaml-db
+./script/plugin install http://opensource.heroku.com/svn/rails_plugins/yaml_db/
+
+TODO
+
+1. al crear un nuevo proyecto, habría que indicar también la URL pública
+2. la URL publica debe empezar por / !!?¿?

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>SOLIDARIDAD EN ACCIÓN <%= @area.title %> - <%= @page.title unless @page.depth == 0 %></title>
+    <%= javascript_include_tag 'jquery-1.2.3.min.js', :cache => false %>
+    <%= stylesheet_link_tag 'reset', 'solidaridad', :cache => false %>
+  </head>
+  <body>
+    
+    <div id="logged">
+      <%= link_to 'admin', project_pages_path(@project) %> | 
+      <%= link_to 'editar', [@project, @page, @page.content, :edit] %>
+    </div>
+    
+    <div id="page">
+      <div id="logo"><%= image_tag('solidaridad/logo.gif') %></div>
+      <div id="banner">&nbsp;</div>
+      <div id="areas">
+        <%= image_tag('solidaridad/foro.gif') %>
+        <%= image_tag('solidaridad/agenda.gif') %>
+        <%= image_tag('solidaridad/actualidad.gif') %>
+        <%= image_tag('solidaridad/materiales.gif') %>
+        <%= image_tag('solidaridad/videos.gif') %>
+        <%= image_tag('solidaridad/enlaces.gif') %>
+<%= clear %>
+      </div>     
+      <%= yield  %>
+    </div>
+    
+  </body>
+</html>

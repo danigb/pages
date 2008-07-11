@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Beautiful Forms</title>
+
+<style type="text/css">
+body{	font-family:"Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; 
+	font-size:12px; 
+	color:#000000;
+}
+a{color:#0033CC;}
+h1, h2, p, form{
+	border:0px; 
+	margin:0px; 
+	padding:0px;
+}
+
+input{	font-family:"Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif; 
+	font-size:12px;
+}
+h2{	color:#666666; 
+	margin-bottom:20px;
+	font-size:16px;
+}
+
+div.main{
+	margin:30px auto; 
+	width:340px;
+	}
+
+div.box{
+	border:solid 1px #c6cfe1;
+	background:#dfe4ee;
+	padding:10px;
+	color:#333333;
+	margin-bottom:20px;
+}
+div.box h1 {
+	font-size:14px;
+	color:#000000;
+	padding-bottom:4px;
+}
+div.box p{padding-bottom:14px;}
+
+div.box input .input-text{
+	border:1px solid #3b6e22;
+	color:#666666;
+	width:180px;
+}
+
+div.box label{
+	display:block;
+	margin-bottom:10px;
+	color:#555555;
+}
+
+div.box label span{
+	display:block;
+	float:left;
+	padding-right:6px;
+	width:70px;
+	text-align:right;
+	font-weight:bold;
+}
+.spacer{margin-left:80px; 
+	margin-bottom:10px;
+	font-size:11px;
+	color:#555555;
+}
+.green{
+	background:url(img/green.gif);
+	padding:0px 6px;
+	border:1px solid #3b6e22;
+	height:24px; 
+	line-height:24px;
+	color:#FFFFFF;
+	font-size:12px;
+	margin-right:10px;
+	display:inline-block;
+	text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<div class="main">
+<h1>Beautiful Form</h1>
+<h2>Facebook inspired</h2>
+For more info visit: <a href="http://woork.blogspot.com">http://woork.blogspot.com</a>
+<br/><br/>
+
+<div class="box">
+<h1>Sign in</h1>
+<p>Do you have an account? Sign in!</p>
+<form action="" method="post">
+<label><span>E-mail</span>
+<input type="text"name="email" id="email" class="input-text"/>
+</label>
+<label><span>Password</span>
+<input type="password"name="psw" id="psw" class="input-text"/>
+</label>
+</form>
+<div class="spacer"><a href="#" onClick="" class="green">Sign in</a></div>
+<div class="spacer">
+Lost your data? <a href="#">Get your password</a><br/>
+New User? <a href="#">Sign up</a>
+</div>
+</div>
+
+<div class="box">
+<h1>Sign Up</h1>
+<p>New User? Create your account now!</p>
+<form action="" method="post">
+<label><span>Full name</span>
+<input type="text"name="name" id="name" class="input-text"/>
+</label>
+<label><span>E-mail</span>
+<input type="text"name="email" id="email" class="input-text"/>
+</label>
+<label><span>Password</span>
+<input "psw" type="password" id="psw" class="input-text"/>
+</label>
+</form>
+<div class="spacer"><a href="#" onClick="" class="green">Create Account</a></div>
+<div class="spacer">
+Lost your data? <a href="#">Get your password</a><br/>
+New User? <a href="#">Sign up</a>
+</div>
+</div>
+
+
+</div>
+</body>
+</html>

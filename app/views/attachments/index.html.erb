@@ -1,0 +1,35 @@
+<%= project_tabs @project, 'imágenes y archivos' %>
+
+<h1>Imágenes y archivos de '<%= @project.name %>'</h1>
+
+<% action_area do %>
+        <%= action 'picture_add.png', 'añadir imágen o fichero', new_project_attachment_path %>
+  <% end %>
+
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>Nombre</td>
+      <td></td>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% for attachment in @attachments %>
+      <tr>
+        <td><%= image_tag attachment.public_filename(:thumb), :alt => attachment.filename + '(thumbnail)' %></td>
+        <td><%= attachment.filename %></td>
+        <td>
+          <%= link_to 'Show', [@project, attachment] %>
+          <%= link_to 'Edit', [@project, attachment, :edit] %>
+          <%= link_to 'Destroy', [@project, attachment], :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+

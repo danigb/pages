@@ -1,0 +1,21 @@
+<% action_area do %>
+    <%= action nil, 'Cancelar', project_users_url %>
+  <% end%>
+  
+
+<div class="formBox">
+<h1>Añadir un nuevo usuario al proyecto '<%= @project.name %>'</h1>
+<%= error_messages_for :user %>
+
+<% form_for([@project, @user]) do |f| %>
+  <div><span>Email</span>
+<%= f.text_field :email%>
+  </div>
+  <div><span>Contraseña</span>
+<%= f.password_field :password %>
+  </div>
+
+  <%= submit_button( 'Crear', "jQuery('#new_user').submit()" ) %>
+<% end %>
+</div>
+

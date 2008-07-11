@@ -1,0 +1,29 @@
+
+<%= project_tabs(@project, 'usuarios') %>
+
+<h1>Usuarios de '<%= @project.name %>'</h1>
+
+
+<% action_area do %>
+    <%= action 'user_add.png', 'Añadir nuevo usuario', new_project_user_path %>
+  <% end %>
+
+
+<table>
+  <tr><td>email</td>
+    <td></td>
+  </tr>
+  
+  <% for user in @users %>
+    <tr>
+      <td><%= user.email %></td>
+      <td class="table_actions"><%= link_to 'Show', [@project, user] %>
+        <%= link_to 'Edit', edit_project_user_path(@project, user) %>
+        <%= link_to 'Destroy', [@project, user], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+

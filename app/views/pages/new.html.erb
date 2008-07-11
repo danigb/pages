@@ -1,0 +1,28 @@
+
+
+<% action_area do %>
+    <%= action nil, 'Cancelar', project_pages_url %>
+  <% end%>
+  
+<div class="formBox">
+<h1>Añadir <%= @page.parent.nil? ? 'una nueva área' : "una página hija de '#{@page.parent.title}'"  %></h1>
+
+<%= error_messages_for :page %>
+
+<% form_for([@project, @page]) do |f| %>
+  <%= f.hidden_field :parent_id unless @page.parent.nil?  %>
+<div><label>Título</label>
+    <%= f.text_field :title %>
+  </div>
+
+  <%= submit_button( 'Crear', "jQuery('#new_page').submit()" ) %>
+ 
+
+<% end %>
+</div>
+
+<script type="text/javascript">
+jQuery(function() {
+    jQuery('#page_title').focus();
+});
+</script>

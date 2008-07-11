@@ -1,0 +1,18 @@
+
+
+<% action_area do %>
+    <%= action nil, 'Cancelar', project_templates_url %>
+  <% end%>
+  
+<div class="formBox">
+<h1>Añadir un template a <%= @project.name %></h1>
+
+<% form_for([@project, @tpl]) do |f| %>
+<div><label>Nombre</label>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= submit_button( 'Crear', "jQuery('#new_template').submit()" ) %>
+<% end %>
+
+</div>

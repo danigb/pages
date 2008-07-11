@@ -1,0 +1,35 @@
+<%= project_tabs @project, 'templates' %>
+<h1>Templates de '<%= @project.name %>'</h1>
+
+
+
+<% action_area do %>
+        <%= action 'page_white_add.png', 'añadir nuevo template', new_project_template_path %>
+  <% end %>
+
+
+<table>
+  <thead>
+    <tr>
+      <td>título</td>
+      <td>última modificación</td>
+      <td></td>
+    </tr>
+  </thead>
+  
+  <% for template in @tpls %>
+    <tr>
+      <td><%= template.name %></td>
+      <td><%= fecha template.updated_at %></td>
+      <td>
+        <%= link_to 'Show', [@project, template ]%>
+        <%= link_to 'Edit', edit_template_path(template) %>
+        <%= link_to 'Destroy', [@project, template], :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+
+
+

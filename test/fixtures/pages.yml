@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: pages
+#
+#  id         :integer(11)     not null, primary key
+#  parent_id  :integer(11)     
+#  title      :string(255)     not null
+#  position   :integer(11)     
+#  depth      :integer(5)      
+#  state      :string(12)      
+#  created_at :datetime        
+#  updated_at :datetime        
+#  project_id :integer(11)     
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+
+two:
+  title: MyString

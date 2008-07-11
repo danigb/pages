@@ -1,0 +1,22 @@
+<h1>Página '<%= @page.title %>'</h1>
+
+<% action_area do %>
+    <%= action nil, 'Cancelar', [@project, @page] %>
+  <% end%>
+
+
+<div class="formBox" style="margin-left: 1em;">
+  <h1>Añadir metadatos</h1>  
+  <% form_for([@project, @page, @meta]) do |f| %>
+    <div>
+      <label>Nombre</label>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <label>Valor</label>
+      <%= f.text_field :value %>
+    </div>  
+      <%= submit_button( 'Añadir', "jQuery('form.new_meta').submit()" ) %>
+  <% end %>
+</div>
+    
