@@ -8,6 +8,7 @@
 <table>
   <thead>
     <tr>
+      <td>Id</td>
       <td>Nombre</td>
       <td></td>
     </tr>
@@ -16,6 +17,7 @@
   <tbody>
     <% for project in @projects %>
       <tr>
+        <td><%= project.id  %>
         <td><%= link_to project.name, project_pages_path(project) %></td>
         <td class="table_actions">
                  <%=  link_to 'Edit', [project, :edit] %>

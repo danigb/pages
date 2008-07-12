@@ -1,19 +1,47 @@
 class SolidaridadController < ApplicationController
-  	layout 'solidaridad'
-	before_filter :load_roots
+  layout 'solidaridad'
+  before_filter :load_roots
 	
-	def index
-		redirect_to :action => :pagina, :id => @roots.first
-	end
+  PROJECT_ID = 2
+  AREAS = {:content => 5, :foro => 4, :agenda => 6, :actualidad => 7, :materiales => 8, :videos => 9, :enlaces => 10}
+  
+  def index
+    redirect_to :action => :pagina, :id => AREAS[:content]
+  end
+        
+  def pagina
+    @page = Page.find(params[:id])
+  end
+    
+  def foro
+    @page = Page.find(AREAS[:foro])
+    @items = Page.find(:all, :conditions => ['parent_id = ?', @page.id], :order => 'position DESC')
+  end
+  
+  # muestra un asunto del foro
+  def asunto
+    @page = Page.find(params[:id])
+  end
+  
+  def nuevo_asunto
+    @asunto = Page.find(params[:id])
+    post = @asunto.children.create(:title => @asunto.title)
+    if post.save
+      content = post.contents.create(:data => params[:post][:content])
+      content.save
+      redirect_to :action => asunto, :id => @asunto.id
+    end
+  end
+  
+  def ver
+    @name = params[:id]
+    @page = Page.find(AREAS[@name.to_sym])
+  end
 	
-	def pagina
-		@page = Page.find(params[:id])
-		@area = @page.area
-	end
-	
-private
-	def load_roots
-                @project = Project.find(3)
-		@roots = Page.find(:all, :conditions => ['parent_id IS NULL AND project_id=3'], :order => 'position')
-	end
+  private
+  def load_roots
+    @project = Project.find(PROJECT_ID)
+    @content = Page.find(AREAS[:content])
+    @news = Page.find(:all, :conditions => ['parent_id = ?', AREAS[:actualidad]], :order => 'position DESC', :limit => 10)
+  end
 end

@@ -1,28 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Administración <%= "de la web " + @project.name if !@project.nil? %> </title>
-     <%= stylesheet_link_tag 'reset', 'admin', 'jquery.wysiwyg.css', 'facebox.css', 
-    'forms.css', 'dialogs.css', :cache => false %>
-  <%= javascript_include_tag 'jquery-1.2.3.min.js', 'jquery.wysiwyg.js', 'editor.js', 'facebox.js', :cache => false %>
-  <%= javascript_include_tag 'jquery.blockUI.js' %>
-</head>
-<body>
-
-
-<div id="header">
-c a l c p a g e s > 
-        <%= link_to 'proyectos', projects_url %>
-<p style="color: green"><%= flash[:notice] %>&nbsp;</p>
-</div>
-
-<div id="page">
-
-	<%= yield  %>
-</div>
-
-</body>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Administración <%= "de la web " + @project.name if !@project.nil? %> </title>
+    <%= stylesheet_link_tag 'reset', 'admin', 'jquery.wysiwyg.css', 'facebox.css', 
+      'forms.css', 'dialogs.css', :cache => false %>
+    <%= javascript_include_tag 'jquery-1.2.3.min.js', 'jquery.wysiwyg.js', 'editor.js', 'facebox.js', :cache => false %>
+    <%= javascript_include_tag 'jquery.blockUI.js' %>
+  </head>
+  <body>
+    
+    
+    <div id="header">
+      c a l c p a g e s > <%= link_to 'proyectos', projects_url %> <% if !@project.nil? %> > <%= link_to @project.name, project_pages_path(@project) %><% end %>
+      <p style="color: green"><%= flash[:notice] %>&nbsp;</p>
+    </div>
+    
+    <div id="page">
+      
+      <%= yield  %>
+    </div>
+    
+  </body>
 </html>

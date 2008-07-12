@@ -13,7 +13,7 @@ body { text-align: center; background-color: white; }
 a { text-decoration: none; color: inherit; }
 img { margin: 2px 0 0 0; }
 table {  width: 100%; }
-table thead { font-weight: normal;; background-color: #88dd77; border: 1px solid green; }
+table thead { font-weight: normal;; background-color: #88dd77; border-bottom: 1px solid green; }
 td { vertical-align: middle; padding: 5px 2px; }
 
 h1 { font-size: 200%; margin: 0.5em 0 1em 0; }

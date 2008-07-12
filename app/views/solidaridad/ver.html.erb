@@ -1,0 +1,10 @@
+<h1><%=  @name %></h1>
+
+<div class="<%= @name %>">
+  <% for page in @page.children %>
+    <div class="item">
+      <%= page.title %>
+      <%= page.content.data %>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
 <ul>
 <% for page in pages %>
-<li><%= link_to_if (page.depth != 1, page.title, {:action => :pagina, :id => page}) %></li>
+<li><%= link_to_if(page.depth != 1, page.title, {:action => :pagina, :id => page}) %></li>
 <%= render(:partial => 'menu_items', :locals => {:pages => page.children}) if page.depth < 2 %>
 <% end %>
 </ul>

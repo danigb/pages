@@ -5,16 +5,16 @@
   <%= error_messages_for :project %>
   
   <% form_for(@project) do |f| %>
-    <div><label>
-      Nombre</label>
+    <div>
+      <label>Nombre</label>
       <%= f.text_field :name %>
     </div>
-     <div>
+    <div>
       <label>URL pública</label>
       <%= f.text_field :public_url %>
     </div>
-  <%= submit_button( 'Crear', "jQuery('#new_project').submit()" ) %>
-
+    <%= submit_button( 'Crear', "jQuery('#new_project').submit()" ) %>
+  
   <% end %>
 </div>
 

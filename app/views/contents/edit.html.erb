@@ -1,6 +1,6 @@
 <%= page_tabs(@page, 'contenido')  %>
 
-<h1>Editando '<%= @page.title %>'</h1>
+<h1>Página '<%= @page.title %>'</h1>
 
 <%= error_messages_for :content %>
 
@@ -10,24 +10,18 @@
 </div>
 <%= clear %><br/><br/>
 
-<% form_for([@project, @page, @content]) do |f| %>
-  
-  <div class="editor">
-    <%= f.text_area :data, :id => 'wysiwyg' %>
-  </div>
+<div class="formBox">
+  <h1>Editar contenido</h1>
+  <% form_for([@project, @page, @content]) do |f| %>
+    <div>
+      <label>Type</label>
+      <%= f.text_field :mime %>
+    </div>
+    <div class="editor">
+      <%= f.text_area :data, :id => 'wysiwyg' %>
+    </div>
+  <% end %>
+</div>
+<%= clear %>
 
-  
-<% end %>
 
-<%= clear %><br/>
-
-
-<div id="imagesDialog" style="display: none">esto es el cuadro de diálogo</div>
-
-
-<script type="text/javascript">
-  jQuery(function()
-    {
-      Editor.init('<%= url_for :controller => 'editor', :action => 'select_image', :id => @project %>');
-    });
-    </script>

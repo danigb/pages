@@ -1,49 +1,15 @@
 
-body {
-    background-color: gray;
-}
+body { background-color: white; }
+a {  text-decoration: none; }
 
-a {
-    text-decoration: none;
-    
-}
-
-#logo {
-    float: left;
-    width: 10em;
-    background-color: white;
-    text-align: center;
-}
-#logged {
-    padding: 0.5em;
-    border-bottom: 1px solid black;
-    margin-bottom: 0.5em;
-    background-color: lightgray;
-    font-size: 75%;
-}
-
-#page {
-    width: 77.5em;
-    margin: 1em auto;
-    overflow: hidden;
-    background-color: #67053E;
-}
-
-#content {
-    padding: 1em 1em 100em 1em;
-    margin-left: 10em;
-    margin-bottom: -99em;
-    width: 54.3em;
-    background-color: white;
-}
-
-#content font {
-    font-size: 90%;
-}
-
-#content p {
-    margin: 0.5em 0;
-}
+#logo { float: left; width: 10em; background-color: white; text-align: center; }
+#logged { padding: 0.5em; border-bottom: 1px solid black; margin-bottom: 0.5em; background-color: lightgray;
+    font-size: 75%; }
+#page { width: 77.5em; margin: 1em auto; overflow: hidden; background-color: #67053E; }
+#content { padding: 1em 1em 100em 1em; margin-left: 10em; margin-bottom: -99em;
+    width: 54.3em; background-color: white; }
+#content font { font-size: 90%; }
+#content p { margin: 0.5em 0; }
 
 
 #banner {
@@ -53,12 +19,12 @@ a {
     background: url('../images/solidaridad/banner.gif') no-repeat ;
 }
 
-#areas {
-}
+#areas {}
+#areas img { float: left; }
 
-#areas img {
-    float: left;
-}
+#news {float: right; width: 10em; padding: 0 0.5em; color: white;}
+#news div.item {margin: 0 0 0.5em 0;}
+#news div.item div.content {padding: 0 0 0 0.3em; font-size: 80%;}
 
 #menu {
     float: left; 
@@ -74,7 +40,7 @@ a {
     padding: 0.5em 0 2em 0; 
     list-style: none; 
     width: 100%;
-font-size: 85%;
+  font-size: 85%;
 }
 
 #menu li {

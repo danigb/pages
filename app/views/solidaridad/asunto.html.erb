@@ -1,0 +1,25 @@
+
+<div class="asunto">
+  <h1><%= @page.title %></h1>
+  <%= @page.content.data %> 
+</div>
+
+<div class="responses">
+  <% for response in @page.children %>
+    <div class="response">
+      <h1><%= response.title %></h1>
+      <%= response.content.data %>
+    </div>
+  <% end %>
+</div>
+
+<div class="respond">
+  <h1>Añadir una respuesta</h1>
+  <% form_for :post, :url => {:action => 'nuevo_asunto', :id => @page.id} do |f| %>
+    <label>Email (obligatorio, pero no se mostrará):</label><br/>
+    <%= f.text_field :name %><br/>
+    <label>Texto:</label><br/>
+    <%= f.text_area :content %><br/>
+    <%= f.submit 'enviar' %>
+  <% end  %>
+</div>
