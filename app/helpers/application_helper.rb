@@ -35,9 +35,7 @@ module ApplicationHelper
   
   def page_tabs(page, current) 
     open_area + 
-      tab( 'páginas', project_pages_path, current ) +
-      tab(  'imágenes y archivos',  project_attachments_path, current) +
-      tab(  'página', [page.project, page, page.content], current) +
+      tab(  'visualizar', [page.project, page, page.content], current) +
       tab( 'contenido', [page.project, page, page.content, :edit], current ) +
       tab(  'metadatos', project_page_path, current) +
       close_area
@@ -45,9 +43,9 @@ module ApplicationHelper
   
   def project_tabs(project, current) 
     open_area + 
-      tab( 'páginas', project_pages_path, current ) +
-      tab(  'imágenes y archivos', project_attachments_path, current) +
-      tab('usuarios',project_users_path(project), current) +
+      tab('general',project_path(project), current) +
+      tab( 'páginas', project_pages_path(project), current ) +
+      tab(  'imágenes y archivos', project_attachments_path(project), current) +
       close_area
   end
 

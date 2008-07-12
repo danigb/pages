@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 0) do
 
   create_table "projects", :force => true do |t|
     t.string   "name",       :null => false
-    t.reference "page"
+    t.references "page"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "public_url"

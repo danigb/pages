@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.root :controller => 'solidaridad'
+  map.root :controller => 'projects'
 
   map.resources :projects do |projects|
      projects.resources :users

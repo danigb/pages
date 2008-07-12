@@ -14,4 +14,6 @@ class Project < ActiveRecord::Base
   has_many :attachments
   has_many :users
   has_many :templates
+  belongs_to :page, :dependent => :destroy
+  
 end

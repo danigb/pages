@@ -5,25 +5,26 @@
 
 
 <% action_area do %>
-    <%= action 'user_add.png', 'Añadir nuevo usuario', new_project_user_path %>
-  <% end %>
+  <%= action 'user_add.png', 'Añadir nuevo usuario', new_project_user_path %>
+<% end %>
 
 
 <table>
-  <tr><td>email</td>
-    <td></td>
-  </tr>
-  
-  <% for user in @users %>
-    <tr>
-      <td><%= user.email %></td>
-      <td class="table_actions"><%= link_to 'Show', [@project, user] %>
-        <%= link_to 'Edit', edit_project_user_path(@project, user) %>
-        <%= link_to 'Destroy', [@project, user], :confirm => 'Are you sure?', :method => :delete %></td>
+  <thead>
+    <tr><td>email</td>
+      <td></td>
     </tr>
-  <% end %>
+  </thead>
+  <tbody>  
+    <% for user in @users %>
+      <tr>
+        <td><%= user.email %></td>
+        <td class="table_actions"><%= link_to 'Show', [@project, user] %>
+          <%= link_to 'Edit', edit_project_user_path(@project, user) %>
+          <%= link_to 'Destroy', [@project, user], :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br />
 
 

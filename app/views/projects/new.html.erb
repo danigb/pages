@@ -9,7 +9,10 @@
       Nombre</label>
       <%= f.text_field :name %>
     </div>
-  
+     <div>
+      <label>URL pública</label>
+      <%= f.text_field :public_url %>
+    </div>
   <%= submit_button( 'Crear', "jQuery('#new_project').submit()" ) %>
 
   <% end %>

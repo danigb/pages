@@ -4,6 +4,8 @@
 <% action_area do %>
   <%= action 'page_white_database.png', 'Modificar', edit_project_page_path %>
   <%= action 'page_white_database.png', 'Añadir metadatos', new_project_page_meta_path(:page_id => @page) %>
+  <%= action nil, 'Volver', project_pages_path(@project) %>
+
   <% end %>
 
 <div class="dataBox">

@@ -6,13 +6,13 @@ defaults: &defaults
   socket: /var/run/mysqld/mysqld.sock
 
 development:
-  database: calcpages_development
+  database: pages_development
   <<: *defaults
 
 test:
-  database: calcpages_test 
+  database: pages_test 
   <<: *defaults
 
 production:
-  database: calcpages_production
+  database: pages_production
   <<: *defaults

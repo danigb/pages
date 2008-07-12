@@ -1,12 +1,12 @@
-/**** FORMS ****/
-div.formBox{
-    border:solid 1px #c6cfe1;
-    background:#dfe4ee;
+
+div.formBox { border:solid 1px #c6cfe1;
+    background-color: #dfeee0;
     padding: 0.5em 2em 2em 2em;
     color:#333333;
     margin: 3em 0;
     float: left;
 }
+
 div.formBox h1 {
     font-size: 150%;
     color:#000000;

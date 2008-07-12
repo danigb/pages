@@ -18,7 +18,7 @@
     </div>
     <div>
       <label>Estado</label>
-      <%= f.select :state, ['borrador', 'publicada', 'oculta'] %>
+      <%= f.select :state, Page::STATES %>
     </div>  
       <%= submit_button( 'Cambiar', "jQuery('form.edit_page').submit()" ) %>
   <% end %>

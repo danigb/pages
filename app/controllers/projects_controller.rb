@@ -16,7 +16,12 @@ class ProjectsController < ApplicationController
   # GET /projects/1.xml
   def show
     @project = Project.find(params[:id])
-
+    
+    if @project.page.nil?
+      @project.page = @project.pages.build(:title => @project.name, :state => Page::STATES[0])
+      @project.save!
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @project }
@@ -26,7 +31,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.xml
   def new
-    @project = Project.new
+    @project = Project.new(:name => 'web')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +48,7 @@ class ProjectsController < ApplicationController
   # POST /projects.xml
   def create
     @project = Project.new(params[:project])
-
+    
     respond_to do |format|
       if @project.save
         flash[:notice] = 'Project was successfully created.'

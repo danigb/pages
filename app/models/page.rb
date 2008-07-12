@@ -14,6 +14,9 @@
 #
 
 class Page < ActiveRecord::Base
+  
+  STATES = ['locked', 'draft', 'published']
+  
   acts_as_list  :scope => :parent_id
   acts_as_tree  :order => "position"
   has_many :contents, :order => 'id DESC', :dependent => :destroy
@@ -24,6 +27,10 @@ class Page < ActiveRecord::Base
   
   def area 
     area_of(self)
+  end
+  
+  def locked?
+    self.state == STATES[0]
   end
   
   def meta(name)

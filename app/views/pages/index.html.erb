@@ -2,21 +2,20 @@
 <h1>Páginas de '<%= @project.name %>'</h1>
 
 <% action_area do %>
-    <%= action 'page_white_add.png', 'añadir nueva área', new_project_page_path %>
     <%= action nil, 'ver parte pública', @project.public_url %>
   <% end %>
 
 <table>
   <thead>
     <td style="width: 50%">Título</td>
+    <td></td>
     <td>Última modificación</td>
     <td>Estado</td>
-    <td></td>
     <td></td>
   </thead>
 
 <tbody>
-<% for node in @roots %>
+<% for node in @project.page.children %>
               <%= render :partial => 'children', :locals => {:root => node, :depth => 1} %>
 <% end %>  
 </tbody>

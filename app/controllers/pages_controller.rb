@@ -5,10 +5,7 @@ class PagesController < ApplicationController
   
   # GET /pages
   # GET /pages.xml
-  def index
-    @pages = @project.pages
-    @roots = @pages.roots
-
+  def index 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pages }
@@ -29,7 +26,7 @@ class PagesController < ApplicationController
   # GET /pages/new
   # GET /pages/new.xml
   def new
-    parent = params[:parent_id] ? Page.find(params[:parent_id]) : nil
+    parent = params[:parent_id] ? Page.find(params[:parent_id]) : @project.page
     @page = @project.pages.build(:parent => parent)
  
     respond_to do |format|

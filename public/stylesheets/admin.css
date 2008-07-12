@@ -4,16 +4,16 @@
 /* color oscuro: 363C44 */
 
 /* azul: #13A FDF */
-/* verde: #4CC 335 */
-/* manzana: #72 DD01 */
+/* verde: #4CC335 */
+/* manzana: #72DD01 */
 /* pollo: #FFD716  */
 
 
-body { text-align: center; background-color: #F4F2EB; }
+body { text-align: center; background-color: white; }
 a { text-decoration: none; color: inherit; }
 img { margin: 2px 0 0 0; }
 table {  width: 100%; }
-thead { font-weight: bold; background-color: #c6cfe1; }
+table thead { font-weight: normal;; background-color: #88dd77; border: 1px solid green; }
 td { vertical-align: middle; padding: 5px 2px; }
 
 h1 { font-size: 200%; margin: 0.5em 0 1em 0; }
@@ -23,13 +23,13 @@ h2 { font-size: 150%; margin: 1em 0 0.5em 0; }
 #page {
     width: 75em;
     margin: 0px auto;
-    background-color: #F4F2EB;
+    background-color: white;
     text-align: left;
     padding: 0em 3em;
 }
 
 #header {
-    background-color: #363C44;
+    background-color: #468800;
     color: white;
     text-align: left;
     padding: 30px 10px 5px 10px;
@@ -73,36 +73,12 @@ h2 { font-size: 150%; margin: 1em 0 0.5em 0; }
 }
 
 /*** ACTIONS ***/
-.actions {
-    margin: 20px 0;
-}
-
-.actions .action {
-    border: 1px solid #DBD5C5;
-    background-color: white;
-    float: left;
-    margin: 0 5px 0 0;
-}
-
-.actions a {
-    font-size: 95%;
-    line-height: -1em;
-    display: block;
-    border: 1px solid #DBD5C5;
-    background-color: #F4F2EB;
-    color: #D1C38E;
-    padding: 4px 10px;
-    margin: 2px;	
-}
-
-.actions a img {
-    float: left;
-}
-
-.actions a:hover {
-    color: white;
-    background-color: #DBD5C5;
-}
+div.actions { margin: 20px 0; }
+div.actions .action { border: 1px solid #DBD5C5; background-color: white; float: left; margin: 0 5px 0 0; }
+div.actions a { font-size: 95%; line-height: -1em; display: block; border: 1px solid #DBD5C5;
+    background-color: white; color: #D1C38E; padding: 4px 10px; margin: 2px;}
+div.actions a img { float: left; }
+div.actions a:hover { color: white;  background-color: #DBD5C5;}
 
 .children a {
     color: black;
@@ -119,11 +95,11 @@ div.tabs * {
 }
 
 div.tabs a {
-    background-color: white;
+    background-color: #baed84;
     color: black;
 }
 
 div.tabs .active {
-    background-color: #363C44;
+    background-color: #468800;
     color: white;
 }
