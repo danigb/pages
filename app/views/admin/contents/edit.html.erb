@@ -1,18 +1,18 @@
-<%= page_tabs(@page, 'contenido')  %>
+<%= page_tabs(@page, 'Content')  %>
 
-<h1>Página '<%= @page.title %>'</h1>
+<h1>Page '<%= @page.title %>'</h1>
 
 <%= error_messages_for :content %>
 
 <div class="actions">
   <%= javascript_action('page_white_edit.png', 'guardar', "jQuery('form.edit_content').submit()") %>
-  <%= action nil, 'Cancelar', project_pages_path(@project) %>
+  <%= action nil, 'Cancelar', admin_pages_path %>
 </div>
-<%= clear %><br/><br/>
+<%= clear %>
 
 <div class="formBox">
-  <h1>Editar contenido</h1>
-  <% form_for([@project, @page, @content]) do |f| %>
+  <h1>Edit content</h1>
+  <% form_for([:admin, @page, @content]) do |f| %>
     <div>
       <label>Type</label>
       <%= f.text_field :mime %>

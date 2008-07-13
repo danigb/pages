@@ -3,7 +3,8 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-
+  before_filter :load_site
+  
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => 'bc8bb3f23d6d3c8a39a3a2ddc438d8fe'
@@ -15,12 +16,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def load_project
-    @project = Page.find(1)
+  def load_site
+    @site = Page.find(1)
   end
-  
-  def load_page
-    @page = Page.find(params[:page_id])
-  end
-  
 end

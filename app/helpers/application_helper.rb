@@ -37,17 +37,17 @@ module ApplicationHelper
   
   def page_tabs(page, current) 
     tabs do
-      tab('visualizar', admin_page_content_path(page, page.content), current) <<
-      tab('contenido', edit_admin_page_content_path(page, page.content), current) <<
-      tab('metadatos', admin_page_path, current) 
+#      tab('View', admin_page_content_path(page, page.content), current) <<
+      tab('Content', edit_admin_page_content_path(page, page.content), current) <<
+      tab('Metadata', admin_page_path, current) 
     end
   end
   
   def project_tabs(current)
     tabs do
-      tab('páginas', admin_pages_path, current) <<
-      tab('imágenes y archivos', admin_attachments_path, current) <<
-      tab('usuarios', admin_users_path, current) 
+      tab('Pages', admin_pages_path, current) <<
+      tab('Files', admin_attachments_path, current) <<
+      tab('Users', admin_users_path, current) 
     end
   end
 

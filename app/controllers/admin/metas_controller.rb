@@ -1,7 +1,6 @@
 
 class Admin::MetasController < ApplicationController
   layout 'admin'
-  before_filter :load_project_page
   
   # GET /metas
   # GET /metas.xml
