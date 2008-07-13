@@ -13,7 +13,7 @@ class Apy::VerController < ApplicationController
 	
 private
 	def load_roots
-                @project = Project.find(1)
+                @site = Page.find(1)
 		@roots = Page.find(:all, :conditions => ['parent_id IS NULL AND project_id=1'], :order => 'position')
 	end
 end

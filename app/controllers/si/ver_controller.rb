@@ -1,11 +1,11 @@
 class Si::VerController < ApplicationController
   include Si::SolidaridadSite
   layout 'solidaridad'
-  before_filter :load_project, :load_roots
+  before_filter  :load_roots
 	
   
   def index
-    redirect_to :action => :pagina, :id => AREAS[:contenido]
+    redirect_to :action => :pagina, :id => @content
   end
         
   def pagina
@@ -13,7 +13,7 @@ class Si::VerController < ApplicationController
   end
     
   def foro
-    @page = Page.find(AREAS[:foro])
+    @page = page_of :foro
     @items = Page.find(:all, :conditions => ['parent_id = ?', @page.id], :order => 'position DESC')
   end
   
@@ -32,14 +32,14 @@ class Si::VerController < ApplicationController
     end
   end
   
-  def ver
+  def el
     @name = params[:id]
-    @page = Page.find(AREAS[@name.to_sym])
+    @page = page_of @name
   end
 	
   private
   def load_roots
-    @content = page_of :contenido
+    @content = page_of :contenidos
     @news = recent_news
   end
 end

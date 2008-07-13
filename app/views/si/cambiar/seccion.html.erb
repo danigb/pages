@@ -3,8 +3,7 @@
 <h1><%=  @section%></h1>
 
 <% action_area do %>
-    <%= action nil, 'añadir', {:action => 'nuevo', id => @section } %>
-  <%= action nil, 'ver parte pública', {:controller => 'solidaridad', :action => 'ver', :id => @section }%>
+    <%= action nil, 'añadir', {:action => 'crear', :id => @section } %>
 <% end %>
 
 

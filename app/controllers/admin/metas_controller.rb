@@ -49,7 +49,7 @@ class Admin::MetasController < ApplicationController
     respond_to do |format|
       if @meta.save
         flash[:notice] = 'meta was successfully created.'
-        format.html { redirect_to([@project, @page]) }
+        format.html { redirect_to([:admin, @page]) }
         format.xml  { render :xml => @meta, :status => :created, :location => @meta }
       else
         format.html { render :action => "new" }
@@ -66,7 +66,7 @@ class Admin::MetasController < ApplicationController
     respond_to do |format|
       if @meta.update_attributes(params[:meta])
         flash[:notice] = 'Metadatos guardados'
-        format.html { redirect_to([@project, @page, @meta]) }
+        format.html { redirect_to([:admin, @page, @meta]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,7 +82,7 @@ class Admin::MetasController < ApplicationController
     @meta.destroy
 
     respond_to do |format|
-      format.html { redirect_to([@project, @page]) }
+      format.html { redirect_to([:admin, @page]) }
       format.xml  { head :ok }
     end
   end

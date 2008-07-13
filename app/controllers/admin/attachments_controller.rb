@@ -15,7 +15,7 @@ class Admin::AttachmentsController < ApplicationController
   # GET /attachments/1
   # GET /attachments/1.xml
   def show
-    @attachment = @project.attachments
+    @attachment = Attachment.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,7 @@ class Admin::AttachmentsController < ApplicationController
   # GET /attachments/new
   # GET /attachments/new.xml
   def new
-    @attachment = @project.attachments.build
+    @attachment = Attachment.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +36,13 @@ class Admin::AttachmentsController < ApplicationController
 
   # GET /attachments/1/edit
   def edit
-    @attachment = @project.attachments.find(params[:id])
+    @attachment = Attachment.find(params[:id])
   end
 
   # POST /attachments
   # POST /attachments.xml
   def create
-    @attachment = @project.attachments.build(params[:attachment])
+    @attachment = Attachment.new(params[:attachment])
 
     respond_to do |format|
       if @attachment.save
@@ -59,12 +59,12 @@ class Admin::AttachmentsController < ApplicationController
   # PUT /attachments/1
   # PUT /attachments/1.xml
   def update
-    @attachment = @project.attachments.find(params[:id])
+    @attachment = Attachment.find(params[:id])
 
     respond_to do |format|
       if @attachment.update_attributes(params[:attachment])
         flash[:notice] = 'Attachment was successfully updated.'
-        format.html { redirect_to(@project, @attachment) }
+        format.html { redirect_to admin_attachments_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

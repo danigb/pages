@@ -65,7 +65,7 @@ class Admin::ContentsController < ApplicationController
     respond_to do |format|
       if @content.update_attributes(params[:content])
         flash[:notice] = 'El contenido de la página ha sido guardado'
-        format.html { redirect_to([@project, @page, @content]) }
+        format.html { redirect_to([:admin, @page, @content]) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
