@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+	ServerName elmagrebconojosdemujer.org
+        ServerAlias www.elmagrebconojosdemujer.org
+        DocumentRoot /home/dani/rails/pages/public
+        <Directory /home/dani/rails/pages/public/>
+                Options FollowSymLinks
+                Allow from all
+                AllowOverride None
+	 	Order allow,deny	
+        </Directory>
+</VirtualHost>
