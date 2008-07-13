@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "thumbnail"
     t.integer  "width"
     t.integer  "height"
-    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -49,21 +48,11 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "state",      :limit => 12
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "project_id"
-  end
-
-  create_table "projects", :force => true do |t|
-    t.string   "name",       :null => false
-    t.references "page"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "public_url"
   end
 
   create_table "users", :force => true do |t|
     t.string   "email",      :null => false
     t.string   "password",   :null => false
-    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

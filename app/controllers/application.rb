@@ -15,14 +15,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  protected 
   def load_project
-    @project = Project.find(params[:project_id]) if params.include? :project_id
+    @project = Page.find(1)
   end
   
-  def load_project_page
-    @project = Project.find(params[:project_id])
+  def load_page
     @page = Page.find(params[:page_id])
   end
-
+  
 end

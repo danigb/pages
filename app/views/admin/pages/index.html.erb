@@ -1,0 +1,36 @@
+<%= project_tabs  'páginas' %>
+<h1>Páginas de '<%= @page.title %>'</h1>
+
+<% action_area do %>
+  <%= action nil, 'ver parte pública', '/' %>
+<% end %>
+
+<table>
+  <thead>
+    <td style="width: 50%">Título</td>
+    <td>Última modificación</td>
+    <td>Estado</td>
+    <td>Ref.</td>    
+    <td></td>
+  </thead>
+  
+  <tbody>
+    <%= render :partial => 'children', :locals => {:root => @page, :depth => 1} %>
+  </tbody>
+  
+</table>
+
+
+
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery('.page').hover(
+        function() {
+            jQuery(this).addClass('highlight');
+        },
+        function() {
+            jQuery(this).removeClass('highlight');
+        }
+    )});
+    
+</script>

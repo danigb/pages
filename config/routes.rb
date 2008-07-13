@@ -1,16 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
-
-  map.root :controller => 'projects'
-
-  map.resources :projects do |projects|
-     projects.resources :users
-     projects.resources :attachments
-     projects.resources :pages do |pages|
-        pages.resources :contents
-        pages.resources :metas
-        pages.resources :attachments
-     end
+  map.namespace :admin do |admin|
+    admin.resources :users
+    admin.resources :attachments
+    admin.resources :pages do |pages|
+      pages.resources :contents
+      pages.resources :metas
+      pages.resources :attachments
+    end  
+    admin.resources :site
   end
+  
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

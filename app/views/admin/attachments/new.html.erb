@@ -1,0 +1,20 @@
+
+<% action_area do %>
+    <%= action nil, 'Cancelar', project_attachments_path %>
+ <% end %>
+
+<div class="formBox">
+  <h1>Añadir una imágen o archivo a  '<%= @project.name %>'</h1>
+  
+  <%= error_messages_for :attachment %>
+  
+  <% form_for([@project, @attachment], :html => { :multipart => true }) do |f| %>
+    <div><label>Fichero:</label>
+      <%= f.file_field :uploaded_data %>
+    </div>
+    <%= submit_button 'Añadir', "jQuery('#new_attachment').submit()" %>
+
+<% end %>
+
+</div>
+

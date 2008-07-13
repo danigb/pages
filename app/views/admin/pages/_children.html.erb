@@ -1,0 +1,24 @@
+
+<tr>
+  <td>
+    <%= image_tag 'page_white.png', :style => "margin-left: #{depth}em;" %>
+    <%= link_to_unless root.locked?, root.title, edit_admin_page_content_path(root, root.content) %> 
+  </td>
+  <td><%= fecha root.updated_at %></td>
+  <td><%= root.state %></td>
+  <td><%=  root.id %></td>
+  <td class="table_actions">    
+    <% if !root.parent.nil? %>
+      <%= link_to btn_tag('page_white_up.png', 'subir'), {:controller => 'pages', :action => 'move_up', :id => root}, :class => 'action' %>
+      <%= link_to btn_tag('page_white_down.png', 'bajar'), { :action => 'move_down', :id => root}, :class => 'action' %>
+    <% end %>
+    <%= link_to image_tag('page_white_add.png') + ' añadir página hija', new_admin_page_path(:parent_id => root), :class => 'action' %>
+    <%= link_to image_tag('page_white_database.png') + ' datos', [:admin, root],  :class => 'action'  %>
+    <%= link_to(image_tag('page_white_delete.png') + ' borrar', [:admin, root], :confirm => 'seguro?', 
+        :method => :delete, :class => 'action') if !root.locked? %> 
+  </td>
+</tr>
+
+<% for node in root.children %>
+  <%= render :partial => 'children', :locals => {:root => node, :depth => depth + 1} %>
+<% end %>

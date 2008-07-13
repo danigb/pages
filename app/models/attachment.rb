@@ -18,7 +18,6 @@
 #
 
 class Attachment < ActiveRecord::Base
-  belongs_to :project
   has_attachment :storage => :file_system, :thumbnails => { :thumb => 'x50' }
   validates_as_attachment
 end

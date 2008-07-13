@@ -37,17 +37,17 @@ module ApplicationHelper
   
   def page_tabs(page, current) 
     tabs do
-      tab('visualizar', [page.project, page, page.content], current) <<
-      tab('contenido', [page.project, page, page.content, :edit], current) <<
-      tab('metadatos', project_page_path, current) 
+      tab('visualizar', admin_page_content_path(page, page.content), current) <<
+      tab('contenido', edit_admin_page_content_path(page, page.content), current) <<
+      tab('metadatos', admin_page_path, current) 
     end
   end
   
-  def project_tabs(project, current)
+  def project_tabs(current)
     tabs do
-      tab('general', project_path(project), current) <<
-      tab('páginas', project_pages_path(project), current) <<
-      tab('imágenes y archivos', project_attachments_path(project), current)
+      tab('general', {:controller => 'admin/site'}, current) <<
+      tab('páginas', admin_pages_path, current) <<
+      tab('imágenes y archivos', admin_attachments_path, current)
     end
   end
 

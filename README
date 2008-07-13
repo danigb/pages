@@ -12,6 +12,10 @@ EXPORT AND IMPORT DB
 http://www.railslodge.com/plugins/830-yaml-db
 ./script/plugin install http://opensource.heroku.com/svn/rails_plugins/yaml_db/
 
+RUBY INLINE on toami
+(inside enviroment.rb)
+ENV['INLINEDIR'] = File.join(File.dirname(__FILE__),"../../inline")
+
 TODO
 
 1. al crear un nuevo proyecto, habría que indicar también la URL pública

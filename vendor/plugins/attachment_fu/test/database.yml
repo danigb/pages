@@ -1,18 +1,21 @@
-sqlite:
-  :adapter: sqlite
-  :dbfile: attachment_fu_plugin.sqlite.db
-sqlite3:
-  :adapter: sqlite3
-  :dbfile: attachment_fu_plugin.sqlite3.db
-postgresql:
-  :adapter: postgresql
-  :username: postgres
-  :password: postgres
-  :database: attachment_fu_plugin_test
-  :min_messages: ERROR
-mysql:
-  :adapter: mysql
-  :host: localhost
-  :username: rails
-  :password:
-  :database: attachment_fu_plugin_test
+defaults: &defaults
+  adapter: mysql
+  encoding: utf8
+  username: root
+  password: db4root
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  database: solidaridad
+  <<: *defaults
+
+production:
+  database: solidaridad
+  <<: *defaults
+
+
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  timeout: 5000
+
