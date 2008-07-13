@@ -12,7 +12,8 @@
     
     <div id="logged">
       <%= link_to 'admin', project_pages_path(@project) %> | 
-      <%= link_to 'editar', [@project, @page, @page.content, :edit] %>
+      <%= link_to 'editar', [@project, @page, @page.content, :edit] %> |
+      <%= link_to 'cambiar', :controller => 'cambiar' %>
     </div>
     
     <div id="page">

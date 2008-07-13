@@ -1,12 +1,11 @@
 class SolidaridadController < ApplicationController
+  include SolidaridadSite
   layout 'solidaridad'
-  before_filter :load_roots
+  before_filter :load_project, :load_roots
 	
-  PROJECT_ID = 2
-  AREAS = {:content => 5, :foro => 4, :agenda => 6, :actualidad => 7, :materiales => 8, :videos => 9, :enlaces => 10}
   
   def index
-    redirect_to :action => :pagina, :id => AREAS[:content]
+    redirect_to :action => :pagina, :id => AREAS[:contenido]
   end
         
   def pagina
@@ -40,8 +39,7 @@ class SolidaridadController < ApplicationController
 	
   private
   def load_roots
-    @project = Project.find(PROJECT_ID)
-    @content = Page.find(AREAS[:content])
-    @news = Page.find(:all, :conditions => ['parent_id = ?', AREAS[:actualidad]], :order => 'position DESC', :limit => 10)
+    @content = page_of :contenido
+    @news = recent_news
   end
 end

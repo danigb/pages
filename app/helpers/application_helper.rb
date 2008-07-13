@@ -1,5 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
-module ApplicationHelper
+module ApplicationHelper 
+  include AdminHelper
+  
   def clear
     '<div class="spacer">&nbsp;</div>'
   end
@@ -34,31 +36,21 @@ module ApplicationHelper
   end
   
   def page_tabs(page, current) 
-    open_area + 
-      tab(  'visualizar', [page.project, page, page.content], current) +
-      tab( 'contenido', [page.project, page, page.content, :edit], current ) +
-      tab(  'metadatos', project_page_path, current) +
-      close_area
+    tabs do
+      tab('visualizar', [page.project, page, page.content], current) <<
+      tab('contenido', [page.project, page, page.content, :edit], current) <<
+      tab('metadatos', project_page_path, current) 
+    end
   end
   
-  def project_tabs(project, current) 
-    open_area + 
-      tab('general',project_path(project), current) +
-      tab( 'páginas', project_pages_path(project), current ) +
-      tab(  'imágenes y archivos', project_attachments_path(project), current) +
-      close_area
+  def project_tabs(project, current)
+    tabs do
+      tab('general', project_path(project), current) <<
+      tab('páginas', project_pages_path(project), current) <<
+      tab('imágenes y archivos', project_attachments_path(project), current)
+    end
   end
 
-  
-  private
-  def open_area
-    '<div class="tabs">'
-  end
-  
-  def close_area
-    '</div><div class="spacer">&nbsp;</div><br/>'
-  end
-  
   def tab(name, path, current)
     current == name ? "<div class=\"active\">#{name}</div>" : link_to( name, path) 
   end
