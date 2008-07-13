@@ -45,9 +45,9 @@ module ApplicationHelper
   
   def project_tabs(current)
     tabs do
-      tab('general', {:controller => 'admin/site'}, current) <<
       tab('páginas', admin_pages_path, current) <<
-      tab('imágenes y archivos', admin_attachments_path, current)
+      tab('imágenes y archivos', admin_attachments_path, current) <<
+      tab('usuarios', admin_users_path, current) 
     end
   end
 

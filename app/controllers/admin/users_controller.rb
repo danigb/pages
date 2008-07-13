@@ -1,6 +1,5 @@
 class Admin::UsersController < ApplicationController
   layout 'admin'
-  before_filter :load_project
   
   # GET /users
   # GET /users.xml
@@ -43,12 +42,12 @@ class Admin::UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-    @user = @project.users.build(params[:user])
+    @user = User.new(params[:user])
 
     respond_to do |format|
       if @user.save
         flash[:notice] = 'User was successfully created.'
-        format.html { redirect_to(@project) }
+        format.html { redirect_to admin_users_path }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -81,7 +80,7 @@ class Admin::UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to(@project) }
+      format.html { redirect_to admin_users_path }
       format.xml  { head :ok }
     end
   end

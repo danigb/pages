@@ -4,8 +4,7 @@ class Admin::AttachmentsController < ApplicationController
   # GET /attachments
   # GET /attachments.xml
   def index
-    page = Page.find(1)
-    @attachments = page.attachments
+    @attachments = Attachment.find :all
 
     respond_to do |format|
       format.html # index.html.erb

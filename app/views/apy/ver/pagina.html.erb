@@ -1,0 +1,11 @@
+
+<div id="menu" style="<%= color_of @area %>">
+  <%= render :partial => 'menu_items', :locals => {:pages => @area.children} %> 
+</div>
+
+<div id="content">
+  <%= @page.content.data if @page.content %>
+</div>
+
+
+<%= clear %>
