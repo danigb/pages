@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>SOLIDARIDAD EN ACCIÓN </title>
+    <%= javascript_include_tag 'jquery-1.2.3.min.js', :cache => false %>
+    <%= stylesheet_link_tag 'reset', 'si/ver.css', 'si/items.css', :cache => false %>
+  </head>
+  <body>
+    
+    <div id="logged">
+      <%= link_to 'admin', admin_pages_path %> | 
+      <%= link_to 'cambiar', :controller => 'cambiar' %>
+    </div>
+    
+    <div id="page">
+      <div id="logo"><%= image_tag('solidaridad/logo.gif') %></div>
+      <div id="banner">&nbsp;</div>
+      <div id="areas">
+        <%= link_to image_tag('solidaridad/foro.gif'), :action => 'foro' %>
+        <%= link_to image_tag('solidaridad/agenda.gif'), :action => 'la', :id => 'agenda' %>
+        <%= link_to image_tag('solidaridad/actualidad.gif'), :action => 'la', :id => 'actualidad'  %>
+        <%= link_to image_tag('solidaridad/materiales.gif'), :action => 'los', :id => 'materiales'  %>
+        <%= link_to image_tag('solidaridad/videos.gif'), :action => 'los', :id => 'videos'  %>
+        <%= link_to image_tag('solidaridad/enlaces.gif'), :action => 'los', :id => 'enlaces'  %>
+        <%= clear %>
+      </div>     
+      <div id="menu">
+        <%= render :partial => 'menu_items', :locals => {:pages => @content.children} %> 
+      </div>      
+      <div id="news">
+        <% for item in @news  %>
+          <div class="item">
+            <div class="title"><%= item.title %></div>
+            <div class="content"><%= item.content %></div>
+          </div>
+        <% end %>
+      </div>
+      
+      <div id="content">        
+        <%= yield  %>          
+      </div>            
+      <%= clear %>
+    </div>    
+  </body>
+</html>

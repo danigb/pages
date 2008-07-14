@@ -1,0 +1,7 @@
+<h1><%=  @name %></h1>
+
+<div class="<%= @name %>">
+  <% for page in @page.children %>
+    <%= render_item page, @name %>
+  <% end %>
+</div>

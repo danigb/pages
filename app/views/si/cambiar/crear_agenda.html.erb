@@ -1,0 +1,25 @@
+<%= cambiar_tabs '' %>
+
+<div id="crear_agenda" class="formBox">
+  <h1>Añadir una entrada en la agenda</h1>
+  
+  <% form_tag :action => 'create_agenda' do -%>
+    <%= hidden_field_tag :parent_id, @parent.id %>
+
+  <div>
+    <label>Fecha</label>
+    <%= text_field_tag :date %>
+  </div>
+  <div>
+    <label>Título</label>
+    <%= text_field_tag :title %>
+  </div>  
+  <div>
+    <%= text_area_tag :content %>
+  </div>
+  <%= submit_button( 'Crear', "jQuery('form').submit()" ) %>
+
+  <% end -%>
+  
+      
+</div>
