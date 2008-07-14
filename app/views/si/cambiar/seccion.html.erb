@@ -6,18 +6,17 @@
     <%= action nil, 'añadir', {:action => 'crear', :id => @section } %>
 <% end %>
 
-
 <table>
   <thead>
     <tr>
-      <td>Título</td>
+      <td>&nbsp;</td>
       <td></td>
     </tr>
   </thead>
   <tbody>
     <% for page in @pages %>
       <tr>
-        <td><%= page.title %></td>
+        <td><%= render_item page, @section %></td>
         <td></td>
       </tr>
     <% end %>

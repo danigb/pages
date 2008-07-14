@@ -1,5 +1,5 @@
 
-class Admin::MetasController < ApplicationController
+class Admin::MetasController < Admin::AdminController
   layout 'admin'
   
   # GET /metas

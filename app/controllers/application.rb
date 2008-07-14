@@ -9,12 +9,6 @@ class ApplicationController < ActionController::Base
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => 'bc8bb3f23d6d3c8a39a3a2ddc438d8fe'
   
-  def authenticate
-    authenticate_or_request_with_http_basic do |name, pass|
-      #User.authenticate(name, pass)
-      name == 'calc' && pass == 'calc'      
-    end
-  end
 
   def load_site
     @site = Page.find(1)

@@ -1,6 +1,6 @@
 class Si::VerController < ApplicationController
   include Si::SolidaridadSite
-  layout 'solidaridad'
+  layout 'si_ver'
   before_filter  :load_roots
 	
   
@@ -32,12 +32,21 @@ class Si::VerController < ApplicationController
     end
   end
   
-  def el
+  def la
+    seccion
+  end
+  
+  def los
+    seccion
+  end
+  
+  private
+  def seccion
     @name = params[:id]
     @page = page_of @name
+    render :action => 'seccion'
   end
 	
-  private
   def load_roots
     @content = page_of :contenidos
     @news = recent_news

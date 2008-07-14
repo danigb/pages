@@ -1,6 +1,6 @@
 class Si::CambiarController < ApplicationController
   include Si::SolidaridadSite
-  layout 'admin'
+  layout 'si_cambiar'
   
   def index
     redirect_to :action => 'seccion', :id => 'agenda'

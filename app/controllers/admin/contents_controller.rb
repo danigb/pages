@@ -1,4 +1,4 @@
-class Admin::ContentsController < ApplicationController
+class Admin::ContentsController < Admin::AdminController
   layout 'admin'
   before_filter :load_page
   

@@ -1,4 +1,4 @@
-class Admin::PagesController < ApplicationController
+class Admin::PagesController < Admin::AdminController
   layout 'admin'
   # before_filter :authenticate
   
