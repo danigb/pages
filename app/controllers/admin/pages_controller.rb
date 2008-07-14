@@ -38,7 +38,11 @@ class Admin::PagesController < Admin::AdminController
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
-    @meta = Meta.new
+  end
+  
+  def meta
+    @page = Page.find(params[:id])
+    @meta = @page.metas.build
   end
 
   # POST /pages

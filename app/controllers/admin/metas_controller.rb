@@ -44,12 +44,11 @@ class Admin::MetasController < Admin::AdminController
   # POST /metas.xml
   def create
     @meta = Meta.new(params[:meta])
-    @meta.page_id = @page.id  
     
     respond_to do |format|
       if @meta.save
         flash[:notice] = 'meta was successfully created.'
-        format.html { redirect_to([:admin, @page]) }
+        format.html { redirect_to :back }
         format.xml  { render :xml => @meta, :status => :created, :location => @meta }
       else
         format.html { render :action => "new" }

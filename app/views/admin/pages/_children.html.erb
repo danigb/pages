@@ -2,7 +2,7 @@
 <tr>
   <td>
     <%= image_tag 'page_white.png', :style => "margin-left: #{depth}em;" %>
-    <%= link_to_unless root.locked?, root.title, edit_admin_page_content_path(root, root.content) %> 
+    <%= link_to_edit_page root %> 
   </td>
   <td><%= fecha root.updated_at %></td>
   <td><%= root.state %></td>
@@ -13,9 +13,10 @@
       <%= link_to btn_tag('page_white_down.png', 'bajar'), { :action => 'move_down', :id => root}, :class => 'action' %>
     <% end %>
     <%= link_to image_tag('page_white_add.png') + ' añadir página hija', new_admin_page_path(:parent_id => root), :class => 'action' %>
-    <%= link_to image_tag('page_white_database.png') + ' datos', [:admin, root],  :class => 'action'  %>
+    <%= link_to image_tag('page_white_database.png') + ' editar', edit_admin_page_path(root),  :class => 'action'  %>
+    <%= link_to image_tag('page_white_database.png') + ' meta', {:action => 'meta', :id => root},  :class => 'action'  %>
     <%= link_to(image_tag('page_white_delete.png') + ' borrar', [:admin, root], :confirm => 'seguro?', 
-        :method => :delete, :class => 'action') if !root.locked? %> 
+      :method => :delete, :class => 'action') if !root.locked? %> 
   </td>
 </tr>
 

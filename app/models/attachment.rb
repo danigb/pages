@@ -12,7 +12,6 @@
 #  thumbnail    :string(255)     
 #  width        :integer(11)     
 #  height       :integer(11)     
-#  project_id   :integer(11)     
 #  created_at   :datetime        
 #  updated_at   :datetime        
 #

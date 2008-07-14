@@ -37,9 +37,8 @@ module ApplicationHelper
   
   def page_tabs(page, current) 
     tabs do
-#      tab('View', admin_page_content_path(page, page.content), current) <<
-      tab('Content', edit_admin_page_content_path(page, page.content), current) <<
-      tab('Metadata', admin_page_path, current) 
+      tab('Content', edit_admin_page_path(page), current) <<
+      tab('Metadata', {:action => 'meta', :id => page}, current) 
     end
   end
   

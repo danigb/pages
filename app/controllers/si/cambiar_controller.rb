@@ -1,6 +1,7 @@
 class Si::CambiarController < ApplicationController
   include Si::SolidaridadSite
   layout 'si_cambiar'
+  before_filter :authenticate
   
   def index
     redirect_to :action => 'seccion', :id => 'agenda'
@@ -19,10 +20,8 @@ class Si::CambiarController < ApplicationController
   end
   
   def create_agenda
-    @page = Page.new(:title => params[:title], :parent_id => params[:parent_id])
+    @page = Page.new(:title => params[:title], :parent_id => params[:parent_id], :content => params[:date] + "\n" + params[:content])
     if @page.save
-      @page.contents.build(:data => params[:date] + "\n" + params[:content])
-      @page.save
       redirect_to :action => 'seccion', :id => 'agenda'
     end
   end

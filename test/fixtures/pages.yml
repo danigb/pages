@@ -10,7 +10,8 @@
 #  state      :string(12)      
 #  created_at :datetime        
 #  updated_at :datetime        
-#  project_id :integer(11)     
+#  content    :text            
+#  mime       :string(12)      
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

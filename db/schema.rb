@@ -25,9 +25,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "updated_at"
   end
 
-  create_table "contents", :force => true do |t|
+  create_table "revisions", :force => true do |t|
     t.integer  "page_id"
-    t.integer  "user_id"
     t.string "mime"
     t.text     "data"
     t.datetime "created_at"
@@ -46,6 +45,8 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "position"
     t.integer  "depth",      :limit => 5
     t.string   "state",      :limit => 12
+    t.string "mime", :limit => 12
+    t.text "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
