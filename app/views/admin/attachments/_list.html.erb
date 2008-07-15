@@ -1,0 +1,24 @@
+
+<table>
+  <thead>
+    <tr>
+      <td></td>
+      <td>Nombre</td>
+      <td>Link</td>
+      <td></td>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% for attachment in attachments %>
+      <tr>
+        <td><%= image_tag attachment.public_filename(:thumb), :alt => attachment.filename + '(thumbnail)' %></td>
+        <td><%= attachment.filename %></td>
+        <td>!<%= attachment.public_filename %>!</td>
+        <td>
+          <%= link_to 'Destroy', [:admin, attachment], :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

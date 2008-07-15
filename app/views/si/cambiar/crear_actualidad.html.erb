@@ -1,0 +1,29 @@
+<%= cambiar_tabs '' %>
+
+<div id="crear_actualidad" class="formBox">
+  <h1>Añadir una entrada en la sección de actualidad</h1>
+  
+  <% form_tag({:action => 'create_actualidad'},  :multipart => true ) do -%>
+    <%= error_messages_for :attachment %>
+    <div style="color: red">
+      <%= error_messages_for :page %>
+    </div>
+  
+    <%= hidden_field_tag 'page[parent_id]', @page.parent.id %>
+    <%= hidden_field_tag 'page[state]', 'published' %>
+    <%= hidden_field_tag 'page[mime]', 'actualidad' %>
+    <div>
+      <label>Fecha</label>
+      <%= text_field_tag 'page[content]' %>
+    </div>
+    <div>
+      <label>Título</label>
+      <%= text_field_tag 'page[title]' %>
+    </div>  
+    <div><label>Archivo:</label>
+      <%= file_field_tag 'attachment[uploaded_data]' %>
+    </div>
+    <%= submit_button( 'Crear', "jQuery('form').submit()" ) %>
+  
+  <% end -%>
+</div>
