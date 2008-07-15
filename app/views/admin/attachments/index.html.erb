@@ -6,30 +6,7 @@
         <%= action 'picture_add.png', 'añadir imágen o fichero', new_admin_attachment_path %>
   <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <td></td>
-      <td>Nombre</td>
-      <td></td>
-    </tr>
-  </thead>
-  
-  <tbody>
-    <% for attachment in @attachments %>
-      <tr>
-        <td><%= image_tag attachment.public_filename(:thumb), :alt => attachment.filename + '(thumbnail)' %></td>
-        <td><%= attachment.filename %></td>
-        <td>
-          <%= link_to 'Show', [:admin, attachment] %>
-          <%= link_to 'Edit', [:admin, attachment, :edit] %>
-          <%= link_to 'Destroy', [:admin, attachment], :confirm => 'Are you sure?', :method => :delete %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<%= render :partial => 'list', :locals => {:attachments => @attachments} %>
 <br />
 
 

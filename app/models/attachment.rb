@@ -17,8 +17,9 @@
 #
 
 class Attachment < ActiveRecord::Base
-  has_attachment :storage => :file_system, :thumbnails => { :thumb => 'x50' }
+  has_attachment :storage => :file_system, :thumbnails => { :thumb => 'x50' }, :path_prefix => 'public/files/development'
   validates_as_attachment
+  belongs_to :page
 end
 
 

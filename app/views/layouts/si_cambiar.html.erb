@@ -6,7 +6,7 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Administración <%= "de la web " + @project.title if !@project.nil? %> </title>
     <%= stylesheet_link_tag 'reset', 'admin/admin.css', 'jquery.wysiwyg.css', 'facebox.css', 
-      'admin/forms.css', 'dialogs.css', 'si/cambiar.css', :cache => false %>
+      'admin/forms.css', 'dialogs.css', 'si/cambiar.css', 'si/items.css', :cache => true %>
     <%= javascript_include_tag 'jquery-1.2.3.min.js', 'jquery.wysiwyg.js', 'editor.js', 'facebox.js', :cache => false %>
     <%= javascript_include_tag 'jquery.blockUI.js' %>
   </head>

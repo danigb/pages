@@ -3,7 +3,7 @@
 <h1><%=  @section%></h1>
 
 <% action_area do %>
-    <%= action nil, 'añadir', {:action => 'crear', :id => @section } %>
+  <%= action nil, "añadir una entrada en la sección #{@section}", {:action => 'crear', :id => @section } %>
 <% end %>
 
 <table>
@@ -17,7 +17,9 @@
     <% for page in @pages %>
       <tr>
         <td><%= render_item page, @section %></td>
-        <td></td>
+        <td class="actions">
+          <%= link_to 'borrar',  [:admin, page], :confirm => "vas a borrar #{page.title}. ¿estás segurx?", :method => :delete %>
+        </td>
       </tr>
     <% end %>
   </tbody>

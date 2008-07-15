@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.integer  "height"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.references "page"
   end
 
   create_table "revisions", :force => true do |t|

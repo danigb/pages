@@ -38,11 +38,16 @@ class Admin::PagesController < Admin::AdminController
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
+    @attachment = Attachment.new(:page_id => @page.id)
   end
   
   def meta
     @page = Page.find(params[:id])
     @meta = @page.metas.build
+  end
+  
+  def preview
+    @page = Page.find(params[:id])
   end
 
   # POST /pages
@@ -98,7 +103,7 @@ class Admin::PagesController < Admin::AdminController
     @page.destroy
 
     respond_to do |format|
-      format.html { redirect_to(project_pages_url) }
+      format.html { redirect_to :back }
       format.xml  { head :ok }
     end
   end

@@ -4,7 +4,7 @@
   <h1>Añadir una entrada en la agenda</h1>
   
   <% form_tag :action => 'create_agenda' do -%>
-    <%= hidden_field_tag :parent_id, @parent.id %>
+    <%= hidden_field_tag :parent_id, @page.parent.id %>
 
   <div>
     <label>Fecha</label>
@@ -20,6 +20,4 @@
   <%= submit_button( 'Crear', "jQuery('form').submit()" ) %>
 
   <% end -%>
-  
-      
 </div>

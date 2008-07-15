@@ -1,10 +1,9 @@
 class Admin::AttachmentsController < Admin::AdminController
   layout 'admin'
 
-  # GET /attachments
-  # GET /attachments.xml
+  # GET /attachments GET /attachments.xml
   def index
-    @attachments = Attachment.find :all
+    @attachments = Attachment.find(:all, :conditions => ['parent_id IS NULL'])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,8 +11,7 @@ class Admin::AttachmentsController < Admin::AdminController
     end
   end
 
-  # GET /attachments/1
-  # GET /attachments/1.xml
+  # GET /attachments/1 GET /attachments/1.xml
   def show
     @attachment = Attachment.find(params[:id])
 
@@ -23,8 +21,7 @@ class Admin::AttachmentsController < Admin::AdminController
     end
   end
 
-  # GET /attachments/new
-  # GET /attachments/new.xml
+  # GET /attachments/new GET /attachments/new.xml
   def new
     @attachment = Attachment.new
 
@@ -39,15 +36,14 @@ class Admin::AttachmentsController < Admin::AdminController
     @attachment = Attachment.find(params[:id])
   end
 
-  # POST /attachments
-  # POST /attachments.xml
+  # POST /attachments POST /attachments.xml
   def create
     @attachment = Attachment.new(params[:attachment])
 
     respond_to do |format|
       if @attachment.save
         flash[:notice] = 'Attachment was successfully created.'
-        format.html { redirect_to(project_attachments_url) }
+        format.html { redirect_to :back }
         format.xml  { render :xml => @attachment, :status => :created, :location => @attachment }
       else
         format.html { render :action => "new" }
@@ -56,15 +52,14 @@ class Admin::AttachmentsController < Admin::AdminController
     end
   end
 
-  # PUT /attachments/1
-  # PUT /attachments/1.xml
+  # PUT /attachments/1 PUT /attachments/1.xml
   def update
     @attachment = Attachment.find(params[:id])
 
     respond_to do |format|
       if @attachment.update_attributes(params[:attachment])
         flash[:notice] = 'Attachment was successfully updated.'
-        format.html { redirect_to admin_attachments_path }
+        format.html { redirect_to :back }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -73,14 +68,13 @@ class Admin::AttachmentsController < Admin::AdminController
     end
   end
 
-  # DELETE /attachments/1
-  # DELETE /attachments/1.xml
+  # DELETE /attachments/1 DELETE /attachments/1.xml
   def destroy
     @attachment = Attachment.find(params[:id])
     @attachment.destroy
 
     respond_to do |format|
-      format.html { redirect_to(project_attachments_url) }
+      format.html { redirect_to :back}
       format.xml  { head :ok }
     end
   end
