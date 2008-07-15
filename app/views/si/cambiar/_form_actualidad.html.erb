@@ -1,18 +1,29 @@
 
 <div>
   <label>Fecha</label>
-  <%= text_field_tag 'page[content]' %>
+  <%= text_field_tag 'page[content]', @page.content %>
 </div>
 <div>
   <label>Título</label>
-  <%= text_field_tag 'page[title]' %>
+  <%= text_field_tag 'page[title]', @page.title %>
 </div>  
-<div>
-  <label>Archivo:</label>
-  <% if @page.new_record? %>
-    <div class="info">Debes guardar esta entrada antes de poder asociar un archivo</div>
-  <% else  %>
+<% if @page.attachments.size > 0 %>
+  <% attachment = @page.attachments[0] %>
+  <div>
+    <label>Archivo:</label>
+    <%= attachment.filename %>
+  </div>
+  <div>
+    <label>&nbsp;</label>
+    <div class="info">
+      Debes borrar el archivo antes de poder subir otro: 
+      <%= link_to icon(:delete, 'Borrar el archivo', true), [:admin, attachment], :confirm => 'Estás segura?', :method => :delete %><br/><br/>
+    </div>
+  </div>
+<% else  %>   
+  <div>
+    <label>Archivo:</label>
     <%= file_field_tag 'attachment[uploaded_data]' %>
-  <% end %>
-</div>
+  </div>
+<% end %>
 

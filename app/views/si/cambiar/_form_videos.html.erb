@@ -1,11 +1,11 @@
 
 <div>
   <label>Título</label>
-  <%= text_field_tag 'page[title]' %>
+  <%= text_field_tag 'page[title]', @page.title %>
 </div>  
 <div>
   <label>Enlace de YouTube</label>
-  <%= text_area_tag 'page[content]' %>
+  <%= text_area_tag 'page[content]', @page.content %>
 </div>  
 
 

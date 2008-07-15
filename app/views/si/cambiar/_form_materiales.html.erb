@@ -3,5 +3,24 @@
   <label>Título</label>
   <%= text_field_tag 'page[title]' %>
 </div>  
+<% if @page.attachments.size > 0 %>
+  <% attachment = @page.attachments[0] %>
+  <div>
+    <label>Archivo</label>
+    <%= attachment.filename %>
+  </div>
+  <div>
+    <label>&nbsp;</label>
+    <div class="info">
+      Debes borrar el archivo antes de poder subir otro: 
+      <%= link_to icon(:delete, 'Borrar el archivo', true), [:admin, attachment], :confirm => 'Estás segura?', :method => :delete %><br/><br/>
+    </div>
+  </div>
+<% else  %>   
+  <div>
+    <label>Archivo</label>
+    <%= file_field_tag 'attachment[uploaded_data]' %>
+  </div>
+<% end %>
 
 

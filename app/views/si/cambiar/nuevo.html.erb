@@ -3,17 +3,18 @@
 <div id="crear <%=  @section %>" class="formBox">
   <h1>Añadir una entrada en la sección de <%= @section %></h1>
   
-  <% form_tag({:action => "create_#{@section}"}, :multipart => true) do -%>
+  <% form_tag({:action => 'create'}, :multipart => true) do -%>
     <%= error_messages_for :attachment %>
     <%= error_messages_for :page %>
+    <%= hidden_field_tag :section, @section %>
     <%= hidden_field_tag 'page[parent_id]', @page.parent.id %>
     <%= hidden_field_tag 'page[state]', 'published' %>
     <%= hidden_field_tag 'page[mime]', @section %>
   
     <%= render :partial => "form_#{@section}"  %>
-
+  
     <%= submit_button( 'Crear', "jQuery('form').submit()" ) %>
-
+  
   <% end -%>
 </div>
 <%= clear %>
