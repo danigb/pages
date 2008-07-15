@@ -48,7 +48,7 @@ class Si::VerController < ApplicationController
   end
 	
   def load_roots
-    @content = page_of :contenidos
+    @content = page_of :dossier
     @news = recent_news
   end
 end

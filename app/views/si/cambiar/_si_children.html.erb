@@ -1,0 +1,21 @@
+
+<tr>
+  <td>
+    <%= image_tag 'page_white.png', :style => "margin-left: #{depth}em;" %>
+    <%= link_to_edit_page root %> 
+  </td>
+  <td><%= fecha root.updated_at %></td>
+  <td class="actions">    
+    <% if !root.parent.nil? %>
+      <%= link_to icon(:up, 'subir'), {:controller => 'admin/pages', :action => 'move_up', :id => root} %>
+      <%= link_to icon(:down, 'bajar'), {:controller => 'admin/pages', :action => 'move_down', :id => root} %>
+    <% end %>
+    <%= link_to icon(:page_add, 'añadir página hija'), :action => 'hija', :id => root if depth == 1 %>
+    <%= link_to icon(:page_edit, 'editar'), :action => 'editar_pagina', :id => root if depth > 0 %>
+    <%= link_to(icon(:delete, 'borrar'), [:admin, root], :confirm => 'seguro?', :method => :delete) if root.children.size == 0 %> 
+  </td>
+</tr>
+
+<% for node in root.children %>
+  <%= render :partial => 'si_children', :locals => {:root => node, :depth => depth + 1} %>
+<% end %>

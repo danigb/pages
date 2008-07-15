@@ -4,7 +4,40 @@ class Si::CambiarController < ApplicationController
   before_filter :authenticate
   
   def index
-    redirect_to :action => 'seccion', :id => 'agenda'
+    redirect_to :action => 'dossier'
+  end
+  
+  def dossier
+    @section = 'dossier'
+    @page = page_of(@section)
+  end
+  
+  def create_sub
+    if params[:title] != ''
+      @page = Page.new(:parent_id => params[:id], :mime => 'sub', :state => 'locked', :title => params[:title])
+      @page.save
+    end
+    redirect_to :action => 'dossier'
+  end
+  
+  def hija
+    @page = Page.new(:parent_id => params[:id], :mime => 'página', :state => 'published')
+    render :action => 'editar_pagina'
+  end
+  
+  def editar_pagina
+    @page = Page.find(params[:id])
+    @attachment= Attachment.new(:parent_id => @page)
+  end
+  
+  def save
+    @page = params[:page_id] == '' ? Page.new : Page.find(params[:page_id])
+    @page.attributes = params[:page]
+    if @page.save
+      flash[:notice] = 'Página guardada'
+      @attachment= Attachment.new(:parent_id => @page)
+    end
+    render :action => 'editar_pagina'
   end
   
   def seccion
@@ -28,13 +61,9 @@ class Si::CambiarController < ApplicationController
     prepare_content
     @page = Page.new(params[:page])
     @page.attachments.build(params[:attachment]) if has_attachment
-    if @page.save
-      flash[:notice] = "Se ha añadido una entrada a '#{section}'."
-      redirect_to :action => 'seccion', :id => section
-    else
-      render_crear section
-    end
+    save_item(@page, section, 'Se ha añadido una entrada a')
   end
+  
   
   def update
     section = params[:section]
@@ -42,17 +71,17 @@ class Si::CambiarController < ApplicationController
     @page = Page.find(params[:id])
     @page.attachments.build(params[:attachment]) if has_attachment
     @page.attributes = params[:page]
-    if @page.save
-      flash[:notice] = "Se ha actualizado la entrada en '#{section}'."
-      redirect_to :action => 'seccion', :id => section
-    else
-      render_crear section
-    end
+    save_item(@page, section, 'Se ha actualizada la entrada en')
   end
   
   private
-  def render_crear(section)
-    render :action => "crear_#{section.downcase}"
+  def save_item(page, section, message)
+    if page.save
+      flash[:notice] = "#{message} '#{section}'."
+      redirect_to :action => 'seccion', :id => section
+    else
+      render :action => "crear_#{section.downcase}"
+    end
   end
   
   def has_attachment

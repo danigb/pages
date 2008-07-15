@@ -1,0 +1,34 @@
+<%= cambiar_tabs '' %>
+
+<h1><%= @page.title.blank? ? 'Crear nueva página' : "Editar página '#{@page.title}'" %></h1>
+
+<div class="actions">
+  <%= javascript_action('icons/edit.png', 'Guardar', "jQuery('#edit_page').submit()") %>
+  <%= action nil, 'Volver', :action => 'dossier' %>
+</div>
+<%= clear %>
+
+<div class="formBox">
+  <h1>&nbsp;</h1>
+  
+  <%= error_messages_for :page %>
+  
+  <% form_for(:page, @page, :url => {:action => 'save'}, :html => {:id => 'edit_page'}) do |f| %>
+    <%= hidden_field_tag :page_id, @page.id %>
+    <%= f.hidden_field :parent_id %>
+    <%= f.hidden_field :state %>
+    <%= f.hidden_field :mime %>
+    <div>
+      <label>Título</label>
+      <%= f.text_field :title %>
+    </div>
+    <% if !@page.locked? %>
+      <div class="editor">
+        <label>Contenido</label>
+        <%= f.text_area :content, :id => 'wysiwyg' %>
+      </div>
+    <% end  %>
+  <% end %>
+</div>
+
+<%= render :partial => '/admin/pages/page_attachments' %>

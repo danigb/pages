@@ -3,10 +3,9 @@ module Si::SolidaridadHelper
   include AdminHelper
   include ActionView::Helpers::TagHelper
 
-  
   def cambiar_tabs(current)
     tabs do 
-      tab('contenido', '', current) <<
+      tab('dossier', {:action => 'dossier'}, current) <<
         tab('agenda', {:action => 'seccion', :id =>'agenda'}, current) <<
         tab('actualidad', {:action => 'seccion', :id =>'actualidad'}, current) <<
         tab('materiales', {:action => 'seccion', :id =>'materiales'}, current) <<

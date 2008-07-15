@@ -26,6 +26,8 @@ h2 { font-size: 150%; margin: 1em 0 0.5em 1em; }
 #preview { margin: 2em; padding: 1em; background-color: white; border: 1px solid #DBD5C5; }
 #bottom {margin: 0em auto 1em auto; color: gray; border-top: 1px solid lightgray; padding: 1em 0 0 0}
 
+#page div.info {margin: 0 1em 0 1em; width: 73em; color: #DBC381; text-align: right;}
+
 /*** TABLE ***/
 table { margin: 1em; width: 73em;}
 td.actions {}

@@ -1,0 +1,30 @@
+<%= cambiar_tabs @section %>
+
+<h1>Sección '<%= @section %> '</h1>
+
+<div class="formBox" style="margin-left: 1em;">
+  <h1>Añadir una nueva sección al dossier</h1>  
+  <% form_tag(:action => 'create_sub', :id => @page) do -%>
+    <div>
+      <label>Título</label>
+      <%= text_field_tag :title %>
+    </div>
+    <%= submit_button( 'Añadir', "jQuery('form').submit()" ) %>
+  <% end %>
+</div>
+<%= clear %>
+<div class="info">Utiliza el botón <%= icon :page_add, 'añadir página hija' %> para añadir páginas a las secciones del dossier.<br/>
+Las secciones sólo se pueden borrar si no tienen páginas hijas.
+</div>
+<table>
+  <thead>
+    <td style="width: 50%">Título</td>
+    <td>Última modificación</td>
+    <td></td>
+  </thead>
+  
+  <tbody>
+    <%= render :partial => 'si_children', :locals => {:root => @page, :depth => 0} %>
+  </tbody>
+  
+</table>

@@ -1,0 +1,25 @@
+
+
+
+<% if @page.state != 'locked' && !@attachment.nil? %>
+<div class="formBox">
+  <h1>Subir una imágen o archivo</h1>
+  
+  <%= error_messages_for :attachment %>
+  
+  <% form_for([:admin, @attachment], :html => { :multipart => true }) do |f| %>
+    <%= f.hidden_field :page_id %>
+    <div><label>Archivo:</label>
+      <%= f.file_field :uploaded_data %>
+    </div>
+    <%= submit_button 'Añadir', "jQuery('#new_attachment').submit()" %>
+  <% end %>
+</div>
+<%= clear  %>
+
+<h1>Archivos e imágenes asociadas a esta página</h1>
+<%= render :partial => '/admin/attachments/list', :locals => {:attachments => @page.attachments} %>
+
+<% end %>
+
+<%= clear %>

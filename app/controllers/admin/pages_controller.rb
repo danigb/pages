@@ -58,7 +58,7 @@ class Admin::PagesController < Admin::AdminController
     respond_to do |format|
       if @page.save
         flash[:notice] = 'Página creada'
-        format.html { redirect_to admin_pages_path }
+        format.html { redirect_to :back }
         format.xml  { render :xml => @page, :status => :created, :location => @page }
       else
         format.html { render :action => "new" }
@@ -74,8 +74,8 @@ class Admin::PagesController < Admin::AdminController
 
     respond_to do |format|
       if @page.update_attributes(params[:page])
-        flash[:notice] = 'Page was successfully updated.'
-        format.html { redirect_to admin_pages_url }
+        flash[:notice] = 'Página modificada'
+        format.html { redirect_to :back }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
