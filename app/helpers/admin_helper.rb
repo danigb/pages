@@ -10,5 +10,10 @@ module AdminHelper
     return link_to(page.title, {:action => 'meta', :id => page}) if page.locked?
   end
 
+  def icon(name, label, visible = false)
+    result = image_tag("icons/#{name.to_s}.png", :alt => label)
+    result << "&nsbp;#{label}" if visible
+    return result
+  end
   
 end

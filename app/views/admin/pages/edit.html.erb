@@ -1,10 +1,10 @@
 <%= page_tabs(@page, 'Content')  %>
 
-<h1>Page '<%= @page.title %>'</h1>
+<h1>Página '<%= @page.title %>'</h1>
 
 <div class="actions">
-  <%= javascript_action('page_white_edit.png', 'Save', "jQuery('form.edit_page').submit()") %>
-  <%= action nil, 'Cancel', admin_pages_path %>
+  <%= javascript_action('icons/edit.png', 'Guardar', "jQuery('form.edit_page').submit()") %>
+  <%= action nil, 'Cancelar', admin_pages_path %>
 </div>
 <%= clear %>
 
@@ -33,22 +33,23 @@
   <% end %>
 </div>
 
-<h1>Files of this page</h1>
-<%= render :partial => '/admin/attachments/list', :locals => {:attachments => @page.attachments} %>
-
 <div class="formBox">
-  <h1>Upload a file to this page</h1>
+  <h1>Subir una imágen o archivo</h1>
   
   <%= error_messages_for :attachment %>
   
   <% form_for([:admin, @attachment], :html => { :multipart => true }) do |f| %>
     <%= f.hidden_field :page_id %>
-    <div><label>File:</label>
+    <div><label>Archivo:</label>
       <%= f.file_field :uploaded_data %>
     </div>
     <%= submit_button 'Añadir', "jQuery('#new_attachment').submit()" %>
   <% end %>
-  
 </div>
-
 <%= clear  %>
+
+<h1>Archivos e imágenes asociadas a esta página</h1>
+<%= render :partial => '/admin/attachments/list', :locals => {:attachments => @page.attachments} %>
+
+
+

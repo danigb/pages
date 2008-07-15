@@ -1,0 +1,20 @@
+<%= cambiar_tabs '' %>
+
+<h1>Sección '<%= @section %> '</h1>
+<div id="editar <%=  @section %>" class="formBox">
+  <h1>Modificar '<%= @page.title %>'</h1>
+  
+  <% form_tag({:action => "update_#{@section}", :id => @page}, :multipart => true) do -%>
+    <%= error_messages_for :attachment %>
+    <%= error_messages_for :page %>
+    <%= hidden_field_tag 'page[parent_id]', @page.parent.id %>
+    <%= hidden_field_tag 'page[state]', 'published' %>
+    <%= hidden_field_tag 'page[mime]', @section %>
+  
+    <%= render :partial => "form_#{@section}"  %>
+
+    <%= submit_button( 'Modificar', "jQuery('form').submit()" ) %>
+
+  <% end -%>
+</div>
+<%= clear %>

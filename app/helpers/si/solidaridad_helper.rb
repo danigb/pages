@@ -14,7 +14,7 @@ module Si::SolidaridadHelper
         tab('enlaces', {:action => 'seccion', :id =>'enlaces'}, current)
     end
   end
-
+  
   
   def render_item_old(page, section)
     if section == 'agenda'
@@ -32,14 +32,14 @@ module Si::SolidaridadHelper
     content_tag(:div, :class=>'item agenda') do
       content_tag(:div, page.first_line, :class=> 'date') +
         content_tag(:div, page.title, :class => 'title') +
-        content_tag(:div, page.skip_first_line, :class => 'content')
+        content_tag(:div, textilize(page.skip_first_line), :class => 'content')
     end
   end
     
   def render_actualidad(page)
     pdf = page.attachments.size > 0 ? page.attachments[0] : nil
     content_tag(:div, :class => 'item actualidad') do
-      content_tag(:div, page.content, :class=> 'date') +
+      content_tag(:div, textilize(page.content), :class=> 'date') +
         content_tag(:div,:class => 'title') do
           if !pdf.nil?
             link_to page.title, pdf.public_filename, :popup => ['_blank']

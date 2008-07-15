@@ -1,15 +1,15 @@
 <%= cambiar_tabs @section %>
 
-<h1><%=  @section%></h1>
+<h1>Sección '<%= @section %> '</h1>
 
 <% action_area do %>
-  <%= action nil, "añadir una entrada en la sección #{@section}", {:action => 'crear', :id => @section } %>
+  <%= action 'icons/add.png', "añadir a '#{@section}'", {:action => 'crear', :id => @section } %>
 <% end %>
 
 <table>
   <thead>
     <tr>
-      <td>&nbsp;</td>
+      <td>Elementos en  '<%= @section %> '</td>
       <td></td>
     </tr>
   </thead>
@@ -18,7 +18,10 @@
       <tr>
         <td><%= render_item page, @section %></td>
         <td class="actions">
-          <%= link_to 'borrar',  [:admin, page], :confirm => "vas a borrar #{page.title}. ¿estás segurx?", :method => :delete %>
+          <%= link_to icon(:up, 'subir'), {:controller => 'admin/pages', :action => 'move_up', :id => page} %>
+          <%= link_to icon(:down, 'bajar'), {:controller => 'admin/pages', :action => 'move_down', :id => page} %>
+          <%= link_to icon(:edit, 'editar'), {:action => 'editar', :id => page} %>
+          <%= link_to icon(:delete, 'borrar'),  [:admin, page], :confirm => "vas a borrar #{page.title}. ¿estás segurx?", :method => :delete %>
         </td>
       </tr>
     <% end %>

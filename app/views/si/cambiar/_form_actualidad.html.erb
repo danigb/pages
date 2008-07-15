@@ -1,0 +1,18 @@
+
+<div>
+  <label>Fecha</label>
+  <%= text_field_tag 'page[content]' %>
+</div>
+<div>
+  <label>Título</label>
+  <%= text_field_tag 'page[title]' %>
+</div>  
+<div>
+  <label>Archivo:</label>
+  <% if @page.new_record? %>
+    <div class="info">Debes guardar esta entrada antes de poder asociar un archivo</div>
+  <% else  %>
+    <%= file_field_tag 'attachment[uploaded_data]' %>
+  <% end %>
+</div>
+

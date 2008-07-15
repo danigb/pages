@@ -1,0 +1,17 @@
+
+    
+<div>
+  <label>Fecha</label>
+  <%= text_field_tag :date, @page.first_line %>
+</div>
+<div>
+  <label>Título</label>
+  <%= text_field_tag 'page[title]', @page.title %>
+</div>  
+<div>
+  <label>Contenido</label>
+  <%= text_area_tag :content, @page.skip_first_line %>
+</div>
+    
+    
+    

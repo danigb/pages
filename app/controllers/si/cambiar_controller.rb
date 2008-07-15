@@ -15,29 +15,35 @@ class Si::CambiarController < ApplicationController
   end
   
   def crear
-    section = params[:id]
-    parent = page_of section
+    @section = params[:id]
+    parent = page_of @section
     @page = parent.children.build
-    render_crear section
+  end
+  
+  def editar
+    @page = Page.find(params[:id])
+    @section = @page.parent.title.downcase
   end
   
   def create_agenda
-    @page = Page.new(:title => params[:title], :parent_id => params[:parent_id],
-      :content => params[:date] + "\n" + params[:content], :mime => 'agenda')
+    params[:page][:content] = params[:date] + "\n" + params[:content]
+    @page = Page.new(params[:page])
     if @page.save
       redirect_to :action => 'seccion', :id => 'agenda'
     end
   end
   
+  def update_agenda
+    @page = Page.find(params[:id])
+    @page.update_attributes(params[:page])
+  end
+  
   def create_actualidad
-    @attachment = Attachment.new(params[:attachment])
     @page = Page.new(params[:page])
-    Page.transaction do
-      @page.save!
-      @attachment.save!
+    if @page.save
+      flash[:notice] = 'Se ha añadido una entrada a la actualidad.'
+      redirect_to :action => 'seccion', :id => 'actualidad'
     end
-    flash[:notice] = 'Se ha añadido una entrada a la actualidad.'
-    redirect_to :action => 'seccion', :id => 'actualidad'
   end
   
   def create_actualidad_old

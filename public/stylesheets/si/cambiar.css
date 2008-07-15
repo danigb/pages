@@ -1,2 +1,6 @@
 
-td .item {padding: 0.5em; border: 1px solid gray;}
+td .item {padding: 0.5em; border: 1px solid gray; background-color: white;}
+
+div.formBox input[type=text] {width: 40em;}
+div.formBox textarea {width: 40em; height: 10em;}
+div.formBox div.info {color: #468800; float: left;}

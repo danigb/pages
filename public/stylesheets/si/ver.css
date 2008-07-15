@@ -15,7 +15,7 @@ a {  text-decoration: none; }
     width: 67.5em;
     height: 4.8em;
     margin-left: 10em;
-    background: url('../images/solidaridad/banner.gif') no-repeat ;
+    background: url('../../images/solidaridad/banner.gif') no-repeat ;
 }
 
 #areas {}
