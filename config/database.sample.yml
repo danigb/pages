@@ -2,15 +2,15 @@ defaults: &defaults
   adapter: mysql
   encoding: utf8
   username: root
-  password: 
+  password: db4root
   socket: /var/run/mysqld/mysqld.sock
 
 development:
-  database: pages_development
+  database: solidaridad
   <<: *defaults
 
 production:
-  database: pages_production
+  database: solidaridad
   <<: *defaults
 
 

@@ -1,5 +1,0 @@
---- 
-:files_path: public/files/development
-:root: 
-  :action: index
-  :controller: si/ver
