@@ -1,6 +1,6 @@
 
 body { background-color: white; }
-a {  text-decoration: none; }
+a {  text-decoration: none; color: inherit; }
 
 #logo { float: left; width: 10em; background-color: white; text-align: center; }
 #logged { padding: 0.5em; font-size: 75%; }
@@ -9,6 +9,8 @@ a {  text-decoration: none; }
     width: 54.3em; background-color: white; }
 #content font { font-size: 90%; }
 #content p { margin: 0.5em 0; }
+
+h1 {font-size: 200%; margin: 0 0 0.25em 0;  }
 
 
 #banner {

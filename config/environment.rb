@@ -1,15 +1,20 @@
 # Be sure to restart your server when you modify this file
-
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
 #ENV['RAILS_ENV'] ||= 'production'
-#ENV['INLINEDIR'] = File.join(File.dirname(__FILE__),"../inline")
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
 
+
+
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
+
+require File.join(File.dirname(__FILE__), 'pages_deploy')
+
+puts 'PAGES configuration:' + $pages.to_yaml
+
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root $pages[:root]
+  
   map.namespace :admin do |admin|
     admin.resources :users
     admin.resources :attachments
