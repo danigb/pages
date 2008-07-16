@@ -1,0 +1,22 @@
+<h1>Añadir un nuevo tema de discusión al foro</h1>
+
+<div class="form">
+  <% form_tag :action => 'crear_tema' do %>
+    <div>
+      <label>Tema</label>
+      <%=  text_field_tag :title %>
+    </div>
+       <div>
+      <label>Nombre</label>
+      <%=  text_field_tag :name %>
+    </div>
+    <div>
+      <label>Texto</label>
+      <%= text_area_tag :text %>
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <%=  submit_tag 'crear' %>
+    </div>
+  <% end %>
+</div>

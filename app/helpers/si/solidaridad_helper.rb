@@ -3,9 +3,12 @@ module Si::SolidaridadHelper
   include AdminHelper
   include ActionView::Helpers::TagHelper
 
+  FORO_ICONS = [:comments, :comments, :comment]
+  
   def cambiar_tabs(current)
     tabs do 
       tab('dossier', {:action => 'dossier'}, current) <<
+        tab('foro', {:action => 'foro'}, current) <<
         tab('agenda', {:action => 'seccion', :id =>'agenda'}, current) <<
         tab('actualidad', {:action => 'seccion', :id =>'actualidad'}, current) <<
         tab('materiales', {:action => 'seccion', :id =>'materiales'}, current) <<
@@ -14,13 +17,8 @@ module Si::SolidaridadHelper
     end
   end
   
-  
-  def render_item_old(page, section)
-    if section == 'agenda'
-      render_agenda(page)
-    else
-      return page.title
-    end
+  def foro_icon(depth)
+    image_tag "icons/#{FORO_ICONS[depth]}.png", :style => "margin-left: #{depth}em;"
   end
   
   def render_item(page, section)
@@ -28,6 +26,13 @@ module Si::SolidaridadHelper
       method(:"render_#{section}").call(page)
     rescue NameError
       page.title + "<br/>" + (page.content.nil? ? '' : page.content)
+    end
+  end
+  
+  def render_hoja(page)
+    content_tag(:div, :class=>'item hoja') do
+      content_tag(:div, page.title, :class => 'title') +
+        content_tag(:div, textilize(page.content), :class => 'content')
     end
   end
   

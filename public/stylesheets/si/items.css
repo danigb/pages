@@ -1,4 +1,10 @@
 
+strong { font-weight: bold;}
+
+div.item.hoja {}
+div.item.hoja div.title {font-size: 150%;}
+div.item.hoja {}
+
 div.item.agenda {margin: 0 0 0.5em 0;}
 div.item.agenda div.date {font-size: 200%;}
 div.item.agenda div.title {font-weight: bold;}

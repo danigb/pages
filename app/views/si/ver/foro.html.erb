@@ -1,8 +1,13 @@
 <h1>Foro</h1>
 
+<div class="actions">
+  <%= link_to 'Añadir un nuevo tema de discusión al foro', :action => 'nuevo_tema' %>
+</div>
+
+<div id="foro">
 <% for item in @items  %>
   <div class="item">
-    <div class="title"><%= link_to item.title, :action => 'asunto', :id => item %></div>
-    <div class="content"><%= item.content  %></div>
+    <div class="title"><%= link_to item.title, :action => 'ver_tema', :id => item %></div>
   </div>
 <% end  %>
+</div>

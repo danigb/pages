@@ -1,0 +1,15 @@
+
+<tr>
+  <td>
+    <%= foro_icon depth %>
+    <%= link_to_if depth == 1, root.title, :controller => 'si/ver', :action => 'ver_tema', :id => root %> 
+  </td>
+  <td><%= fecha root.created_at %></td>
+  <td class="actions">    
+    <%= link_to(icon(:delete, 'borrar'), [:admin, root], :confirm => 'seguro?', :method => :delete) if root.children.size == 0 %> 
+  </td>
+</tr>
+
+<% for node in root.children %>
+  <%= render :partial => 'si_foro_child', :locals => {:root => node, :depth => depth + 1} %>
+<% end %>

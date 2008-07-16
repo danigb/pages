@@ -12,6 +12,10 @@ class Si::CambiarController < ApplicationController
     @page = page_of(@section)
   end
   
+  def foro
+    @page = page_of :foro
+  end
+  
   def create_sub
     if params[:title] != ''
       @page = Page.new(:parent_id => params[:id], :mime => 'sub', :state => 'locked', :title => params[:title])
@@ -21,7 +25,7 @@ class Si::CambiarController < ApplicationController
   end
   
   def hija
-    @page = Page.new(:parent_id => params[:id], :mime => 'página', :state => 'published')
+    @page = Page.new(:parent_id => params[:id], :mime => 'hoja', :state => 'published')
     render :action => 'editar_pagina'
   end
   

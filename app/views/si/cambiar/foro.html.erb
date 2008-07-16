@@ -1,0 +1,16 @@
+<%= cambiar_tabs 'foro' %>
+
+<h1>Sección 'foro'</h1>
+
+<table>
+  <thead>
+    <td style="width: 50%">Tema (y respuestas)</td>
+    <td>Fecha de creación</td>
+    <td></td>
+  </thead>
+  
+  <tbody>
+    <%= render :partial => 'si_foro_child', :locals => {:root => @page, :depth => 0} %>
+  </tbody>
+  
+</table>

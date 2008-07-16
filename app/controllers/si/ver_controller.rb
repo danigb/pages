@@ -22,13 +22,28 @@ class Si::VerController < ApplicationController
     @page = Page.find(params[:id])
   end
   
-  def nuevo_asunto
-    @asunto = Page.find(params[:id])
-    post = @asunto.children.create(:title => @asunto.title)
-    if post.save
-      content = post.contents.create(:data => params[:post][:content])
-      content.save
-      redirect_to :action => asunto, :id => @asunto.id
+  def nuevo_tema
+  end
+  def ver_tema
+    @tema = Page.find(params[:id])
+  end
+  
+  def responder
+    @tema = Page.find(params[:id])
+    add_response(@tema, params[:name], params[:text]).save
+    render :action => 'ver_tema'
+  end
+  
+  # Crea un nuevo asunto en el foro
+  def crear_tema
+    foro = page_of :foro
+    @tema = foro.children.build(:title => params[:title], :state => 'published', :mime => 'tema')
+    add_response(@tema, params[:name], params[:text])
+    if @tema.save
+      render :action => 'ver_tema'
+    else
+      @error = "Lo siento, no se ha podido crear el tema. Vuelve a intentarlo dentro de unos minutos"
+      render :action => 'error'
     end
   end
   
@@ -41,6 +56,10 @@ class Si::VerController < ApplicationController
   end
   
   private
+  def add_response(tema, name, body)
+    tema.children.build(:title => name, :state => 'published', :mime => 'respuesta', :content => body)
+  end
+  
   def seccion
     @name = params[:id]
     @page = page_of @name

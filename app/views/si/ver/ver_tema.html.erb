@@ -1,0 +1,31 @@
+<h1>Foro</h1>
+
+<div id="foro">
+<h1><%= link_to "Tema >>  #{@tema.title}", :action => 'ver_tema', :id => @tema %></h1>
+
+<% for response in @tema.children %>
+  <div class="response">
+    <div class="name"><b><%= response.title %></b> el <%= fecha response.created_at %> </div>
+    <div class="body"><%= response.content %></div>
+  </div>
+<% end  %>
+<br/>
+</div>
+
+<div class="form">
+  <h1>Añadir una respuesta</h1>
+  <% form_tag :action => 'responder', :id => @tema do %>
+    <div>
+      <label>Nombre</label>
+      <%=  text_field_tag :name %>
+    </div>
+    <div>
+      <label>Texto</label>
+      <%= text_area_tag :text %>
+    </div>
+    <div>
+      <label>&nbsp;</label>
+      <%=  submit_tag 'responder' %>
+    </div>
+  <% end %>
+</div>
