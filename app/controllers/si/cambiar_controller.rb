@@ -31,7 +31,7 @@ class Si::CambiarController < ApplicationController
   
   def editar_pagina
     @page = Page.find(params[:id])
-    @attachment= Attachment.new(:parent_id => @page)
+    @attachment= Attachment.new(:page_id => @page.id)
   end
   
   def save

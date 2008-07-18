@@ -9,10 +9,10 @@
 <%= clear %>
 
 <div class="formBox">
-  <h1>&nbsp;</h1>
-  
+  <h1>Título y contenido</h1>
+
   <%= error_messages_for :page %>
-  
+
   <% form_for(:page, @page, :url => {:action => 'save'}, :html => {:id => 'edit_page'}) do |f| %>
     <%= hidden_field_tag :page_id, @page.id %>
     <%= f.hidden_field :parent_id %>
@@ -29,6 +29,24 @@
       </div>
     <% end  %>
   <% end %>
+</div>
+
+<div class="helpBox">
+  <h1>Códigos válidos para editar</h1>
+  <ul>
+    <li><b>Negritas:</b> *texto*</li>
+    <li><b>Itálicas:</b> _texto_</li>
+    <li><b>Título grande:</b> h1. Título grande</li>
+    <li><b>Título mediano:</b> h2. Título mediano</li>
+    <li><b>Título pequeño:</b> h3. Título pequeño</li>
+    <li><b>Enlaces: "Google":http://google.com</b></li>
+    <li><b>Imágen:</b> !enlace!<br/>
+    (el enlace aparece en la lista de archivos e imágenes asociada a la página)</li>
+    <li><b>Imágen a la izquierda:</b> !&lt;enlace! </li>
+    <li><b>Imágen a la derecha:</b> !&gt;enlace!</li>
+    <li><b>Listas:</b> * elemento</li>
+  </ul>
+  <a href="http://hobix.com/textile/quick.html" target="_blank">m&aacute;s info...</a>
 </div>
 
 <%= render :partial => '/admin/pages/page_attachments' %>

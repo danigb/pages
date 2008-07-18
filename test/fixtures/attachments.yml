@@ -14,6 +14,7 @@
 #  height       :integer(11)     
 #  created_at   :datetime        
 #  updated_at   :datetime        
+#  page_id      :integer(11)     
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
