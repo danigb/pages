@@ -1,9 +1,7 @@
 class Admin::PagesController < Admin::AdminController
   layout 'admin'
-  # before_filter :authenticate
-  
-  # GET /pages
-  # GET /pages.xml
+
+  # GET /pages GET /pages.xml
   def index 
     @page = Page.find(1)
     respond_to do |format|
@@ -12,8 +10,7 @@ class Admin::PagesController < Admin::AdminController
     end
   end
 
-  # GET /pages/1
-  # GET /pages/1.xml
+  # GET /pages/1 GET /pages/1.xml
   def show
     @page = Page.find(params[:id])
 
@@ -23,8 +20,7 @@ class Admin::PagesController < Admin::AdminController
     end
   end
 
-  # GET /pages/new
-  # GET /pages/new.xml
+  # GET /pages/new GET /pages/new.xml
   def new
     parent = Page.find(params[:parent_id])
     @page = Page.new(:parent => parent)
@@ -50,8 +46,7 @@ class Admin::PagesController < Admin::AdminController
     @page = Page.find(params[:id])
   end
 
-  # POST /pages
-  # POST /pages.xml
+  # POST /pages POST /pages.xml
   def create
     @page = Page.new(params[:page])
 
@@ -67,8 +62,7 @@ class Admin::PagesController < Admin::AdminController
     end
   end
 
-  # PUT /pages/1
-  # PUT /pages/1.xml
+  # PUT /pages/1 PUT /pages/1.xml
   def update
     @page = Page.find(params[:id])
 
@@ -96,8 +90,7 @@ class Admin::PagesController < Admin::AdminController
     redirect_to :back
   end
 
-  # DELETE /pages/1
-  # DELETE /pages/1.xml
+  # DELETE /pages/1 DELETE /pages/1.xml
   def destroy
     @page = Page.find(params[:id])
     @page.destroy

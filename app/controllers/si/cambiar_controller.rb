@@ -1,7 +1,7 @@
 class Si::CambiarController < ApplicationController
   include Si::SolidaridadSite
   layout 'si_cambiar'
-  before_filter :authenticate_cambiar
+  before_filter :authenticate_admin
   
   def index
     redirect_to :action => 'dossier'
@@ -96,11 +96,5 @@ class Si::CambiarController < ApplicationController
     params[:page][:content] = params[:date] + "\n" + params[:content] if params[:section] == 'agenda'    
   end
   
-    def authenticate_cambiar
-    authenticate_or_request_with_http_basic('Si::Cambiar') do |name, pass|
-      # #User.authenticate(name, pass)
-      name == 'solidaridad' && pass == 'solidaridad'      
-    end
-  end
 end
   

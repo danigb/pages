@@ -52,11 +52,4 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "email",      :null => false
-    t.string   "password",   :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end

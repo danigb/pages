@@ -1,9 +1,9 @@
 
 class Admin::MetasController < Admin::AdminController
   layout 'admin'
+
   
-  # GET /metas
-  # GET /metas.xml
+  # GET /metas GET /metas.xml
   def index
     @metas = @page.metas
 
@@ -13,8 +13,7 @@ class Admin::MetasController < Admin::AdminController
     end
   end
 
-  # GET /metas/1
-  # GET /metas/1.xml
+  # GET /metas/1 GET /metas/1.xml
   def show
     @meta = @page.meta
 
@@ -24,8 +23,7 @@ class Admin::MetasController < Admin::AdminController
     end
   end
 
-  # GET /metas/new
-  # GET /metas/new.xml
+  # GET /metas/new GET /metas/new.xml
   def new
     @meta = Meta.new
 
@@ -40,8 +38,7 @@ class Admin::MetasController < Admin::AdminController
     @meta = @page.meta
   end
 
-  # POST /metas
-  # POST /metas.xml
+  # POST /metas POST /metas.xml
   def create
     @meta = Meta.new(params[:meta])
     
@@ -57,8 +54,7 @@ class Admin::MetasController < Admin::AdminController
     end
   end
 
-  # PUT /metas/1
-  # PUT /metas/1.xml
+  # PUT /metas/1 PUT /metas/1.xml
   def update
     @meta = @page.meta
 
@@ -74,8 +70,7 @@ class Admin::MetasController < Admin::AdminController
     end
   end
 
-  # DELETE /metas/1
-  # DELETE /metas/1.xml
+  # DELETE /metas/1 DELETE /metas/1.xml
   def destroy
     @meta = Meta.find(params[:id])
     @meta.destroy
@@ -86,4 +81,4 @@ class Admin::MetasController < Admin::AdminController
     end
   end
   
-  end
+end
