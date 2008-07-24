@@ -1,8 +1,8 @@
 /log
 /nbproject
 .project
-/public/files/development
-/config/database.yml
-/config/pages_deploy.rb
+public/files/development
+config/database.yml
+config/config.yml
 
 

@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root $pages[:root]
+  map.root :controller => APP_CONFIG['root'], :action => 'index'
   
   map.namespace :admin do |admin|
     admin.resources :users

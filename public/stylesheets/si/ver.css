@@ -10,10 +10,13 @@ h1 {font-size: 200%; margin: 0 0 0.25em 0;  }
 #content { padding: 1em 1em 100em 1em; margin-left: 10em; margin-bottom: -99em;
     width: 54.3em; background-color: white; }
 #content font { font-size: 90%; }
-#content p { margin: 0.5em 0; }
 
-#areas {}
-#areas img { float: left; }
+#content p { margin: 0.5em 0; }
+#content em {font-style: italic;}
+#content strong {font-weight: bold;}
+
+#areas {  }
+#areas img { float: left; border-right: 2px solid white; border-bottom: 2px solid white;}
 
 #news {float: right; width: 10em; padding: 0 0.5em; color: white;}
 #news div.item {margin: 0 0 0.5em 0;}

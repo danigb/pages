@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def authenticate_admin
     authenticate_or_request_with_http_basic('Pages::Admin') do |name, pass|
       # #User.authenticate(name, pass)
-      name == $pages[:user][:name] && pass == $pages[:user][:pass]
+      name == APP_CONFIG['user']['name'] && pass == APP_CONFIG['user']['pass']
     end
   end
 
