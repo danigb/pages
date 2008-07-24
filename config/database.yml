@@ -2,7 +2,7 @@ defaults: &defaults
   adapter: mysql
   encoding: utf8
   username: root
-  password: db4root
+  password: flo%mlx
   socket: /var/run/mysqld/mysqld.sock
 
 development:
