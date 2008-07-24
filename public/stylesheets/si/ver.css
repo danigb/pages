@@ -3,7 +3,7 @@ body { background-color: white; }
 a {  text-decoration: none; color: inherit; }
 h1 {font-size: 200%; margin: 0 0 0.25em 0;  }
 
-#logo { float: left; width: 10em; background-color: white; text-align: center; }
+#logo { float: left; width: 10em; background-color: white; text-align: center; padding: 10px 0 0 0; height: 83px; }
 #logged { padding: 0.5em; font-size: 75%; }
 #page { width: 77.5em; margin: 1em auto; overflow: hidden; background-color: #67053E; }
 #banner { width: 67.5em; height: 4.8em; margin-left: 10em; background: url('../../images/solidaridad/banner.gif') no-repeat ; }
