@@ -1,0 +1,74 @@
+
+
+REQUEST IP
+request.
+
+CONTROLLER TO HELPER METHOD
+helper_method :method
+
+EAGER LOADING
+Model.find(:all, :include => [:users, {:tasks=> :owner])
+
+
+COUNTER CACHE (brutal!)
+Project.find(:all)
+
+class Task < ActiveRecord::Base
+    belongs_to :project, :counter_cache => true
+end
+(in project: column tasks_count)
+
+COLUMN DEFAULT
+db.integer :task_count, :default => 0
+
+RUBY: ARRAYS GROUPING
+a = (1..12).to_a
+a.in_groups_of(4, false)
+a.in_groups_of {|task| task.date}
+
+RUBY: LOOP A HASH
+h = {...}
+h.each {|name, value| ...}
+
+CONTENT_FOR
+# in view:
+<% content_for :title do %> "The title" <%end %>
+
+# in layout:
+<%= yield(:title) || 'The default title' %>
+
+#with helper:
+def title(name)
+    content_for :title { name }
+end
+
+DATE FORMATS
+# In envirorment.rb
+Time::DATE_FORMATS[:fecha] = ""
+date.to_s(:fecha)
+
+VIRTUAL ATTRIBUTES
+def date_as_string
+    date.to_s(:fecha)
+end
+
+def date_as_string=(fecha)
+  self.date = Time.parse(fecha)
+rescue ArgumentError
+  @date_invalid = true
+end
+
+def validate
+  errors.add(:date, 'mala fecha') if @date_invalid
+end
+
+# @see 'chornic'
+# @see Episode 33
+
+REST ACTIONS
+map.resources :task, :collection => { :completed => :get }, :member => { :complete => :put }}
+complete_task_path(task)
+
+CUSTOM ROUTES
+map.connect 'archives/:year/:month/:day', :controller => 'files', :month => nil, :day => nil, 
+    :requirements => { :year => /\d{4}/ }

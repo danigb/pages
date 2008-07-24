@@ -19,7 +19,7 @@
 
 class Attachment < ActiveRecord::Base
   has_attachment :storage => :file_system, :thumbnails => { :thumb => 'x150' }, :max_size => 4.megabytes,
-    :path_prefix => $pages[:files_path]
+    :path_prefix => APP_CONFIG['files_path']
   validates_as_attachment
   belongs_to :page
 end

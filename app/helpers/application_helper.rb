@@ -65,9 +65,8 @@ module ApplicationHelper
   
   def project_tabs(current)
     tabs do
-      tab('Pages', admin_pages_path, current) <<
-        tab('Files', admin_attachments_path, current) <<
-        tab('Users', admin_users_path, current) 
+      tab('Páginas', admin_pages_path, current) <<
+        tab('Archivos e imágenes', admin_attachments_path, current) 
     end
   end
 

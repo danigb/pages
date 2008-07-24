@@ -4,7 +4,7 @@
 td .item {padding: 0.5em; border: 1px solid gray; background-color: white;}
 
 div.formBox input[type=text] {width: 40em;}
-div.formBox textarea {width: 40em; height: 10em;}
+div.formBox textarea {width: 40em; height: 30em;}
 div.formBox div.info {color: #468800; float: left;}
 
 div.helpBox {border: 1px solid orange; float: right; padding: 1em; margin: 1em 1em 0 0; background-color: #ffeb99;}
