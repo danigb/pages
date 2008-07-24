@@ -1,0 +1,73 @@
+
+/*
+
+morado: #66063E;
+naranja: #DF8000;
+*/
+
+body { background-color: white; }
+a {  text-decoration: none; color: inherit; }
+h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
+
+#logo { float: left; width: 10em; background-color: white; text-align: center; padding: 10px 0 0 0; height: 83px; }
+#logged { padding: 0.5em; font-size: 75%; }
+#page { width: 77.5em; margin: 1em auto; overflow: hidden; background-color: #67053E; }
+#banner { width: 67.5em; height: 4.8em; margin-left: 10em; background: url('../../images/solidaridad/banner.gif') no-repeat ; }
+
+#content { padding: 4em 6em 100em 6em; margin-left: 10em; margin-bottom: -99em;
+    width: 44.3em; background-color: white; }
+#content > div.title {font-size: 120%; font-weight: bold; margin: 0 0 1.5em 0; color: #F0C730; }
+#content font { font-size: 90%; }
+
+#content p { margin: 0 0 1.5em 0; }
+#content em {font-style: italic;}
+#content strong {font-weight: bold;}
+#content img {margin: 0 1em;}
+#content p.footnote {font-size: 85%;}
+
+#content table {font-size: 85%;}
+#content table {color: white; background-color: #67053E;}
+#content table tr th {padding: 0.3em 0.5em; font-weight: bolder; border: 1px solid white;}
+#content table tr td {padding: 0.3em 0.5em; border: 1px solid white;}
+
+
+#areas {  }
+#areas img { float: left; border-right: 2px solid white; border-bottom: 2px solid white;}
+
+#news {float: right; width: 10em; padding: 1.2em 0.5em; color: white; font-size: 100%;}
+#news > div {margin: 0 0 0.5em 0; padding: 0 0 0 0em; }
+#news div h1 {padding: 0.1em 0 0.3em 0.3em; font-size: 90%;}
+#news div div.content {font-size: 100%; padding: 0.5em; font-size: 85%;}
+
+#menu {width: 14em; float: left; padding: 0 0 15em 0.5em;}
+#menu div.area {width: 12em; color: white; margin: 2em 0 0.5em 0; font-size: 90%;}
+#menu div.item {width: 8em; color: #F0C730; margin: 0; padding: 0.4em 1em;
+  border-bottom: 1px solid white;}
+#menu div.item.selected {background-color: white;}
+#menu div.item a {font-size: 85%;}
+
+div.form { background-color: #DF8000; padding: 1em;}
+div.form h1 {font-size: 120%;}
+div.form div {margin: 0.1em 0;}
+div.form div label {display: block; float: left; width: 5em; text-align: right; padding: 0.5em 0.2em 0 0;
+    margin: 0 0.3em 0 0;}
+div.form div input[type='text'] { width: 30em; border: 0; margin: 0.3em 0; height: 1.6em;}
+div.form div textarea { width: 30em; height: 10em; border: 0;margin: 0.3em 0;}
+
+div.actions { padding: 1em 0; margin: 0 0 1em 0;}
+div.actions a {padding: 1em; border: 1px solid gray; }
+div.actions a:hover {text-decoration: underline;}
+
+#foro div.item {background-color: #DF8000; padding: 0.5em 1em; margin: 0.3em 0em;}
+#foro a:hover {text-decoration: underline;}
+#foro > div.item > div.tema {color: #66063E; font-size: 110%;}
+
+#nuevo_foro {padding: 1em; margin: 0 0 0.0em 0; border: 1px solid gray;
+    border-bottom: 0px solid gray; }
+#ver_foro {border: 1px solid gray; border-bottom: 0;}
+#ver_foro > h1 { background-color: #DF8000; color: white; padding: 0.2em 1em;}
+#ver_foro div.response {margin: 0.5em 1em; }
+#ver_foro div.response div.name {background-color: #DF8000; padding: 0.2em 1em; }
+#ver_foro div.response div.body {padding: 0.2em 1em;}
+div.enviar {text-align: right; width: 35.3em;}
+

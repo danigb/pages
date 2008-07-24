@@ -4,40 +4,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title>SOLIDARIDAD INTERNACIONAL - </title>
+    <title>SOLIDARIDAD INTERNACIONAL - El Magreb con ojos de mujer</title>
     <%= javascript_include_tag 'jquery-1.2.3.min.js', :cache => false %>
-    <%= stylesheet_link_tag 'reset', 'si/ver.css', 'si/items.css', :cache => false %>
+    <%= stylesheet_link_tag 'reset', 'si/si_ver.css', 'si/items.css', :cache => false %>
   </head>
-  <body>    
+  <body>
     <div id="page">
       <div id="logo"><%= image_tag('solidaridad/logo.gif') %></div>
-      <div id="banner">&nbsp;</div>
+      <a href="/"><div id="banner">&nbsp;</div></a>
       <div id="areas">
-        <%= link_to image_tag('solidaridad/foro_off.gif'), :action => 'foro' %>
-        <%= link_to image_tag('solidaridad/agenda_off.gif'), :action => 'la', :id => 'agenda' %>
-        <%= link_to image_tag('solidaridad/actualidad_off.gif'), :action => 'la', :id => 'actualidad'  %>
-        <%= link_to image_tag('solidaridad/materiales_off.gif'), :action => 'los', :id => 'materiales'  %>
-        <%= link_to image_tag('solidaridad/videos_off.gif'), :action => 'los', :id => 'videos'  %>
-        <%= link_to image_tag('solidaridad/enlaces_off.gif'), :action => 'los', :id => 'enlaces'  %>
+        <%= link_to img_nav('foro', @name), :action => 'foro' %>
+        <%= link_to img_nav('agenda', @name), :action => 'la', :id => 'agenda' %>
+        <%= link_to img_nav('actualidad', @name), :action => 'la', :id => 'actualidad'  %>
+        <%= link_to img_nav('materiales', @name), :action => 'los', :id => 'materiales'  %>
+        <%= link_to img_nav('videos', @name), :action => 'los', :id => 'videos'  %>
+        <%= link_to img_nav('enlaces', @name), :action => 'los', :id => 'enlaces'  %>
         <%= clear %>
-      </div>     
-      <div id="menu">
-        <%= render :partial => 'menu_items', :locals => {:pages => @content.children} %> 
-      </div>      
-      <div id="news">
-        <% for item in @news  %>
-          <div class="item">
-            <div class="title"><%= item.title %></div>
-            <div class="content"><%= item.content %></div>
-          </div>
-        <% end %>
       </div>
-      
-      <div id="content">        
-        <%= yield  %>          
-      </div>            
+
+      <div id="menu">
+        <% for area in @content.children %>
+          <div class="area"><%= area.title %></div>
+          <% for item in area.children %>
+            <div class="item <%= 'selected' if !@page.nil? && item.id == @page.id %> "><%= link_to item.title, {:action => :pagina, :id => item} %></div>
+          <% end %>
+        <% end %>
+        <% #  render :partial => 'menu_items', :locals => {:pages => @content.children} %>
+      </div>
+
+
+      <div id="news">
+        <div class="actualidad" style="background-color: #377292;" >
+          <h1 style="background-color: #2D5D77;">actualidad</h1>
+          <div class="content">esto es el contenido</div>
+        </div>
+        <div class="agenda" style="background-color: #3A8722;" >
+          <h1 style="background-color: #32741D;">agenda</h1>
+          <div class="content">esto es el contenido</div>
+        </div>
+        <div class="foro" style="background-color: #D07E11;" >
+          <h1 style="background-color: #A9660E;">foro</h1>
+          <div class="content">esto es el contenido</div>
+        </div>
+      </div>
+
+      <div id="content">
+        <%= yield  %>
+      </div>
       <%= clear %>
-    </div>    
+    </div>
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

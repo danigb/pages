@@ -13,18 +13,23 @@ class Si::VerController < ApplicationController
   end
     
   def foro
+    @name = 'foro'
     @page = page_of :foro
     @items = Page.find(:all, :conditions => ['parent_id = ?', @page.id], :order => 'position DESC')
   end
   
   # muestra un asunto del foro
   def asunto
+    @name = 'foro'
     @page = Page.find(params[:id])
   end
   
   def nuevo_tema
+    @name = 'foro'
   end
+
   def ver_tema
+    @name = 'foro'
     @tema = Page.find(params[:id])
   end
   
@@ -62,12 +67,12 @@ class Si::VerController < ApplicationController
   
   def seccion
     @name = params[:id]
-    @page = page_of @name
+    page = page_of @name
+    @items = Page.find(:all, :conditions => "parent_id = #{page.id}", :order => 'position DESC')
     render :action => 'seccion'
   end
 	
   def load_roots
     @content = page_of :dossier
-    @news = recent_news
   end
 end

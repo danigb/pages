@@ -4,7 +4,12 @@ module Si::SolidaridadHelper
   include ActionView::Helpers::TagHelper
 
   FORO_ICONS = [:comments, :comments, :comment]
-  
+
+  def img_nav(name, current)
+    state = !current.nil? && current == name ? 'on' : 'off'
+    image_tag("solidaridad/#{name}_#{state}.gif")
+  end
+
   def cambiar_tabs(current)
     tabs do 
       tab('dossier', {:action => 'dossier'}, current) <<
@@ -25,14 +30,14 @@ module Si::SolidaridadHelper
     begin
       method(:"render_#{section}").call(page)
     rescue NameError
-      page.title + "<br/>" + (page.content.nil? ? '' : page.content)
+      "no renderer found!"
     end
   end
   
   def render_hoja(page)
     content_tag(:div, :class=>'item hoja') do
-      content_tag(:div, page.title, :class => 'title') +
-        content_tag(:div, textilize(page.content), :class => 'content')
+      header = page.title != 'DOSSIER' ? content_tag(:div, page.title, :class => 'title') : ''
+      header + content_tag(:div, textilize(page.content), :class => 'content')
     end
   end
   
@@ -67,8 +72,8 @@ module Si::SolidaridadHelper
     pdf = page.attachments.size > 0 ? page.attachments[0] : nil
     content = !pdf.nil? ? link_to(page.title, pdf.public_filename, :popup => ['_blank']) : page.title
     content_tag(:div, :class => 'item actualidad') do
-      content_tag(:div, textilize(page.content), :class=> 'date') +
-        content_tag(:div, content, :class => 'title') 
+        content_tag(:div, content, :class => 'title') +
+      content_tag(:div, textilize(page.content), :class=> 'date')
     end
   end
   

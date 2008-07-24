@@ -1,4 +1,7 @@
-<h1>Añadir un nuevo tema de discusión al foro</h1>
+<div id="nuevo_foro">
+  Añadir un nuevo tema de discusión al foro
+</div>
+
 
 <div class="form">
   <% form_tag :action => 'crear_tema' do %>
@@ -14,7 +17,7 @@
       <label>Texto</label>
       <%= text_area_tag :text %>
     </div>
-    <div>
+    <div class="enviar">
       <label>&nbsp;</label>
       <%=  submit_tag 'crear' %>
     </div>

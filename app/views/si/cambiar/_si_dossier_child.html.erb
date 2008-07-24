@@ -2,7 +2,7 @@
 <tr>
   <td>
     <%= image_tag 'page_white.png', :style => "margin-left: #{depth}em;" %>
-    <%= link_to_if depth > 0, root.title, :action => 'editar_pagina', :id => root %> 
+    <%= link_to_if depth > 0, root.title, :action => 'editar_pagina', :id => root %>
   </td>
   <td><%= fecha root.updated_at %></td>
   <td class="actions">    
