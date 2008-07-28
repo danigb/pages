@@ -5,13 +5,13 @@ morado: #66063E;
 naranja: #DF8000;
 */
 
-body { background-color: white; }
+body { background-image: url('../../images/solidaridad/bg.gif');}
 a {  text-decoration: none; color: inherit; }
 h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
 
+#page { width: 77.5em; margin: 3em auto; overflow: hidden; background-color: #67053E; }
 #logo { float: left; width: 10em; background-color: white; text-align: center; padding: 10px 0 0 0; height: 83px; }
 #logged { padding: 0.5em; font-size: 75%; }
-#page { width: 77.5em; margin: 1em auto; overflow: hidden; background-color: #67053E; }
 #banner { width: 67.5em; height: 4.8em; margin-left: 10em; background: url('../../images/solidaridad/banner.gif') no-repeat ; }
 
 #content { padding: 4em 6em 100em 6em; margin-left: 10em; margin-bottom: -99em;
@@ -33,11 +33,14 @@ h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
 
 #areas {  }
 #areas img { float: left; border-right: 2px solid white; border-bottom: 2px solid white;}
-
+#last > img {border-right: 0px;}
 #news {float: right; width: 10em; padding: 1.2em 0.5em; color: white; font-size: 100%;}
 #news > div {margin: 0 0 0.5em 0; padding: 0 0 0 0em; }
 #news div h1 {padding: 0.1em 0 0.3em 0.3em; font-size: 90%;}
 #news div div.content {font-size: 100%; padding: 0.5em; font-size: 85%;}
+
+#sponsor1 {margin-top: 30em;}
+#sponsor2 {margin-top: 1em;}
 
 #menu {width: 14em; float: left; padding: 0 0 15em 0.5em;}
 #menu div.area {width: 12em; color: white; margin: 2em 0 0.5em 0; font-size: 90%;}

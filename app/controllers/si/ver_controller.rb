@@ -1,7 +1,7 @@
 class Si::VerController < ApplicationController
   include Si::SolidaridadSite
   layout 'si_ver'
-  before_filter  :load_roots
+  before_filter  :load_roots, :load_news
 	
   
   def index
@@ -74,5 +74,11 @@ class Si::VerController < ApplicationController
 	
   def load_roots
     @content = page_of :dossier
+  end
+
+  def load_news
+    @actualidad = last_page_of_mime :actualidad
+    @agenda = last_page_of_mime :agenda
+    @tema = last_page_of_mime :respuesta
   end
 end

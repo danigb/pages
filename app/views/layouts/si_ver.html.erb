@@ -18,7 +18,8 @@
         <%= link_to img_nav('actualidad', @name), :action => 'la', :id => 'actualidad'  %>
         <%= link_to img_nav('materiales', @name), :action => 'los', :id => 'materiales'  %>
         <%= link_to img_nav('videos', @name), :action => 'los', :id => 'videos'  %>
-        <%= link_to img_nav('enlaces', @name), :action => 'los', :id => 'enlaces'  %>
+        <%= link_to img_nav('enlaces', @name), {:action => 'los', :id => 'enlaces'},
+          :id => 'last' %>
         <%= clear %>
       </div>
 
@@ -36,16 +37,25 @@
       <div id="news">
         <div class="actualidad" style="background-color: #377292;" >
           <h1 style="background-color: #2D5D77;">actualidad</h1>
-          <div class="content">esto es el contenido</div>
+          <div class="content">
+            <%= link_to @actualidad.content + ' ' + @actualidad.title, :action => 'la', :id => 'actualidad' %>
+          </div>
         </div>
         <div class="agenda" style="background-color: #3A8722;" >
           <h1 style="background-color: #32741D;">agenda</h1>
-          <div class="content">esto es el contenido</div>
+          <div class="content">
+            <%= link_to @agenda.first_line + ' ' + @agenda.title, :action => 'la', :id => 'agenda' %>
+            </div>
         </div>
         <div class="foro" style="background-color: #D07E11;" >
           <h1 style="background-color: #A9660E;">foro</h1>
-          <div class="content">esto es el contenido</div>
+          <div class="content">
+            <%= link_to( (@tema.content.nil? ? '' : @tema.content), :action => 'foro') %>
+          </div>
         </div>
+        <img id="sponsor1" class="sponsor" src="/images/solidaridad/patrocinador1.gif" />
+        <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador2.gif" />
+
       </div>
 
       <div id="content">
