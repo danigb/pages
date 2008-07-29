@@ -1,6 +1,8 @@
 
 
 
+a {color: black;}
+#header a {color: white;}
 td .item {padding: 0.5em; border: 1px solid gray; background-color: white;}
 
 div.formBox input[type=text] {width: 40em;}
