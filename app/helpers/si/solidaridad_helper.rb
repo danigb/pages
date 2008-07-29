@@ -7,7 +7,7 @@ module Si::SolidaridadHelper
 
   def img_nav(name, current)
     state = !current.nil? && current == name ? 'on' : 'off'
-    image_tag("solidaridad/#{name}_#{state}.gif")
+    image_tag("solidaridad/#{name}_#{state}.gif", :id => "area-#{name}")
   end
 
   def cambiar_tabs(current)
@@ -45,7 +45,8 @@ module Si::SolidaridadHelper
     content_tag(:div, :class=>'item material') do
       if page.attachments.size > 0
         att = page.attachments[0]
-        link_to image_tag(att.public_filename(:thumb)) + '<br/>' + content_tag(:span, page.title, :class=> 'title'), att.public_filename 
+        link_to  content_tag(:div, page.title, :class=> 'title') +
+          image_tag(att.public_filename(:thumb)), att.public_filename
       else
         content_tag(:div, page.title, :class => 'title')
       end

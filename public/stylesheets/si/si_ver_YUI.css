@@ -1,0 +1,23 @@
+/*
+morado: #66063E;
+naranja: #DF8000;
+*/
+body { background-image: url('../../images/solidaridad/bg.gif');}
+#custom-doc { width:68.31em;*width:66.66em;min-width:888px; margin:auto; text-align:left; }
+
+#yui-main {
+  background-color: white;
+}
+
+/* LEFT */
+#logo { background-color: #efefef; text-align: center; padding: 10px 0 0 0; height: 83px; }
+
+#menu {background-color: #66063E; margin: 0 0 0 0; padding: 2em 0 15em 0.5em;}
+#menu div.area {color: white; margin: 2em 0 0.5em 0; font-size: 90%;}
+#menu div.item {color: #F0C730; margin: 0; padding: 0.4em 1em;
+  border-bottom: 1px solid #F0C730;}
+#menu div.item.selected {background-color: white;}
+#menu div.item a {font-size: 85%;}
+
+/* CENTER */
+#banner {height: 4.8em; background: url('../../images/solidaridad/banner.gif') no-repeat ; }

@@ -1,5 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -9,24 +10,10 @@
   </head>
   <body>
     <div id="page">
-      <div id="top">
-        <div id="logo"><%= image_tag('solidaridad/logo.gif') %></div>
-        <a href="/"><div id="banner">&nbsp;</div></a>
-        <div id="sections">
-          <div id="areas">
-            <%= link_to img_nav('foro', @name), :action => 'foro' %>
-            <%= link_to img_nav('agenda', @name), :action => 'la', :id => 'agenda' %>
-            <%= link_to img_nav('actualidad', @name), :action => 'la', :id => 'actualidad'  %>
-            <%= link_to img_nav('materiales', @name), :action => 'los', :id => 'materiales'  %>
-            <%= link_to img_nav('videos', @name), :action => 'los', :id => 'videos'  %>
-            <%= link_to img_nav('enlaces', @name), {:action => 'los', :id => 'enlaces'},
-              :id => 'last' %>
-            <%= clear %>
-          </div>
-        </div>
-        <%= clear %>
-      </div>
-      <div id="menu" >
+      <div id="logo"><%= image_tag('solidaridad/logo.gif') %></div>
+      <a href="/"><div id="banner">&nbsp;</div></a>
+
+      <div id="menu">
         <% for area in @content.children %>
           <div class="area"><%= area.title %></div>
           <% for item in area.children %>
@@ -36,9 +23,20 @@
         <% #  render :partial => 'menu_items', :locals => {:pages => @content.children} %>
       </div>
 
-      <div id="content" >
+      <div id="content">
+        <div id="areas">
+          <%= link_to img_nav('foro', @name), :action => 'foro' %>
+          <%= link_to img_nav('agenda', @name), :action => 'la', :id => 'agenda' %>
+          <%= link_to img_nav('actualidad', @name), :action => 'la', :id => 'actualidad'  %>
+          <%= link_to img_nav('materiales', @name), :action => 'los', :id => 'materiales'  %>
+          <%= link_to img_nav('videos', @name), :action => 'los', :id => 'videos'  %>
+          <%= link_to img_nav('enlaces', @name), {:action => 'los', :id => 'enlaces'},
+            :id => 'last' %>
+          <%= clear %>
+        </div>
         <%= yield  %>
       </div>
+
 
       <div id="news">
         <div class="actualidad" style="background-color: #377292;" >
@@ -59,20 +57,14 @@
             <%= link_to( (@tema.content.nil? ? '' : @tema.content), :action => 'foro') %>
           </div>
         </div>
-        <div id="sponsors">
-          Financiado por:
-          <img id="sponsor1" class="sponsor" src="/images/solidaridad/patrocinador1.gif" />
-          <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador2.gif" />
-        </div>
+        <img id="sponsor1" class="sponsor" src="/images/solidaridad/patrocinador1.gif" />
+        <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador2.gif" />
+
       </div>
+
 
       <%= clear %>
     </div>
-    <div id="foot">
-      <!--
-      -->
-    </div>
-    <!--
     <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
         document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -82,6 +74,5 @@
         pageTracker._initData();
         pageTracker._trackPageview();
     </script>
-    -->
   </body>
 </html>

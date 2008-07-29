@@ -13,10 +13,12 @@ div.item.actualidad div.date {font-weight: bold; font-size: 110%; margin: 0 0 2e
 div.item.actualidad div.title { font-size: 200%; color: #2D5D77;}
 
 
-div.item.material {float: left; margin: 1em; text-align: center;}
-div.item.material span.title {font-weight: bold;}
 
-div.item.video {margin: 0 0 0.5em 0;}
-div.item.video div.title {font-weight: bold;}
+div.item.material {float: left; margin: 1em; padding: 0 0 1em 0; text-align: center; background-color: #028E93;}
+div.item.material .title {font-weight: bold; color: white; text-align: center; padding: 5px 0;}
 
-div.item.enlace {margin: 0 0 1em 0;}
+div.item.video {margin: 0 0 0.5em 0; background-color: #938402; text-align: center;}
+div.item.video div.title {font-weight: bold; color: white; padding: 5px 0;}
+
+div.item.enlace {margin: 0 0 3px 0; background-color: #D3021C; padding: 5px 5px; color: white;}
+div.item a {color: white;}
