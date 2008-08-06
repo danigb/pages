@@ -10,8 +10,8 @@
   <body>
     <div id="page">
       <div id="top">
-        <div id="logo"><%= image_tag('solidaridad/logo.gif') %></div>
-        <a href="/"><div id="banner">&nbsp;</div></a>
+        <div id="logo"><a href="http://www.solidaridad.org/" target="_blank"><%= image_tag('solidaridad/logo.gif') %></a></div>
+        <a href="<%= url_for :action => 'index'  %>"><div id="banner">&nbsp;</div></a>
         <div id="sections">
           <div id="areas">
             <%= link_to img_nav('foro', @name), :action => 'foro' %>
@@ -59,10 +59,13 @@
             <%= link_to( (@tema.content.nil? ? '' : @tema.content), :action => 'foro') %>
           </div>
         </div>
+        <br/>
         <div id="sponsors">
           Financiado por:
-          <img id="sponsor1" class="sponsor" src="/images/solidaridad/patrocinador1.gif" />
-          <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador2.gif" />
+          <a href="http://www.aecid.es/" target="_blank">
+          <img id="sponsor1" class="sponsor" src="/images/solidaridad/patrocinador1.gif" /></a>
+          <a href="http://www.migualdad.es/mujer/" target="_blank">
+          <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador2.gif" /></a>
         </div>
       </div>
 

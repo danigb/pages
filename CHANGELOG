@@ -1,3 +1,42 @@
 
 18 JULIO
 <em> funciona en solidaridad
+
+
+- juan pedro queria que en la pagina inicial se vayan alternando las dos imagenes que te envio aqui (inicio_01.jpg - inicio_02.gif), y que despues aparezca el texto que esta ahora.
+
+
+- los textos aun no los justifica, meti el codigo a mano,
+(DONE)
+
+- los foot notes tendrian que estar tambien a un tamaño de letra mas chico que el resto del texto, tambien meti el codigo a mano
+
+
+- barra navegacion dossier, tendria que ser un poco mas ancha ya que ahora corta un poco los terminos
+(DONE)
+
+- dossier/la verdadera discriminacion, al final de la pagina no renderiza bien la barra de la izquierda y de la derecha
+(DONE)
+
+- en el logo de si deberia ser un link a la pagina de solidaridad http://www.solidaridad.org/
+  los enlaces que se abran en una nueva ventana
+(DONE)
+
+- los patrocinadores tienen que ir mas a bajo (ver layout) y tambien link a su pagina
+  http://www.aecid.es/
+http://www.migualdad.es/mujer/
+  los enlaces que se abran en una nueva ventana
+(PARTIALLY)
+
+- en el foro juan pedro insiste en poner un filtro, es decir que les llegue a ellos primero el texto y que ellos lo introduzcan luego en el foro.
+  ya estuve discutiendo con el acerca del sentido de un foro bajo estas circumstancias........
+  quizas hablas tu con el otra vez ?
+
+- agenda, muestra ahora solo la primera linea del texto que se introduce en contenido, no estaba pensado asi, si no que pudieran meter el texto que quisieran.....
+
+- actualidad, no enseña el texto solo la fecha, es decir el color del texto con el link al fichero esta en blanco y no se ve.......
+
+- materiales, al pinchar en un fichero se deberia abrir en una ventana nueva,
+  el thumb que te envie para los pdf  aun no esta implementado.
+
+- cambiar la imagen de fondo por la ke te envio aqui, le quite un poco de contraste porke a juan pedro no le gustaba....

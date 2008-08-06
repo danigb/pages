@@ -23,23 +23,23 @@ h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
 #areas {width: 800px;}
 #areas img { float: left; margin-right: 2px; }
 
-#menu {background-color: #67053E; width: 130px; float: left; padding: 0 0 3000px 0;
-    margin: 0 0 -3000px 0; overflow: hidden;}
+#menu {background-color: #67053E; width: 130px; float: left; padding: 0 0 400em 0;
+    margin: 0 0 -400em 0; overflow: hidden;}
 #menu a {color: #F0C730;}
 #menu div.area {width: 120px; color: white; margin: 2em 0 10px 10px; font-size: 90%;}
-#menu div.item {width: 118px; color: #F0C730; margin: 0 0 0 0.5em; padding: 0.4em 1em;
+#menu div.item {width: 110px; color: #F0C730; margin: 0 0 0 0.5em; padding: 0.4em 1em;
   border-bottom: 1px solid #F0C730;}
 #menu div.item.selected {background-color: white;}
 #menu div.item a {font-size: 85%;}
 
 
 #content { padding: 50px 70px 130px 70px; margin: 0 0em 0em 0; 
-    width: 590px; background-color: white; overflow: hidden; float: left;}
+    width: 590px; background-color: white; float: left;}
 #content > a  {color: black;}
 #content > div.title {font-size: 120%; font-weight: bold; margin: 0 0 1.5em 0; color: #F0C730; }
 #content font { font-size: 90%; }
 
-#content p { margin: 0 0 1.5em 0; }
+#content p { margin: 0 0 1.5em 0; text-align: justify; }
 #content em {font-style: italic;}
 #content strong {font-weight: bold;}
 #content img {margin: 0 1em;}
@@ -53,14 +53,15 @@ h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
 
 #last > img {border-right: 0px;}
 
-#news {background-color: #67053E; float: right; width: 130px;  padding: 40px 5px 3000px 5px; color: white;
-  font-size: 100%; margin: 0 0 -3000px 0; overflow: hidden;}
+#news {background-color: #67053E; float: right; width: 130px;  padding: 40px 5px 400em 5px; color: white;
+  font-size: 100%; margin: 0 0 -400em 0; overflow: hidden;}
 #news > div {margin: 0 0 0.5em 0; padding: 0 0 0 0em; }
 #news a {color: white;}
 #news div h1 {padding: 0.1em 0 0.3em 0.3em; font-size: 90%;}
 #news div div.content {font-size: 100%; padding: 0.5em; font-size: 85%;}
 
-#sponsors {padding: 250px 0 0 0;}
+#sponsors {bottom: 0px; width: 130px; text-align: center; color: #F0C730;
+  padding: 250px 0 0 0; }
 
 
 div.form { background-color: #DF8000; padding: 1em;}
