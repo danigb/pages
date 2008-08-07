@@ -45,8 +45,11 @@ module Si::SolidaridadHelper
     content_tag(:div, :class=>'item material') do
       if page.attachments.size > 0
         att = page.attachments[0]
-        link_to  content_tag(:div, page.title, :class=> 'title') +
-          image_tag(att.public_filename(:thumb)), att.public_filename
+        is_pdf = att.content_type == 'application/pdf'
+        bloque = content_tag(:div, page.title, :class=> 'title')
+        imagen = image_tag(att.public_filename(:thumb)) unless is_pdf
+        imagen = image_tag('solidaridad/pdf_thumb.gif') if is_pdf
+        link_to(bloque + imagen, att.public_filename, :target => '_blank')
       else
         content_tag(:div, page.title, :class => 'title')
       end
@@ -73,8 +76,8 @@ module Si::SolidaridadHelper
     pdf = page.attachments.size > 0 ? page.attachments[0] : nil
     content = !pdf.nil? ? link_to(page.title, pdf.public_filename, :popup => ['_blank']) : page.title
     content_tag(:div, :class => 'item actualidad') do
-        content_tag(:div, content, :class => 'title') +
-      content_tag(:div, textilize(page.content), :class=> 'date')
+      content_tag(:div, content, :class => 'title') +
+        content_tag(:div, textilize(page.content), :class=> 'date')
     end
   end
   
