@@ -3,11 +3,8 @@ class Si::VerController < ApplicationController
   layout 'si_ver'
   before_filter  :load_roots, :load_news
 
-  IMAGES = ['inicio_01.jpg', 'inicio_02.gif']
   
   def index
-    index = rand(1) > 0.5 ? 1 : 0
-    @image = IMAGES[index]
   end
         
   def pagina
