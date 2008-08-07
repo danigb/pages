@@ -33,7 +33,7 @@
             <div class="item <%= 'selected' if !@page.nil? && item.id == @page.id %> "><%= link_to item.title, {:action => :pagina, :id => item} %></div>
           <% end %>
         <% end %>
-        <% #  render :partial => 'menu_items', :locals => {:pages => @content.children} %>
+        <div style="height: 5em;">&nbsp;</div>
       </div>
 
       <div id="content" >
@@ -68,8 +68,8 @@
           <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador2.gif" /></a>
         </div>
       </div>
-
       <%= clear %>
+
     </div>
     <div id="foot">
       <!--

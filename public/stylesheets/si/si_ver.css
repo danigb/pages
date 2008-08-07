@@ -26,7 +26,7 @@ h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
 #menu {background-color: #67053E; width: 130px; float: left; padding: 0 0 400em 0;
     margin: 0 0 -400em 0; overflow: hidden;}
 #menu a {color: #F0C730;}
-#menu div.area {width: 120px; color: white; margin: 2em 0 10px 10px; font-size: 90%;}
+#menu div.area {width: 120px; color: white; margin: 2em 0 0px 10px; font-size: 90%;}
 #menu div.item {width: 100px; color: #F0C730; margin: 0 0 0 0.5em; padding: 0.4em 1em;
   border-bottom: 1px solid #F0C730;}
 #menu div.item.selected {background-color: white;}
@@ -61,7 +61,7 @@ h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
 #news div div.content {font-size: 100%; padding: 0.5em; font-size: 85%;}
 
 #sponsors {bottom: 0px; width: 130px; text-align: center; color: #F0C730;
-  padding: 250px 0 0 0; }
+  padding: 250px 0 0 5px; margin-top: 15em; }
 
 
 div.form { background-color: #DF8000; padding: 1em;}

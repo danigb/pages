@@ -7,7 +7,7 @@ div.item.agenda {margin: 0 0 0.5em 0;}
 div.item.agenda div.date {font-size: 200%;}
 div.item.agenda div.title {font-weight: bold; font-size: 120%; color: #027F11;}
 div.item.agenda div.content {margin: 0 0 3em 0;}
-
+div.item.agenda div.content p {margin: 0 0 0.4em 0;}
 div.item.actualidad {margin: 0 0 0.5em 0;}
 div.item.actualidad div.date {font-weight: bold; font-size: 110%; margin: 0 0 2em 0;}
 div.item.actualidad div.title { font-size: 200%; color: #2D5D77;}

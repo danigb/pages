@@ -43,7 +43,7 @@ class Page < ActiveRecord::Base
   end
   
   def skip_first_line
-    self.content.nil? ? '' : self.content[/\n.*/]
+    self.content.nil? ? '' : self.content[first_line.length...self.content.length]
   end
    	
   private
