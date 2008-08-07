@@ -75,7 +75,7 @@ module Si::SolidaridadHelper
     
   def render_actualidad(page)
     pdf = page.attachments.size > 0 ? page.attachments[0] : nil
-    content = !pdf.nil? ? link_to(page.title, pdf.public_filename, :popup => ['_blank']) : page.title
+    content = !pdf.nil? ? link_to(page.title, pdf.public_filename, :popup => ['_blank', 'resizable=true']) : page.title
     content_tag(:div, :class => 'item actualidad') do
       content_tag(:div, content, :class => 'title') +
         content_tag(:div, textilize(page.content), :class=> 'date')

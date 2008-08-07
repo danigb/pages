@@ -3,6 +3,8 @@ div.item.hoja {}
 div.item.hoja div.title {font-size: 150%; margin: 0 0 1.5em 0; color: #F0C730;}
 div.item.hoja {}
 
+#foro a {color: #66063E;}
+
 div.item.agenda {margin: 0 0 0.5em 0;}
 div.item.agenda div.date {font-size: 200%;}
 div.item.agenda div.title {font-weight: bold; font-size: 120%; color: #027F11;}
@@ -15,8 +17,9 @@ div.item.actualidad div.title { font-size: 200%; color: #2D5D77;}
 div.item.actualidad a {color: #2D5D77;}
 
 
-div.item.material {float: left; margin: 1em; padding: 0 0 1em 0; text-align: center; background-color: #028E93;}
-div.item.material .title {font-weight: bold; color: white; text-align: center; padding: 5px 0;}
+div.item.material {float: left; margin: 1em; width: 150px; height: 185px;
+  padding: 0 0 1em 0; text-align: center; background-color: #028E93;}
+div.item.material .title {font-weight: bold; color: white; text-align: center; padding: 5px 0; height: 1em;}
 
 div.item.video {margin: 0 0 0.5em 0; background-color: #938402; text-align: center;}
 div.item.video div.title {font-weight: bold; color: white; padding: 5px 0;}
