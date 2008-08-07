@@ -1,12 +1,21 @@
 
 <tr>
   <td>
-    <%= foro_icon depth %>
-    <%= link_to_if depth == 1, root.title, :controller => 'si/ver', :action => 'ver_tema', :id => root %> 
+    <% if depth > 0 %>
+      <% if !root.published?  %>
+        <%= link_to(icon(:cancel, 'publicar'), {:action => 'publicar', :id => root})  %>
+      <% else %>
+        <%= link_to(icon(:accept, 'bloquear'), {:action => 'bloquear', :id => root})  %>
+      <% end %>
+    <% end  %>
+
+    <%= foro_icon depth, root.state == 'published' %>
+    <%= link_to_if depth == 1, root.title, :controller => 'si/ver', :action => 'ver_tema', :id => root %>
+    > <%= root.content %>
   </td>
   <td><%= fecha root.created_at %></td>
-  <td class="actions">    
-    <%= link_to(icon(:delete, 'borrar'), [:admin, root], :confirm => 'seguro?', :method => :delete) if root.children.size == 0 %> 
+  <td class="actions">
+    <%= link_to(icon(:delete, 'borrar'), [:admin, root], :confirm => 'seguro?', :method => :delete) if root.children.size == 0 && depth > 0 %>
   </td>
 </tr>
 

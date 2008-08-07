@@ -35,7 +35,7 @@ h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
 #menu div.item a {font-size: 85%;}
 
 
-#content { padding: 50px 70px 130px 70px; margin: 0 0em 0em 0; 
+#content { overflow: hidden; padding: 50px 70px 130px 70px; margin: 0 0em 0em 0;
     width: 590px; background-color: white; float: left;}
 #content > a  {color: black;}
 #content > div.title {font-size: 120%; font-weight: bold; margin: 0 0 1.5em 0; color: #F0C730; }
@@ -90,4 +90,7 @@ div.actions a:hover {text-decoration: underline;}
 #ver_foro div.response div.name {background-color: #DF8000; padding: 0.2em 1em; }
 #ver_foro div.response div.body {padding: 0.2em 1em;}
 div.enviar {text-align: right; width: 35.3em;}
+
+#foro_wait {border: 5px solid #DF8000; padding: 1em;}
+
 

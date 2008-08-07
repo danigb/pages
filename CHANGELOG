@@ -4,7 +4,7 @@
 
 
 - juan pedro queria que en la pagina inicial se vayan alternando las dos imagenes que te envio aqui (inicio_01.jpg - inicio_02.gif), y que despues aparezca el texto que esta ahora.
-
+(DONE)
 
 - los textos aun no los justifica, meti el codigo a mano,
 (DONE)
@@ -31,12 +31,14 @@ http://www.migualdad.es/mujer/
 - en el foro juan pedro insiste en poner un filtro, es decir que les llegue a ellos primero el texto y que ellos lo introduzcan luego en el foro.
   ya estuve discutiendo con el acerca del sentido de un foro bajo estas circumstancias........
   quizas hablas tu con el otra vez ?
+(DONE)
 
 - agenda, muestra ahora solo la primera linea del texto que se introduce en contenido, no estaba pensado asi, si no que pudieran meter el texto que quisieran.....
 (DONE)
 
 
 - actualidad, no enseña el texto solo la fecha, es decir el color del texto con el link al fichero esta en blanco y no se ve.......
+(DONE)
 
 - materiales, al pinchar en un fichero se deberia abrir en una ventana nueva,
   el thumb que te envie para los pdf  aun no esta implementado.

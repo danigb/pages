@@ -8,4 +8,8 @@ module Si::SolidaridadSite
   def last_page_of_mime(mime)
     Page.find(:first, :conditions => ['mime = ?', mime.to_s], :order => 'created_at DESC')
   end
+
+  def last_foro
+    Page.find(:first, :conditions => ['mime = ? AND state = ?', 'respuesta', 'published'], :order => 'created_at DESC')
+  end
 end

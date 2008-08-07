@@ -14,7 +14,7 @@ class Si::VerController < ApplicationController
   def foro
     @name = 'foro'
     @page = page_of :foro
-    @items = Page.find(:all, :conditions => ['parent_id = ?', @page.id], :order => 'position DESC')
+    @items = Page.find(:all, :conditions => ['parent_id = ? AND state = ?', @page.id, 'published'], :order => 'position DESC')
   end
   
   # muestra un asunto del foro
@@ -30,21 +30,24 @@ class Si::VerController < ApplicationController
   def ver_tema
     @name = 'foro'
     @tema = Page.find(params[:id])
+    @respuestas = Page.find(:all, :conditions => ['parent_id = ? AND state= ?', @tema.id, 'published'])
   end
   
   def responder
     @tema = Page.find(params[:id])
     add_response(@tema, params[:name], params[:text]).save
-    render :action => 'ver_tema'
+    @nota = 'Tu respuesta aparecerá próximamente publicada.'
+    render :action => 'waiting'
   end
   
   # Crea un nuevo asunto en el foro
   def crear_tema
     foro = page_of :foro
-    @tema = foro.children.build(:title => params[:title], :state => 'published', :mime => 'tema')
+    @tema = foro.children.build(:title => params[:title], :state => 'locked', :mime => 'tema')
     add_response(@tema, params[:name], params[:text])
     if @tema.save
-      render :action => 'ver_tema'
+      @nota = "Tu tema '#{@tema.title}' aparecerá próximamente publicado en el foro."
+      render :action => 'waiting'
     else
       @error = "Lo siento, no se ha podido crear el tema. Vuelve a intentarlo dentro de unos minutos"
       render :action => 'error'
@@ -61,7 +64,7 @@ class Si::VerController < ApplicationController
   
   private
   def add_response(tema, name, body)
-    tema.children.build(:title => name, :state => 'published', :mime => 'respuesta', :content => body)
+    tema.children.build(:title => name, :state => 'locked', :mime => 'respuesta', :content => body)
   end
   
   def seccion
@@ -78,6 +81,6 @@ class Si::VerController < ApplicationController
   def load_news
     @actualidad = last_page_of_mime :actualidad
     @agenda = last_page_of_mime :agenda
-    @tema = last_page_of_mime :respuesta
+    @ultimo_tema = last_foro
   end
 end

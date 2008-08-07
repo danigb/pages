@@ -37,6 +37,10 @@ class Page < ActiveRecord::Base
     meta = metas.find_by_name(name.to_s)
     meta.nil? ? nil : meta.value
   end
+
+  def published?
+    self.state == STATES[2]
+  end
   
   def first_line
     self.content.nil? ? '' : self.content[/^.*\n/]

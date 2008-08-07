@@ -2,7 +2,7 @@
 <div id="ver_foro">
 <h1><%= link_to @tema.title, :action => 'ver_tema', :id => @tema %></h1>
 
-<% for response in @tema.children %>
+<% for response in @respuestas %>
   <div class="response">
     <div class="name"><b><%= response.title %></b> el <%= fecha response.created_at %> </div>
     <div class="body"><%= response.content %></div>

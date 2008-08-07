@@ -22,8 +22,9 @@ module Si::SolidaridadHelper
     end
   end
   
-  def foro_icon(depth)
-    image_tag "icons/#{FORO_ICONS[depth]}.png", :style => "margin-left: #{depth}em;"
+  def foro_icon(depth, published)
+    extra = depth == 0 || published ? '' : '_pending'
+    image_tag "icons/#{FORO_ICONS[depth]}#{extra}.png", :style => "margin-left: #{depth}em;"
   end
   
   def render_item(page, section)

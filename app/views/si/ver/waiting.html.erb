@@ -1,0 +1,10 @@
+<div id="foro_wait">
+  <%= @nota  %>
+<br/><br/>
+<% if @tema.published? %>
+  <%= link_to 'Volver al tema', :action => 'ver_tema', :id => @tema %>
+<% else %>
+    <%= link_to 'Volver al foro', :action => 'foro' %>
+<% end %>
+</div>
+

@@ -15,6 +15,7 @@ class Si::CambiarController < ApplicationController
   def foro
     @page = page_of :foro
   end
+
   
   def create_sub
     if params[:title] != ''
@@ -77,6 +78,19 @@ class Si::CambiarController < ApplicationController
     @page.attributes = params[:page]
     save_item(@page, section, 'Se ha actualizada la entrada en')
   end
+
+  def publicar
+    page = Page.find(params[:id])
+    page.update_attribute(:state, 'published')
+    redirect_to :action => 'foro'
+  end
+
+  def bloquear
+    page = Page.find(params[:id])
+    page.update_attribute(:state, 'locked')
+    redirect_to :action => 'foro'
+  end
+
   
   private
   def save_item(page, section, message)

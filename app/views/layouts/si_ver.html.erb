@@ -53,14 +53,16 @@
             <%= link_to @agenda.first_line + ' ' + @agenda.title, :action => 'la', :id => 'agenda' %>
           </div>
         </div>
+        <% if !@ultimo_tema.nil? %>
         <div class="foro" style="background-color: #D07E11;" >
           <h1 style="background-color: #A9660E;">foro</h1>
           <div class="content">
-            <%= link_to( (@tema.content.nil? ? '' : @tema.content), :action => 'foro') %>
+            <%= link_to( (@ultimo_tema.content.nil? ? '' : @ultimo_tema.content), :action => 'foro') %>
           </div>
         </div>
+        <% end %>
         <div class="contrata" style="background-color: white; margin: 10em 0 0 0;">
-          <div class="content"><a href="#" onClick="javascript: window.open('/contrata.html', 'cont', 'width=400,height=300,screenX=50,left=50,screenY=50,top=50,status=no,menubar=no'); return false;" style="color: #66063E;">Solicita la expo didáctica</a></div>
+          <div class="content"><a href="#" onClick="javascript: window.open('/solicita.html', 'cont', 'width=400,height=300,screenX=50,left=50,screenY=50,top=50,status=no,menubar=no'); return false;" style="color: #66063E;">Solicita la exposici&oacute;n didáctica</a></div>
         </div>
         <br/>
         <div id="sponsors">
