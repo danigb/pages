@@ -1,11 +1,10 @@
 <VirtualHost *:80>
-	ServerName apy.calclab.com
-        ServerAlias www.elmagrebconojosdemujer.org
-        DocumentRoot /home/dani/rails/apyweb/public
-        <Directory /home/dani/rails/apyweb/public/>
-                Options FollowSymLinks
-                Allow from all
-                AllowOverride None
-	 	Order allow,deny	
-        </Directory>
+    ServerName apy.calclab.com
+DocumentRoot /home/dani/rails/apyweb/public
+<Directory /home/dani/rails/apyweb/public/>
+    Options FollowSymLinks
+Allow from all
+AllowOverride None
+Order allow,deny	
+</Directory>
 </VirtualHost>

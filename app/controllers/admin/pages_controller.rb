@@ -39,7 +39,7 @@ class Admin::PagesController < Admin::AdminController
   
   def meta
     @page = Page.find(params[:id])
-    @meta = @page.metas.build
+    @meta = Meta.new(:page_id => @page.id)
   end
   
   def preview

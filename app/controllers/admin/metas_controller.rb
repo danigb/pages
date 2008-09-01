@@ -44,7 +44,7 @@ class Admin::MetasController < Admin::AdminController
     
     respond_to do |format|
       if @meta.save
-        flash[:notice] = 'meta was successfully created.'
+        flash[:notice] = 'Metainformación añadida correctamente.'
         format.html { redirect_to :back }
         format.xml  { render :xml => @meta, :status => :created, :location => @meta }
       else
@@ -76,7 +76,7 @@ class Admin::MetasController < Admin::AdminController
     @meta.destroy
 
     respond_to do |format|
-      format.html { redirect_to([:admin, @page]) }
+      format.html { redirect_to :back }
       format.xml  { head :ok }
     end
   end
