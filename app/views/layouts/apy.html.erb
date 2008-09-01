@@ -1,30 +1,28 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= @area.title %> - <%= @page.title unless @page.depth == 0 %></title>
-  <%= javascript_include_tag 'jquery-1.2.3.min.js', :cache => false %>
-  <%= stylesheet_link_tag 'reset', 'apy', :cache => false %>
-</head>
-<body>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Apy &mdash; </title>
+    <%= javascript_include_tag 'apy/jquery-1.2.6.pack.js' %>
+    <% # stylesheet_link_tag 'blueprint/screen.css', :media => 'screen, projection'  %>
+    <% #  stylesheet_link_tag 'blueprint/print.css', :media => 'print'  %>
+    <%= stylesheet_link_tag 'apy/apy.css' %>
+    <%= yield :header %>
+  </head>
+  <body>
+    <div id="page">
+      <div id="areas">
+        <div class="area">
+          logo
+        </div>
+        <% @roots.each do |page| %>
+          <div class="area" style="<%= color_of page %>"><%= link_to page.title, :action => 'pagina', :id => page %></div>
+        <% end %>
+        <div class="area" style="background-color: #CDCDCF;"><%= link_to 'buscar', '#' %></div>
+      </div>
+      <div id="line" style="<%= color_of @area %>">&nbsp;</div>
+      <%= yield  %>
+    </div>
 
-<div id="logged">
-<%= link_to 'admin', project_pages_path(@project) %> | 
-<%= link_to 'editar', [@project, @page, @page.content, :edit] %>
-</div>
-
-<div id="page">
-<div id="areas">
-<% @roots.each do |page| %>
-	<div class="area" style="<%= color_of page %>"><%= link_to page.title, :action => 'pagina', :id => page %></div>
-<% end %>
-<div class="area" style="background-color: #CDCDCF;"><%= link_to 'buscar', '#' %></div>
-</div>
-<div id="line" style="<%= color_of @area %>">&nbsp;</div>
-	<%= yield  %>
-</div>
-
-</body>
+  </body>
 </html>

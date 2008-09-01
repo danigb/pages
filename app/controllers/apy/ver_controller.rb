@@ -8,12 +8,11 @@ class Apy::VerController < ApplicationController
 	
 	def pagina
 		@page = Page.find(params[:id])
-		@area = @page.area
+		@area = @page.parent_id.nil? ? @page :@page.parent
 	end
 	
 private
 	def load_roots
-                @site = Page.find(1)
-		@roots = Page.find(:all, :conditions => ['parent_id IS NULL AND project_id=1'], :order => 'position')
+		@roots = Page.find_all_by_parent_id(1)
 	end
 end
