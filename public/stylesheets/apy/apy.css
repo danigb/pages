@@ -28,9 +28,10 @@ contactos: #809DCE
 buscar: #CDCDCF
 */
 
-body { background-color: white; text-align: center;}
+body { background-color: white; text-align: center; background-color: #efefef;}
 a {text-decoration: none; color: inherit;}
-#page { width: 80em;margin: 5em auto;text-align: left;background-color: white;}
+#page { width: 76em;margin: 2em auto;text-align: left;background-color: white;
+  overflow: hidden;}
 
 
 #line { width: 80em; height: 1em;  clear: both; }
@@ -39,12 +40,12 @@ a {text-decoration: none; color: inherit;}
 #areas .area {  width: 10em;  height: 10em;  float: left; vertical-align: middle;}
 #areas .area a { display: block; color: #2F5BA5; height: 4em; margin: 4em 0 0 0; text-align: center; }
 #areas .area a img {margin: -4em 0 0 0;}
-#areas .search_area {float: left; width: 20em; height: 10em; background-color: #CDCDCF; text-align: center;}
+#areas .search_area {float: left; width: 16em; height: 10em; background-color: #CDCDCF; text-align: center;}
 #areas .search_area label {display: block; text-align: center; margin: 4em 0 0 0;}
-#areas .search_area input {border: 0; height: 2em; width: 16em; margin: 0em 0 0 0;}
+#areas .search_area input {border: 0; height: 2em; width: 12em; margin: 0em 0 0 0;}
 
 /*** MENU ***/
-#menu { float: left; width: 9em; padding: 4em 0 10em 1em; }
+#menu { float: left; width: 9em; padding: 4em 0 400em 1em; margin: 0 0 -400em 0; }
 #menu ul {margin: 0; border: 0; padding: 0.5em 0 2em 0; 
     list-style: none; width: 100%;}
 #menu li { margin: 0; border: 0; color: white; filter: alpha(opacity=80); -moz-opacity:.80;  opacity:.80; }
@@ -52,6 +53,6 @@ a {text-decoration: none; color: inherit;}
     color: white;}
 #menu li a:hover { background-color: #ddd; }
 
-#content { margin: 1em 1em 1em 11em; padding: 1em 3em; text-align: justify;}
+#content { margin: 0em 1em -400em 11em; padding: 2em 3em 402em 3em; text-align: justify;}
 #content h1 {font-family: serif; font-size: 200%; color: gray; margin: 0 0 1em 0;}
 
