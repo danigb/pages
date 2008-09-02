@@ -11,19 +11,29 @@
   </head>
   <body>
     <div id="page">
+
+      <!-- areas -->
       <div id="areas">
-        <div class="area">
-          logo
+        <% @roots.each do |page| -%>
+          <% display = page.title == 'APY' ? image_tag('apy/logo.gif') : page.title -%>
+          <div class="area" style="<%= color_of page %>"><%= link_to display, :action => 'pagina', :id => page -%></div>
+        <% end -%>
+        <div class="search_area"><label>buscar</label><% form_tag :action => 'search' do %><%= text_field_tag :term %><% end %>
         </div>
-        <% @roots.each do |page| %>
-          <% display = page.title == 'APY' ? image_tag('apy/logo.gif') : page.title %>
-          <div class="area" style="<%= color_of page %>"><%= link_to display, :action => 'pagina', :id => page %></div>
-        <% end %>
-        <div class="area" style="background-color: #CDCDCF;"><%= link_to 'buscar', '#' %></div>
       </div>
       <div id="line" style="<%= color_of @area %>">&nbsp;</div>
-      <%= yield  %>
-    </div>
 
+      <!-- menu -->
+      <div id="menu" style="<%= color_of @area %>">
+        <%= render :partial => '/layouts/apy/menu_items', :locals => {:pages => @area.children} %>
+      </div>
+
+      <!-- content -->
+      <div id="content">
+        <%= yield  %>
+      </div>
+
+      <%= clear %>
+    </div>
   </body>
 </html>
