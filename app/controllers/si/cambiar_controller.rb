@@ -1,6 +1,6 @@
 class Si::CambiarController < ApplicationController
   include Si::SolidaridadSite
-  layout 'si_cambiar'
+  layout 'si/si_cambiar'
   before_filter :authenticate_admin
   
   def index

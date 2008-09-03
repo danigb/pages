@@ -5,9 +5,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Administración <%= "de la web " + @project.title if !@project.nil? %> </title>
-    <%= stylesheet_link_tag 'reset', 'admin/admin.css', 'admin/forms.css', 'dialogs.css', :cache => false %>
-    <%= javascript_include_tag 'jquery-1.2.3.min.js', :cache => false %>
-    <%= javascript_include_tag 'jquery.blockUI.js' %>
+    <%= stylesheet_link_tag 'reset', 'admin/admin.css', :cache => false %>
+    <%= javascript_include_tag 'admin/jquery-1.2.6.pack.js', :cache => false %>
   </head>
   <body>    
     <div id="header">

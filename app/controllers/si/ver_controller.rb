@@ -1,6 +1,6 @@
 class Si::VerController < ApplicationController
   include Si::SolidaridadSite
-  layout 'si_ver'
+  layout 'si/si_ver'
   before_filter  :load_roots, :load_news
 
   
