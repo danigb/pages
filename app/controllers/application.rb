@@ -12,18 +12,29 @@ class ApplicationController < ActionController::Base
   def authenticate_admin
     authenticate_or_request_with_http_basic('Pages::Admin') do |name, pass|
       # #User.authenticate(name, pass)
-      name == APP_CONFIG['user']['name'] && pass == APP_CONFIG['user']['pass']
+      user_valid(name, pass) || admin_valid(name, pass)
     end
   end
-
-  def authenticate_restricted
-    authenticate_or_request_with_http_basic('Pages::Restricted') do |name, pass|
-      name == 'calcaxy' && pass == 'calcaxy'
-    end
-  end
-
 
   def load_site
     @site = Page.find(1)
   end
-end
+
+  def user_valid(name, pass)
+    session[:admin] = false
+    name == APP_CONFIG['user']['name'] && pass == APP_CONFIG['user']['pass']
+  end
+  
+  def admin_valid(name, pass)
+    admin = APP_CONFIG['admin']
+
+    if !admin.nil? && name == admin['name'] && pass == admin['pass']
+      session[:admin] = true
+      true
+    elsif
+      false
+    end
+  end
+  
+
+  end

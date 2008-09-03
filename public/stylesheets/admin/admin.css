@@ -1,48 +1,60 @@
-
-/* color fondo: F4F2EB */
-/* color marrón: DB D5C5 */
-/* color oscuro: 363C44 */
-
-/* azul: #13A FDF */
-/* verde: #4CC335 */
-/* manzana: #72DD01 */
-/* pollo: #FFD716  */
-
-
 body { text-align: center; background-color: white; }
 a { text-decoration: none; color: inherit; }
 a:hover {text-decoration: underline;}
 img { margin: 2px 0 0 0; }
-table {  width: 100%; }
-table thead { font-weight: normal;; background-color: #88dd77; border-bottom: 1px solid green; }
-td { vertical-align: middle; padding: 5px 2px; }
 
 h1 { font-size: 200%; margin: 0.5em 0 1em 0.5em; }
 h2 { font-size: 150%; margin: 1em 0 0.5em 1em; }
 
 /**** LAYOUT ***/
-#page { width: 75em; margin: 0px auto; background-color: #FBFAD4; text-align: left; padding: 0em 0em 5em 0em; }
-#header { background-color: #468800; color: white; text-align: left; padding: 1em 1em 0 1em; }
+#page { width: 75em; margin: 0px auto; background-color: #F4F3F2; text-align: left; padding: 0em 0em 5em 0em; }
+#header { background-color: #4F4F4F; color: white; text-align: left; padding: 1em 1em 0 1em; }
 #header h1 {margin: 0.2em 0;}
 #header div.flash {color: yellow; font-size: 120%;}
 #preview { margin: 2em; padding: 1em; background-color: white; border: 1px solid #DBD5C5; }
-#bottom {margin: 0em auto 1em auto; color: gray; border-top: 1px solid lightgray; padding: 1em 0 0 0}
+#bottom {margin: 0em auto 1em auto; color: gray; border-top: 1px solid #E7E2DF; padding: 1em 0 0 0;}
 
 #page div.info {margin: 0 1em 0 1em; width: 73em; color: #DBC381; text-align: right;}
 
 /*** TABLE ***/
-table { margin: 1em; width: 73em;}
+table {  margin: 1em; width: 73em;}
+table thead { font-weight: normal; color: white; background-color: #7FA76B; border-bottom: 1px solid #6A6460; }
+td { vertical-align: middle; padding: 5px 2px; }
 td.actions {}
 
 /*** ACTIONS ***/
 div.actions { margin: 1em; }
-div.actions .action { border: 1px solid #DBC381; background-color: white; float: left; margin: 0 5px 0 0; }
-div.actions a { font-size: 95%; line-height: -1em; display: block; border: 1px solid #DBC381;
-    background-color: white; color: #C4AF74; padding: 4px 10px; margin: 2px;}
+div.actions .action { border: 1px solid #E7E2DF; background-color: white; float: left; margin: 0 5px 0 0; }
+div.actions a { font-size: 95%; line-height: -1em; display: block; border: 1px solid #E7E2DF;
+    background-color: white; color: #4F4F4F; padding: 4px 10px; margin: 2px;}
 div.actions a img { float: left; margin: 0px 0 0 -2px;}
-div.actions a:hover { color: white;  background-color: #DBC381;}
+div.actions a:hover { color: black;  background-color: #F4F3F2;}
 
 /**** TAB ****/
 div.tabs * { display: block; float: left; padding: 0.5em 3em; margin-right: 0.2em; }
-div.tabs a { background-color: #baed84; color: black; }
-div.tabs .active { background-color: #468800; color: white; }
+div.tabs a { background-color: #E7E2DF; color: black; }
+div.tabs .active { background-color: #4F4F4F; color: white; }
+
+/**** TAB ****/
+div.helpBox {border: 1px solid orange; float: right; padding: 1em; margin: 1em 1em 0 0; background-color: #ffeb99;}
+div.helpBox h1 {font-size: 120%;}
+div.helpBox ul li {width: 16em;}
+
+/*** FORMS ***/
+div.formBox { border:solid 1px #AEA39D; background-color: #E7E2DF; padding: 0.5em 2em 3em 2em;
+    color:#333333; margin: 1em; float: left; }
+div.formBox h1 {  font-size: 120%; color:#000000; }
+div.formBox p{padding-bottom:14px;}
+div.formBox div { display:block; margin-bottom:10px; color:#555555;}
+div.formBox div label { display:block; float:left; padding-right:6px; width:70px; text-align:right;
+    font-weight:bold;}
+
+div.formBox form .spacer{ margin-left:80px;  margin-bottom: 4em; color:#555555;}
+div.formBox .green{ background: url('../../images/green.gif'); padding: 3px 1em; margin: 0 10px 1em 0;
+    border:1px solid #3b6e22; height:18px; color:#FFFFFF;  display:inline-block;
+    text-decoration:none; font-size: 14px; clear: both; }
+div.formBox form p { height: 1.5em; margin: 0.2em 0; }
+div.formBox form input {border: 1px solid #AEA39D; padding: 2px;}
+div.formBox form input .input-text {border:1px solid #3b6e22; color:#666666; width:180px; }
+div.formBox form textarea { border: 1px solid #AEA39D; padding: 2px; width: 46em;}
+

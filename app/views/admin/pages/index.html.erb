@@ -5,10 +5,12 @@
   <thead>
     <td style="width: 50%">Título</td>
     <td>Última modificación</td>
+    <% if admin? -%>
     <td>Estado</td>
     <td>Ref.</td>    
-    <td>Tipo</td>    
-    <td></td>
+    <td>Tipo</td>
+    <% end -%>
+    <td>Acciones</td>
   </thead>
   
   <tbody>

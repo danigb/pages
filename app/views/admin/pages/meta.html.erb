@@ -1,4 +1,6 @@
-<%= page_tabs(@page, 'Metadata')  %>
+<%= page_tabs(@page, 'Metadatos')  %>
+
+<h1>Página '<%= @page.title %>'</h1>
 
 <div class="actions">
   <%= action nil, 'Volver', admin_pages_path %>
@@ -6,7 +8,7 @@
 <%= clear %>
 
 <div class="formBox" style="margin-left: 1em;">
-  <h1>Add metadata to '<%= @page.title %>'</h1>  
+  <h1>Añadir metadatos a '<%= @page.title %>'</h1>
   <% form_for([:admin, @page, @meta]) do |f| %>
     <%= f.hidden_field :page_id %>
     <div>

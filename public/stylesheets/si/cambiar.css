@@ -9,6 +9,3 @@ div.formBox input[type=text] {width: 40em;}
 div.formBox textarea {width: 40em; height: 30em;}
 div.formBox div.info {color: #468800; float: left;}
 
-div.helpBox {border: 1px solid orange; float: right; padding: 1em; margin: 1em 1em 0 0; background-color: #ffeb99;}
-div.helpBox h1 {font-size: 120%;}
-div.helpBox ul li {width: 16em;}

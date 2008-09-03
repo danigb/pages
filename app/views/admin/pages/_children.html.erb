@@ -5,9 +5,11 @@
     <%= link_to_edit_page root %> 
   </td>
   <td><%= fecha root.updated_at %></td>
+  <% if admin? -%>
   <td><%= icon root.state, root.state %></td>
   <td><%=  root.id %></td>
   <td><%= root.mime %></td>
+  <% end %>
   <td class="actions">    
     <% if !root.parent.nil? %>
       <%= link_to icon(:up, 'subir'), {:controller => 'pages', :action => 'move_up', :id => root} %>

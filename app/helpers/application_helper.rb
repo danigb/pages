@@ -4,6 +4,7 @@ module ApplicationHelper
   include AdminHelper
   include ActionView::Helpers::TagHelper
 
+
   
   def render_page(page)
     r = $PAGE_RENDERERS[page.mime]
@@ -55,23 +56,7 @@ module ApplicationHelper
     image_tag(file) + " #{label}"
   end
   
-  def page_tabs(page, current) 
-    tabs do
-      tab('Páginas', admin_pages_path, current) <<
-        tab('Metadatos', {:action => 'meta', :id => page}, current)  <<
-        tab('Contenido', edit_admin_page_path(page), current) 
-    end
-  end
-  
-  def project_tabs(current)
-    tabs do
-      tab('Páginas', admin_pages_path, current) <<
-        tab('Archivos e imágenes', admin_attachments_path, current) 
-    end
-  end
 
-  def tab(name, path, current)
-    current == name ? "<div class=\"active\">#{name}</div>" : link_to( name, path) 
-  end
+
   
 end

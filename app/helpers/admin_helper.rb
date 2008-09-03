@@ -1,9 +1,15 @@
 module AdminHelper
+    include ActionView::Helpers::TagHelper
+
   def tabs
     result = '<div class="tabs">'
     result << yield
     result <<  '</div><div class="spacer">&nbsp;</div><br/>'
-  end  
+  end
+
+  def admin?
+    session[:admin] == true
+  end
   
   def  can_add_children(depth, addeable)
     return true if addeable == :all
@@ -21,6 +27,26 @@ module AdminHelper
     result = image_tag("icons/#{name.to_s}.png", :alt => label)
     result << "&nbsp;#{label}" if visible
     return result
+  end
+  
+  
+  def tab(name, path, current)
+    current == name ? "<div class=\"active\">#{name}</div>" : link_to( name, path) 
+  end
+  
+  def page_tabs(page, current)
+    tabs do
+      tab('Páginas', admin_pages_path, current) <<
+        tab('Contenido', edit_admin_page_path(page), current) <<
+        (session[:admin] ? tab('Metadatos', {:action => 'meta', :id => page}, current) : '') 
+    end
+  end
+  
+  def project_tabs(current)
+    tabs do
+      tab('Páginas', admin_pages_path, current) <<
+        (session[:admin] ? tab('Archivos e imágenes', admin_attachments_path, current) : '')
+    end
   end
   
 end

@@ -55,6 +55,7 @@ a {text-decoration: none; color: inherit;}
 
 #content { margin: 0em 1em -400em 11em; padding: 2em 3em 402em 3em; text-align: justify;}
 #content h1 {font-family: serif; font-size: 200%; color: gray; margin: 0 0 1em 0;}
+#content h2 {font-family: serif; font-size: 150%; color: gray; margin: 0 0 1em 0;}
 #content p { margin: 0 0 1.5em 0; text-align: justify; }
 #content em {font-style: italic;}
 #content strong {font-weight: bold;}
