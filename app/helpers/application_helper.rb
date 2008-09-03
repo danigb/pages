@@ -57,9 +57,9 @@ module ApplicationHelper
   
   def page_tabs(page, current) 
     tabs do
-      tab('Preview', {:action => 'preview', :id => page}, current) <<
-        tab('Content', edit_admin_page_path(page), current) <<
-        tab('Metadata', {:action => 'meta', :id => page}, current) 
+      tab('Páginas', admin_pages_path, current) <<
+        tab('Metadatos', {:action => 'meta', :id => page}, current)  <<
+        tab('Contenido', edit_admin_page_path(page), current) 
     end
   end
   

@@ -10,7 +10,7 @@ module Si::SolidaridadHelper
     image_tag("solidaridad/#{name}_#{state}.gif", :id => "area-#{name}")
   end
 
-  def cambiar_tabs(current)
+  def solidaridad_tabs(current)
     tabs do 
       tab('dossier', {:action => 'dossier'}, current) <<
         tab('foro', {:action => 'foro'}, current) <<
