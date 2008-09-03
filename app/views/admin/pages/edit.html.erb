@@ -2,13 +2,8 @@
 
 <h1>Página '<%= @page.title %>'</h1>
 
-<div class="actions">
-  <%= javascript_action('icons/edit.png', 'Guardar', "jQuery('form.edit_page').submit()") %>
-</div>
-<%= clear %>
-
 <div class="formBox">
-  <h1>Editar página</h1>
+  <h1>Editar</h1>
 
   <%= error_messages_for :page %>
 
@@ -17,6 +12,7 @@
       <label>Título</label>
       <%= f.text_field :title %>
     </div>
+
     <% if admin? -%>
       <div>
         <label>Estado</label>
@@ -27,7 +23,11 @@
         <%= f.text_field :mime %>
       </div>
     <% end -%>
-    <div class="editor">
+    <div style="margin: -1em 0  0 -4px"><label>&nbsp;</label>
+      <%= submit_button( 'Guardar', "jQuery('form.edit_page').submit()") %>
+    </div>
+
+    <div class="editor" style="margin-top: 3em">
       <%= f.text_area :content, :id => 'wysiwyg' %>
     </div>
   <% end %>

@@ -17,7 +17,7 @@
     <% end %>
     <%= link_to icon(:page_add, 'añadir página hija'), new_admin_page_path(:parent_id => root) %>
     <%= link_to icon(:page_edit, 'editar'), edit_admin_page_path(root) %>
-    <%= link_to icon(:page_meta, 'metadatos'), {:action => 'meta', :id => root} %>
+    <%= link_to icon(:page_meta, 'metadatos'), {:action => 'meta', :id => root} if admin? %>
     <%= link_to(icon(:delete, 'borrar'), [:admin, root], :confirm => 'seguro?', :method => :delete) if root.children.size == 0 %> 
   </td>
 </tr>

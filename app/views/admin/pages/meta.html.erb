@@ -2,11 +2,6 @@
 
 <h1>Página '<%= @page.title %>'</h1>
 
-<div class="actions">
-  <%= action nil, 'Volver', admin_pages_path %>
-</div>
-<%= clear %>
-
 <div class="formBox" style="margin-left: 1em;">
   <h1>Añadir metadatos a '<%= @page.title %>'</h1>
   <% form_for([:admin, @page, @meta]) do |f| %>
@@ -26,13 +21,13 @@
 <table>
   <thead>
     <tr>
-      <td>Name</td><td>Value</td><td></td>
+      <td>Nombre</td><td>Valor</td><td></td>
     </tr>
   </thead>
   <tbody>
     <% for meta in @page.metas %>
       <tr><td><%= meta.name %></td><td><%= meta.value %></td>
-        <td><%= link_to(image_tag('page_white_delete.png') + ' borrar', [:admin, @page, meta], :confirm => 'seguro?', 
+        <td><%= link_to(image_tag('page_white_delete.png'), [:admin, @page, meta], :confirm => 'seguro?', 
             :method => :delete, :class => 'action')  %> 
         </td>
       </tr>
