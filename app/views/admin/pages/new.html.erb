@@ -20,7 +20,7 @@
         <%= f.select :state, Page::STATES %>
       </div>
     <% elsif -%>
-      <%= f.hidden_field :state, 'published' %>
+      <%= f.hidden_field :state,  :value => 'published' %>
     <% end-%>
     <%= submit_button( 'Crear', "jQuery('#new_page').submit()" ) %>
 
