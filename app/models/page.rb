@@ -16,7 +16,7 @@
 
 class Page < ActiveRecord::Base
   
-  STATES = ['locked', 'draft', 'published']
+  STATES = ['published', 'locked', 'draft']
   RENDERERS = {}
   
   acts_as_list  :scope => :parent_id
