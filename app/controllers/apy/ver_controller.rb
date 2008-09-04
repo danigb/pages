@@ -6,6 +6,12 @@ class Apy::VerController < ApplicationController
   def index
     redirect_to :action => :pagina, :id => @roots.first
   end
+
+  def buscar
+    @pages = Page.search params[:term]
+    @area = Page.new()
+    @area.metas.build(:name => 'color', :value => 'red')
+  end
 	
   def pagina
     @page = Page.find(params[:id])

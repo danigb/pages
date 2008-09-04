@@ -1,4 +1,21 @@
 
+SPHINX!!
+1. install sphinx
+wget http://sphinxsearch.com/downloads/sphinx-0.9.8.tar.gz
+tar zxvf sphinx-0.9.8.tar.gz
+cd sphinx-0.9.8/
+./configure
+make
+sudo make install
+
+2. install thinking-sphinx
+git clone git://github.com/freelancing-god/thinking-sphinx.git
+  vendor/plugins/thinking-sphin
+
+
+REFERENCES:
+http://freelancing-gods.com/posts/a_concise_guide_to_using_thinking_sphinx
+http://railscasts.com/episodes/120-thinking-sphinx
 
 
 rake annotate_models

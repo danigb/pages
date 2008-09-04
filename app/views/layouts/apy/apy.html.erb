@@ -18,7 +18,7 @@
           <% display = page.title == 'APY' ? image_tag('apy/logo.gif') : page.title -%>
           <div class="area" style="background-color: <%= color_of page %>;"><%= link_to display, :action => 'pagina', :id => page -%></div>
         <% end -%>
-        <div class="search_area"><label>buscar</label><% form_tag :action => 'search' do %><%= text_field_tag :term %><% end %>
+        <div class="search_area"><label>buscar</label><% form_tag :action => 'buscar' do %><%= text_field_tag :term %><% end %>
         </div>
       </div>
       <div id="line" style="background-color: <%= color_of @area %>;">&nbsp;</div>
