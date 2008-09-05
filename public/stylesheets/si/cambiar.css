@@ -1,11 +1,24 @@
 
-
-
-a {color: black;}
-#header a {color: white;}
-td .item {padding: 0.5em; border: 1px solid gray; background-color: white;}
-
-div.formBox input[type=text] {width: 40em;}
-div.formBox textarea {width: 40em; height: 30em;}
-div.formBox div.info {color: #468800; float: left;}
+a {
+  color:black;
+}
+#header a {
+  color:white;
+}
+td .item {
+  background-color:white;
+  border:1px solid gray;
+  padding:0.5em;
+}
+div.formBox input[type="text"] {
+  width:40em;
+}
+div.formBox textarea {
+  height:30em;
+  width:40em;
+}
+div.formBox div.info {
+  color:#468800;
+  float:left;
+}
 
