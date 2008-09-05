@@ -7,7 +7,8 @@ class Xy::VerController < ApplicationController
   before_filter :load_roots
 	
   def index
-    redirect_to :action => :pagina, :id => 1
+    @definition = "colectivo atípico laboratorio cultural".gsub(/ /, ' &nbsp; ') 
+
   end
 	
   def pagina
