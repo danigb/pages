@@ -15,12 +15,12 @@
         <div id="calc_name">c o l e c t i v o &nbsp; a t í p i c o &nbsp; l a b o r a t o r i o &nbsp; c u l t u r a l </div>
       </div>
       <div id="tabs">
-        <%= link_to 'HOME', {}, :class => 'active' %>
-        <%= link_to 'BOOC' %>
-        <%= link_to 'FILES' %>
-        <%= link_to 'CELL' %>
-        <%= link_to 'BIOBIBLIO' %>
-        <%= link_to 'TXT\'s' %>
+        <%= link_to 'HOME', {:action => 'home'}, :class => (params[:action] == 'home' ? 'active' : '') %>
+        <%= link_to 'BOOC', {:action => 'booc'}, :class => (params[:action] == 'booc' ? 'active' : '') %>
+        <%= link_to 'FILES', {:action => 'files'}, :class => (params[:action] == 'files' ? 'active' : '') %>
+        <%= link_to 'CELL', {:action => 'cell'}, :class => (params[:action] == 'cell' ? 'active' : '') %>
+        <%= link_to 'BIOBIBLIO', {:action => 'biobiblio'}, :class => (params[:action] == 'biobiblio' ? 'active' : '') %>
+        <%= link_to 'TXT\'s', {:action => 'txts'}, :class => (params[:action] == 'txts' ? 'active' : '') %>
         <div>&nbsp;</div>
       </div>
       <div id="page">

@@ -28,12 +28,6 @@ class Page < ActiveRecord::Base
   before_create :calculate_depth
   belongs_to :parent, :class_name => 'Page'
   
-  define_index do
-    indexes content
-    indexes :title
-  end
-
-
   def locked?
     self.state == STATES[0]
   end
