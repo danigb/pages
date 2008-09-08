@@ -7,9 +7,33 @@ class Xy::VerController < ApplicationController
   before_filter :load_roots
 	
   def index
-    redirect_to :action => :pagina, :id => 1
+    redirect_to :action => 'home'
   end
-	
+
+  def home
+    render :action => 'home'
+  end
+
+  def booc 
+    render :action => 'home'
+  end
+  
+  def files
+    render :action => 'home'
+  end
+
+  def cell
+    render :action => 'home'
+  end
+  
+  def biobiblio
+    render :action => 'home'
+  end
+
+  def txts
+    render :action => 'home'
+  end
+  
   def pagina
     @page = Page.find(params[:id])
   end
