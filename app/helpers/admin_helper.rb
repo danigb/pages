@@ -19,8 +19,8 @@ module AdminHelper
   end
   
   def link_to_edit_page(page)
-    return link_to(page.title, edit_admin_page_path(page)) unless page.locked?
-    return link_to(page.title, {:action => 'meta', :id => page}) if page.locked?
+    return link_to(page.title, edit_admin_page_path(page)) # unless page.locked?
+    #return link_to(page.title, {:action => 'meta', :id => page}) if page.locked?
   end
 
   def icon(name, label, visible = false)

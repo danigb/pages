@@ -30,7 +30,7 @@ buscar: #CDCDCF
 
 body { background-color: white; text-align: center; background-color: #efefef;}
 a {text-decoration: none; color: inherit;}
-#page { width: 76em;margin: 2em auto;text-align: left;background-color: white;
+#page { width: 70em;margin: 2em auto;text-align: left;background-color: white;
   overflow: hidden;}
 
 
@@ -39,27 +39,36 @@ a {text-decoration: none; color: inherit;}
 #areas { clear: both; }
 #areas .area {  width: 10em;  height: 10em;  float: left; vertical-align: middle;}
 #areas .area a { display: block; color: #2F5BA5; height: 4em; margin: 4em 0 0 0; text-align: center; }
+#areas .area a.selected {color: white;}
 #areas .area a img {margin: -4em 0 0 0;}
-#areas .search_area {float: left; width: 16em; height: 10em; background-color: #CDCDCF; text-align: center;}
-#areas .search_area label {display: block; text-align: center; margin: 4em 0 0 0;}
-#areas .search_area input {border: 0; height: 2em; width: 12em; margin: 0em 0 0 0;}
+#areas .search_area {float: left; width: 10em; height: 10em; background-color: #CDCDCF; text-align: center;}
+#areas .search_area label {display: block; text-align: center; margin: 4em 0 0 0;color: #2F5BA5; }
+#areas .search_area input {border: 0; height: 2em; width: 9em; margin: 0em 0 0 0;}
 
 /*** MENU ***/
 #menu { float: left; width: 9em; padding: 4em 0 400em 1em; margin: 0 0 -400em 0; }
 #menu ul {margin: 0; border: 0; padding: 0.5em 0 2em 0; 
     list-style: none; width: 100%;}
-#menu li { margin: 0; border: 0; color: white; filter: alpha(opacity=80); -moz-opacity:.80;  opacity:.80; }
-#menu li a { display: block; padding: 0.1em; border-bottom: 1px solid white; border-left: 8px solid white;
-    color: white;}
-#menu li a:hover { background-color: #ddd; }
+#menu ul.depth-3 {padding: 0 1em 1em 0; margin-left: 1em; width: 8em;}
+/* filter: alpha(opacity=80); -moz-opacity:.80;  opacity:.80; */
+#menu li { margin: 0; border: 0; color: white;}
+#menu li a { display: block; padding: 0.1em; color: white; text-align: right; padding-right: 0.3em;}
+#menu li a.selected {background-color: white; color: black; }
+#menu li a.depth-2 {border-bottom: 1px solid white;}
+#menu li a.depth-3 {}
+#menu li a.depth-4 {font-size: 80%; }
+#menu li a:hover { background-color: white; color: black;}
 
-#content { margin: 0em 1em -400em 11em; padding: 2em 3em 402em 3em; text-align: justify;}
-#content h1 {font-family: serif; font-size: 200%; color: gray; margin: 0 0 1em 0;}
-#content h2 {font-family: serif; font-size: 150%; color: gray; margin: 0 0 1em 0;}
+#content-wrapper {margin: 0em 1em -400em 11em; padding: 2em 3em 402em 3em; }
+#content { text-align: justify; width: 42em; margin: 2em auto;}
+#content h1 {font-family: serif; font-size: 250%; color: #24419B; margin: 0 0 1em 0;}
+#content h2 {font-family: sans-serif; font-size: 150%; color: gray; margin: 0 0 1em 0; font-weight: bold;}
+#content h3 {font-family: sans-serif; font-size: 120%; color: gray; margin: 0 0 1em 0; font-weight: bold;}
 #content p { margin: 0 0 1.5em 0; text-align: justify; }
 #content em {font-style: italic;}
 #content strong {font-weight: bold;}
-#content img {margin: 0 1em;}
+#content img {}
 #content p.footnote {font-size: 85%;}
-#content a {color: black;}
+#content a {color: #24419B;}
+#content a:hover {text-decoration: underline;}
 

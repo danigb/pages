@@ -16,7 +16,9 @@
       <div id="areas">
         <% @roots.each do |page| -%>
           <% display = page.title == 'APY' ? image_tag('apy/logo.gif') : page.title -%>
-          <div class="area" style="background-color: <%= color_of page %>;"><%= link_to display, :action => 'pagina', :id => page -%></div>
+          <div class="area" style="background-color: <%= color_of page %>;">
+            <%= link_to display, {:action => 'pagina', :id => page}, :class => (page == @area ? 'selected' : '') -%>
+          </div>
         <% end -%>
         <div class="search_area"><label>buscar</label><% form_tag :action => 'buscar' do %><%= text_field_tag :term %><% end %>
         </div>
@@ -25,15 +27,17 @@
 
       <!-- menu -->
       <div id="menu" style="background-color: <%= color_of @area %>;">
-        <%= render :partial => '/layouts/apy/menu_items', :locals => {:pages => @area.children} %>
+        <%= render :partial => '/layouts/apy/menu_items', :locals => {:root => @area} %>
       </div>
 
       <!-- content -->
       <div style="border-right: 1em solid <%= color_of @area %>;">
-      <div id="content" >
-        <%= yield  %>
+        <div id="content-wrapper">
+          <div id="content" >
+            <%= yield  %>
+          </div>
+        </div>
       </div>
-    </div>
 
       <%= clear %>
     </div>

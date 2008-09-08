@@ -1,6 +1,7 @@
-<ul>
-<% for page in pages %>
-<li><%= link_to_if(page.depth != 1, page.title, {:action => :pagina, :id => page}) %></li>
-<%= render(:partial => '/layouts/apy/menu_items', :locals => {:pages => page.children}) if page.depth < 3 %>
-<% end %>
+<ul class="<%= "depth-#{root.depth}" %>" >
+  <% for page in root.children -%>
+    <% selected = @page == page ? 'selected' : '' -%>
+    <li><%= link_to(page.title, {:action => :pagina, :id => page}, :class => "depth-#{page.depth} #{selected}") -%></li>
+    <%= render(:partial => '/layouts/apy/menu_items', :locals => {:root => page}) if show_childs?(@page, page) -%>
+  <% end -%>
 </ul>

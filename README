@@ -9,8 +9,7 @@ make
 sudo make install
 
 2. install thinking-sphinx
-git clone git://github.com/freelancing-god/thinking-sphinx.git
-  vendor/plugins/thinking-sphin
+git clone git://github.com/freelancing-god/thinking-sphinx.git  vendor/plugins/thinking-sphin
 
 
 REFERENCES:
