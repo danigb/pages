@@ -1,11 +1,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
+<-- 1sept08  <%= RAILS_ENV %> -->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>SOLIDARIDAD INTERNACIONAL - El Magreb con ojos de mujer</title>
-    <%= javascript_include_tag 'si/jquery-1.2.6.pack.js', :cache => false %>
-    <%= stylesheet_link_tag  'si/si_ver.css', 'si/items.css', :cache => false %>
+    <%= javascript_include_tag 'si/jquery-1.2.6.pack.js'  %>
+    <%= stylesheet_link_tag  'si/si_ver.css', 'si/items.css' %>
   </head>
   <body>
     <div id="page">
@@ -27,12 +28,12 @@
         <%= clear %>
       </div>
       <div id="menu" >
-        <% for area in @content.children %>
+        <% for area in @content.children -%>
           <div class="area"><%= area.title %></div>
-          <% for item in area.children %>
+          <% for item in area.children -%>
             <div class="item <%= 'selected' if !@page.nil? && item.id == @page.id %> "><%= link_to item.title, {:action => :pagina, :id => item} %></div>
-          <% end %>
-        <% end %>
+          <% end -%>
+        <% end -%>
         <div style="height: 5em;">&nbsp;</div>
       </div>
 

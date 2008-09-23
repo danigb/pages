@@ -29,7 +29,7 @@ class Page < ActiveRecord::Base
   belongs_to :parent, :class_name => 'Page'
   
   def locked?
-    self.state == STATES[0]
+    self.state == 'locked'
   end
   
   def meta(name)
@@ -38,7 +38,7 @@ class Page < ActiveRecord::Base
   end
 
   def published?
-    self.state == STATES[2]
+    self.state == 'published'
   end
   
   def first_line
