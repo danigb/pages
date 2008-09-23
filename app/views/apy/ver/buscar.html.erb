@@ -1,5 +1,9 @@
 
+<h1>Resultados de la búsqueda '<%= params[:t] %>'</h1>
+
 <% for page in @pages -%>
 <%= page.title %><br/>
 <% end -%>
-
+<% if @pages.size == 0 %>
+no hay ninguna página que contenga '<%= params[:t] %>'
+<% end  %>

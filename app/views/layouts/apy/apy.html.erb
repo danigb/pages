@@ -3,46 +3,48 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Apy &mdash; </title>
-    <%= javascript_include_tag 'apy/jquery-1.2.6.pack.js' %>
-    <% # stylesheet_link_tag 'blueprint/screen.css', :media => 'screen, projection'  %>
-    <% #  stylesheet_link_tag 'blueprint/print.css', :media => 'print'  %>
-    <%= stylesheet_link_tag 'apy/apy.css' %>
-    <%= yield :header %>
+    <%= javascript_include_tag 'apy/jquery-1.2.6.pack.js' -%>
+    <% # stylesheet_link_tag 'blueprint/screen.css', :media => 'screen, projection'  -%>
+    <% #  stylesheet_link_tag 'blueprint/print.css', :media => 'print'  -%>
+    <%= stylesheet_link_tag 'apy/apy.css' -%>
+    <%= yield :header -%>
   </head>
   <body>
-    <div id="page" style="border-bottom: 1em solid <%= color_of @area %>;">
+    <div id="page" style="border-bottom: 1em solid <%= color_of @area -%>;background-color: <%= color_of @area -%>;">
 
       <!-- areas -->
       <div id="areas">
         <div class="area" style="background-color: #24419B;">
-            <a href="/apy/ver/pagina/8" class="selected"><img alt="Logo" src="/images/apy/logo.gif?1220283534" /></a>
+          <a href="/apy/ver/pagina/8" style="margin-top: 0; " class="selected">
+          <img alt="Apy" src="/images/apy/logo.gif" /></a>
         </div>
         <% @roots.each do |page| -%>
           <% display = page.title == 'APY' ? image_tag('apy/logo.gif') : page.title -%>
-          <div class="area" style="background-color: <%= color_of page %>;">
+          <div class="area" style="background-color: <%= color_of page -%>;">
             <%= link_to display, {:action => 'pagina', :id => page}, :class => (page == @area ? 'selected' : '') -%>
           </div>
         <% end -%>
-        <div class="search_area"><label>buscar</label><% form_tag :action => 'buscar' do %><%= text_field_tag :term %><% end %>
+        <div class="search_area"><label>buscar</label><% form_tag({:action => 'buscar'}, :method => :get) do -%>
+            <%= text_field_tag :t -%><% end -%>
         </div>
       </div>
-      <div id="line" style="background-color: <%= color_of @area %>;">&nbsp;</div>
+      <div id="line" style="background-color: <%= color_of @area -%>;">&nbsp;</div>
 
       <!-- menu -->
-      <div id="menu" style="background-color: <%= color_of @area %>;">
-        <%= render :partial => '/layouts/apy/menu_items', :locals => {:root => @area} %>
+      <div id="menu" style="">
+        <%= render :partial => '/layouts/apy/menu_items', :locals => {:root => @area} -%>
       </div>
 
       <!-- content -->
-      <div style="border-right: 1em solid <%= color_of @area %>;">
+      <div style="">
         <div id="content-wrapper">
           <div id="content" >
-            <%= yield  %>
+            <%= yield  -%>
           </div>
         </div>
       </div>
 
-      <%= clear %>
+      <%= clear -%>
     </div>
   </body>
 </html>

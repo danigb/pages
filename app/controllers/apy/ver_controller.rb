@@ -8,9 +8,13 @@ class Apy::VerController < ApplicationController
   end
 
   def buscar
-    @pages = Page.search params[:term]
-    @area = Page.new()
-    @area.metas.build(:name => 'color', :value => 'red')
+    if params[:t].empty?
+      redirect_to :back
+    else
+      @pages = []
+      @area = Page.new
+      @area.metas.build(:name => 'color', :value => 'red')
+    end
   end
 	
   def pagina

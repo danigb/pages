@@ -34,34 +34,34 @@ a {text-decoration: none; color: inherit;}
   overflow: hidden;}
 
 
-#line { width: 80em; height: 1em;  clear: both; }
+#line { width: 80em; height: 1em;  clear: both; background-color: #CDCDCF;}
 
-#areas { clear: both; }
+#areas { clear: both; background-color: #CDCDCF; width: 70em;}
 #areas .area {  width: 10em;  height: 10em;  float: left; vertical-align: middle;}
 #areas .area a { display: block; color: #2F5BA5; height: 4em; margin: 4em 0 0 0; text-align: center; }
 #areas .area a.selected {color: white;}
-#areas .area a img {margin: -4em 0 0 0;}
 #areas .search_area {float: left; width: 10em; height: 10em; background-color: #CDCDCF; text-align: center;}
 #areas .search_area label {display: block; text-align: center; margin: 4em 0 0 0;color: #2F5BA5; }
-#areas .search_area input {border: 0; height: 2em; width: 9em; margin: 0em 0 0 0;}
+#areas .search_area input {border: 0; width: 9em; margin: 0; padding: 0.2em;}
 
 /*** MENU ***/
-#menu { float: left; width: 9em; padding: 4em 0 400em 1em; margin: 0 0 -400em 0; }
+#menu { float: left; width: 9em; padding: 4em 0 0em 1em; margin: 0 0 0em 0;}
 #menu ul {margin: 0; border: 0; padding: 0.5em 0 2em 0; 
     list-style: none; width: 100%;}
 #menu ul.depth-3 {padding: 0 1em 1em 0; margin-left: 1em; width: 8em;}
 /* filter: alpha(opacity=80); -moz-opacity:.80;  opacity:.80; */
-#menu li { margin: 0; border: 0; color: white;}
+#menu ul li { margin: 0; border: 0; color: white;}
 
-#menu li a, .locked { display: block; padding: 0.1em; color: white; text-align: right; padding-right: 0.3em;}
-#menu li a.selected {background-color: white; color: black; }
-#menu li a.depth-2 {border-bottom: 1px solid white;}
-#menu li div.locked {border-bottom: 1px solid white;}
-#menu li a.depth-3 {}
-#menu li a.depth-4 {font-size: 80%; margin-top: 0.7em;}
-#menu li a:hover { background-color: white; color: black;}
+#menu ul li a, .locked { display: block; padding: 0.1em; color: white; text-align: right; padding-right: 0.3em;}
+#menu ul li a.selected {background-color: white; color: black; }
+#menu ul li a.depth-2 {border-bottom: 1px solid white;}
+#menu ul li div.locked {border-bottom: 1px solid white;}
+#menu ul li a.depth-3 {margin-top: 5px;}
+#menu ul li a.depth-4 {font-size: 80%; margin: 9px 0 0 0;}
+#menu ul li a:hover { background-color: white; color: black;}
 
-#content-wrapper {margin: 0em 1em -400em 11em; padding: 2em 3em 402em 3em; }
+#content-wrapper {margin: 0em 1em 0em 10em; padding: 2em 3em 2em 3em;
+  background-color: white;}
 #content { text-align: justify; width: 42em; margin: 2em auto;}
 #content h1, h2, h3 {color: #24419B; margin: 0 0 1em 0; text-align: left; }
 #content h1 {font-family: serif; font-size: 250%; }
@@ -70,7 +70,6 @@ a {text-decoration: none; color: inherit;}
 #content p { margin: 0 0 1.5em 0; text-align: justify; }
 #content em {font-style: italic;}
 #content strong {font-weight: bold;}
-#content img {align: center;}
 #content p.footnote {font-size: 85%;}
 #content a {color: #24419B;}
 #content a:hover {text-decoration: underline;}
