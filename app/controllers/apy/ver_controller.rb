@@ -20,6 +20,6 @@ class Apy::VerController < ApplicationController
 	
   private
   def load_roots
-    @roots = Page.find_all_by_parent_id(1)
+    @roots = Page.find_all_by_parent_id(1, :conditions => ["id != ?", 2])
   end
 end
