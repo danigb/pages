@@ -1,9 +1,15 @@
 
-<h1>Resultados de la búsqueda '<%= params[:t] %>'</h1>
+<h1>Páginas que contengan '<%= params[:t] %>'</h1>
 
-<% for page in @pages -%>
-<%= page.title %><br/>
-<% end -%>
+<div class="search_result">
+  <% for page in @pages -%>
+    <% if page.published? -%>
+      <div class="<%= cycle("even", "odd", :name => 'search') -%>">
+        <%= link_to page.title, {:action => 'pagina', :id => page.id} -%>
+      </div>
+    <% end -%>
+  <% end -%>
+</div>
 <% if @pages.size == 0 %>
-no hay ninguna página que contenga '<%= params[:t] %>'
+  no hay ninguna página que contenga '<%= params[:t] %>'
 <% end  %>

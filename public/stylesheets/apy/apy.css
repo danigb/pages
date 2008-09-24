@@ -74,3 +74,5 @@ a {text-decoration: none; color: inherit;}
 #content a {color: #24419B;}
 #content a:hover {text-decoration: underline;}
 
+.search_result div {padding: 0.3em 1em;}
+.search_result .odd { background-color: #efefef;}
