@@ -30,13 +30,13 @@
       </div>
       <div id="line" style="background-color: <%= color_of @area -%>;">&nbsp;</div>
 
-      <!-- menu -->
-      <div id="menu" style="">
-        <%= render :partial => '/layouts/apy/menu_items', :locals => {:root => @area} -%>
-      </div>
 
       <!-- content -->
-      <div style="">
+      <div id="main" >
+        <!-- menu -->
+        <div id="menu" style="">
+          <%= render :partial => '/layouts/apy/menu_items', :locals => {:root => @area} -%>
+        </div>
         <div id="content-wrapper">
           <div id="content" >
             <%= yield  -%>

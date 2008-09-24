@@ -27,6 +27,7 @@ class Page < ActiveRecord::Base
   belongs_to :project
   before_create :calculate_depth
   belongs_to :parent, :class_name => 'Page'
+  searches_on :title, :content
   
   def locked?
     self.state == 'locked'

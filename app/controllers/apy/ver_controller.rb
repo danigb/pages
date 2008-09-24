@@ -11,7 +11,7 @@ class Apy::VerController < ApplicationController
     if params[:t].empty?
       redirect_to :back
     else
-      @pages = []
+      @pages = Page.search(params[:t])
       @area = Page.new
       @area.metas.build(:name => 'color', :value => 'red')
     end
