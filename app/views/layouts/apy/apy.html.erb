@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Apy &mdash; </title>
+    <title>Apy &mdash; <%=  @page.title if !@page.nil? -%></title>
     <%= javascript_include_tag 'apy/jquery-1.2.6.pack.js' -%>
     <% # stylesheet_link_tag 'blueprint/screen.css', :media => 'screen, projection'  -%>
     <% #  stylesheet_link_tag 'blueprint/print.css', :media => 'print'  -%>
