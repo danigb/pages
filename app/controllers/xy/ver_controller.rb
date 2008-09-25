@@ -4,6 +4,7 @@
 class Xy::VerController < ApplicationController
   include Xy::Site
   layout 'xy/xy'
+  
   before_filter :load_roots
 	
   def index
