@@ -1,5 +1,5 @@
 # Settings specified here will take precedence over those in config/environment.rb
-ENV['INLINEDIR'] = File.join(File.dirname(__FILE__),"../../inline")
+ENV['INLINEDIR'] = File.join(File.dirname(__FILE__),"../../../inline")
 
 # The production environment is meant for finished, "live" apps.
 # Code is not reloaded between requests
