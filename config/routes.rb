@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => APP_CONFIG['root'], :action => 'index'
-  
+
   map.namespace :admin do |admin|
     admin.resources :users
     admin.resources :attachments
@@ -11,7 +10,15 @@ ActionController::Routing::Routes.draw do |map|
     end  
     admin.resources :site
   end
+
   
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  if APP_CONFIG['name']
+    require "#{RAILS_ROOT}/config/routes/routes_#{APP_CONFIG['name']}.rb"
+  elsif
+    map.root :controller => APP_CONFIG['root'], :action => 'index'    
+    map.connect ':controller/:action/:id'
+    map.connect ':controller/:action/:id.:format'
+  end
+
+  
 end
