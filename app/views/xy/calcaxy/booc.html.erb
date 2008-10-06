@@ -1,21 +1,25 @@
 
-<% for n in 1..5 %>
+<% for booc in @boocs %>
   <div class="boocs main">
     <div class="booc">
-      <h1>Oye, omi, no crees que lleva título</h1>
-      <div class="date">date</div>
-      <div class="body"><%=  "text " * 200 %></div>
+      <h1><%= booc.title %></h1>
+      <div class="date"><%= booc.created_at %></div>
+      <div class="body"><%= booc.content %></div>
       <div class="response">
         <textarea></textarea><br/>
         <input type="button" value="responde" /><br/>
         <% for x in 1..3 %>
-        <div class="body">
-          <%=  "response " * 50 %>
-        </div>
+          <div class="body">
+            <%=  "response " * 50 %>
+          </div>
         <% end %>
       </div>
       <%= clear %>
-      <div class="image">imagen</div>
+      <div class="image">
+        <% if booc.attachment(:booc) %>
+<%= image_tag booc.attachment(:booc).public_filename %>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end  %>

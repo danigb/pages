@@ -8,10 +8,11 @@
       <td>Tamaño</td>
       <td>Enlace (copia en el contenido)</td>
       <td>Pagina</td>
+      <td>Etiqueta</td>
       <td></td>
     </tr>
   </thead>
-  
+
   <tbody>
     <% for attachment in attachments %>
       <tr>
@@ -20,7 +21,8 @@
         <td><%= attachment.content_type %></td>
         <td><%= attachment.size %></td>
         <td>!<%= attachment.public_filename %>!</td>
-        <td><%= attachment.page_id %>
+        <td><%= attachment.page_id %></td>
+        <td><%= attachment.label %></td>
         <td>
           <%= link_to icon(:delete, 'Borrar'), [:admin, attachment], :confirm => "Vas a borrar '#{attachment.filename}'. Deseas continuar?", :method => :delete %>
         </td>

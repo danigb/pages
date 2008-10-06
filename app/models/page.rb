@@ -28,7 +28,15 @@ class Page < ActiveRecord::Base
   before_create :calculate_depth
   belongs_to :parent, :class_name => 'Page'
   searches_on :title, :content
-  
+
+  def self.children_of(id)
+    Page.find_all_by_parent_id(id)
+  end
+
+  def attachment(name)
+    Attachment.find_by_page_id_and_label self.id, name.to_s
+  end
+
   def locked?
     self.state == 'locked'
   end
@@ -42,6 +50,7 @@ class Page < ActiveRecord::Base
     self.state == 'published'
   end
   
+  
   def first_line
     self.content.nil? ? '' : self.content[/^.*\n/]
   end
@@ -51,7 +60,7 @@ class Page < ActiveRecord::Base
   end
    	
   private
-  def calculate_depth 
+  def calculate_depth
     self.depth = ancestors.size
   end
  	

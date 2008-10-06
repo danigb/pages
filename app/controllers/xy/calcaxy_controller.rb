@@ -14,7 +14,8 @@ class Xy::CalcaxyController < ApplicationController
   def home
   end
 
-  def booc 
+  def booc
+    @boocs = Page.children_of(2)
   end
   
   def files
