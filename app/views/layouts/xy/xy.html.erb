@@ -6,6 +6,7 @@
     <%= javascript_include_tag 'apy/jquery-1.2.6.pack.js' %>
     <%= stylesheet_link_tag 'xy/xy.css' %>
     <%= yield :header %>
+
   </head>
   <body>
     <div id="container">
@@ -16,14 +17,29 @@
       </div>
       <div id="tabs">
         <%= link_to 'H O M E', {:action => 'home'}, :class => (params[:action] == 'home' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
         <%= link_to 'B O O C', {:action => 'booc'}, :class => (params[:action] == 'booc' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
         <%= link_to 'F I L E S', {:action => 'files'}, :class => (params[:action] == 'files' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
         <%= link_to 'C E L L', {:action => 'cell'}, :class => (params[:action] == 'cell' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
         <%= link_to 'B I O B I B L I O', {:action => 'biobiblio'}, :class => (params[:action] == 'biobiblio' ? 'active' : '') %>
+        <div class="space">&nbsp;</div>
         <%= link_to 'T X T \' s', {:action => 'txts'}, :class => (params[:action] == 'txts' ? 'active' : '') %>
-        <div>&nbsp;</div>
+        <div class="space">&nbsp;</div>
+        <div class="tab">&nbsp;</div>
+        <div class="space">&nbsp;</div>
+
       </div>
       <div id="page">
+
+        <div class="test">
+          <% for n in 1..7  %>
+            <div class="box">col</div>
+          <% end %>
+        </div>
+
         <%= yield %>
       </div>
     </div>

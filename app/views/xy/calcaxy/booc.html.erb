@@ -1,0 +1,21 @@
+
+<% for n in 1..5 %>
+  <div class="boocs main">
+    <div class="booc">
+      <h1>Oye, omi, no crees que lleva título</h1>
+      <div class="date">date</div>
+      <div class="body"><%=  "text " * 200 %></div>
+      <div class="response">
+        <textarea></textarea><br/>
+        <input type="button" value="responde" /><br/>
+        <% for x in 1..3 %>
+        <div class="body">
+          <%=  "response " * 50 %>
+        </div>
+        <% end %>
+      </div>
+      <%= clear %>
+      <div class="image">imagen</div>
+    </div>
+  </div>
+<% end  %>

@@ -6,7 +6,7 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string   "content_type"
     t.string   "filename"
     t.integer  "size"
-    t.string   "tags"
+    t.string   "label"
     t.string   "description"
     t.integer  "parent_id"
     t.string   "thumbnail"
