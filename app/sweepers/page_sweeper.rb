@@ -18,6 +18,6 @@ class PageSweeper < ActionController::Caching::Sweeper
   def expire_cache_for(page)
     puts "Page changed: " + page.title
     # Expire the list page now that we pageed a new blog entry
-    expire_page(:controller => 'calcaxy')
+    expire_page(:controller => '/xy/calcaxy')
   end
 end

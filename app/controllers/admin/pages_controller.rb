@@ -1,6 +1,6 @@
 class Admin::PagesController < Admin::AdminController
   layout 'admin'
-
+  
   # GET /pages GET /pages.xml
   def index 
     @page = Page.find(1)
