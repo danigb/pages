@@ -42,7 +42,7 @@ class Admin::AttachmentsController < Admin::AdminController
 
     respond_to do |format|
       if @attachment.save
-        flash[:notice] = 'Attachment was successfully created.'
+        flash[:notice] = 'Archivo subido.'
         format.html { redirect_to :back }
         format.xml  { render :xml => @attachment, :status => :created, :location => @attachment }
       else

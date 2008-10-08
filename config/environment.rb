@@ -5,7 +5,7 @@ require 'yaml'
 #ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.1.1' unless defined? RAILS_GEM_VERSION
 
 
 
@@ -62,4 +62,7 @@ Rails::Initializer.run do |config|
 
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
+
+  config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
+  config.load_paths += %W( #{RAILS_ROOT}/app/sweepers )
 end

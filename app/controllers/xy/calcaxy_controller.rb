@@ -4,7 +4,8 @@
 class Xy::CalcaxyController < ApplicationController
   include Xy::Site
   layout 'xy/xy'
-  
+  caches_page :home, :booc, :files
+
   before_filter :load_roots
 	
   def index
@@ -41,10 +42,6 @@ class Xy::CalcaxyController < ApplicationController
 
   def txts
     render :action => 'home'
-  end
-  
-  def pagina
-    @page = Page.find(params[:id])
   end
 	
   private
