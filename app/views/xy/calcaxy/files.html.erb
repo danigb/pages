@@ -3,9 +3,9 @@
 </div>
 
 <div class="files main">
-  <% for n in 1...30 -%>
+  <% for card in @files -%>
     <div class="file">
-      <div class="thumb">&nbsp;</div>
+      <div class="thumb"><%= image_tag card.attachment(:thumb).public_filename %> </div>
       <div class="info">pdf</div>
       <div class="info last">www</div>
     </div>
@@ -13,3 +13,4 @@
 </div>
 
 <%= clear  %>
+<br/><br/><br/>

@@ -14,7 +14,7 @@ select, input, textarea {font:99% arial,helvetica,clean,sans-serif;}
 pre, code {font:115% monospace;*font-size:100%;} 
 body * {line-height:1.22em;}
 
-
+.no_spam {display:none;}
 .spacer {clear: both;font-size: 0.1%;height: 0;	width: 0;}
 
 body {background-color: #E2E338; font-size: 70%;}
@@ -54,12 +54,13 @@ a:hover {text-decoration: underline;}
 #updates {margin: 0 0 100px 139px;}
 #updates h1 {color: #8D8E22; margin: 1em 0;}
 #updates .column {width: 10em; float: left;}
+.home_image {padding: 50px 5px; text-align: center;}
 
 /* FILES */
 .files {}
 .files .file {width: 195px; height: 120px; float: left; background-color: #EFF0F1; margin-right: 15px;
   margin-bottom: 15px;}
-.files .file .thumb {width: 193px; height: 103px; background-color: white; border: 1px solid #DDDE7A;}
+.files .file .thumb {width: 193px; height: 150px; background-color: white; border: 1px solid #DDDE7A; overflow: hidden;}
 .files .file .info {width: 23px; height: 14px; float: left; font-size: 8px; background-color: white;
   border-left: 1px solid #DDDE7A; border-bottom: 1px solid #DDDE7A; text-align: center;}
 .files .file .info.last {border-right: 1px solid #DDDE7A;}
@@ -68,9 +69,11 @@ a:hover {text-decoration: underline;}
 .boocs {}
 .boocs .booc {margin-bottom: 15px;}
 .boocs .booc h1 {display: block; font-size: 150%;}
-.boocs .booc .image {width: 825px; height: 30px; background-color: red;}
-.boocs .booc .date {width: 825px; color: red;}
-.boocs .booc .body {width: 405px; float: left; }
-.boocs .booc .response {width: 405px; margin-left: 15px; float: left; font-family: monospace;}
-.boocs .booc .response textarea {width: 403px; height: 100px; border: 1px solid #efefef; 
+.boocs .booc .image {width: 825px; height: 30px; background-color: #E3E4E5; margin-top: 10px;}
+.boocs .booc .date {width: 825px; color: red; margin-top: 5px; margin-bottom: 5px;}
+.boocs .booc .body {width: 405px; float: left; line-height: 1.5em;}
+.boocs .booc .response {width: 405px; margin-left: 15px; float: left; font-family: monospace;
+  font-size: 120%;}
+.boocs .booc input[type=text] {background-color: #E3E4E5; border: 1px dotted black;}
+.boocs .booc .response textarea {width: 403px; height: 100px; margin: 5px 0;
   background-color: #E3E4E5; border: 1px dotted black;}

@@ -12,13 +12,23 @@ class Xy::CalcaxyController < ApplicationController
   end
 
   def home
+    @home = Page.find(1)
   end
 
   def booc
     @boocs = Page.children_of(2)
   end
+
+  def booc_response
+    if params[:response][:mime].empty?
+      redirect_to :action => 'booc'
+    else
+      render :text => 'please, do not spam us!'
+    end
+  end
   
   def files
+    @files = Page.children_of(3)
   end
 
   def cell

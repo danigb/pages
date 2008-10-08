@@ -1,16 +1,22 @@
 
-<div id="calc_form">
-  <div class="label"> c a l c = </div>
-  <% form_tag :action => 'index' do %>
-<%= text_field_tag :calc %>
-<% end %>
+<div class="home_image">
+  <%= image_tag @home.attachment(:home).public_filename %>
 </div>
-<div id="updates">
-<h1>latest updates / uploads / boocings &gt;</h1>
-<div class="column">
-  <h1>booc</h1>
-</div>
-<div class="column">
-  <h1>files</h1>
-</div>
+
+<div style="display: none;">
+  <div id="calc_form">
+    <div class="label"> c a l c = </div>
+    <% form_tag :action => 'index' do %>
+      <%= text_field_tag :calc %>
+    <% end %>
+  </div>
+  <div id="updates">
+    <h1>latest updates / uploads / boocings &gt;</h1>
+    <div class="column">
+      <h1>booc</h1>
+    </div>
+    <div class="column">
+      <h1>files</h1>
+    </div>
+  </div>
 </div>

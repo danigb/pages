@@ -58,7 +58,7 @@ class Admin::AttachmentsController < Admin::AdminController
 
     respond_to do |format|
       if @attachment.update_attributes(params[:attachment])
-        flash[:notice] = 'Attachment was successfully updated.'
+        flash[:notice] = 'Fichero añadido.'
         format.html { redirect_to :back }
         format.xml  { head :ok }
       else
@@ -66,6 +66,13 @@ class Admin::AttachmentsController < Admin::AdminController
         format.xml  { render :xml => @attachment.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def relabel
+    attachment = Attachment.find(params[:id])
+    attachment.update_attribute('label', params[:label])
+    flash[:notice] = 'Se cambió la etiqueta al fichero.'
+    redirect_to :back
   end
 
   # DELETE /attachments/1 DELETE /attachments/1.xml

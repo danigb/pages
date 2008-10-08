@@ -22,6 +22,14 @@ class Attachment < ActiveRecord::Base
     :path_prefix => APP_CONFIG['files_path']
   validates_as_attachment
   belongs_to :page
+  
+  def image?
+    content_type == 'image/gif' || content_type == 'image/jpeg' || content_type == 'image/png'
+  end
+  
+  def pdf?
+    content_type == 'application/pdf'
+  end
 end
 
 

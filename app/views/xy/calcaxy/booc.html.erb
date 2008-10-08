@@ -1,25 +1,25 @@
 
-<% for booc in @boocs %>
-  <div class="boocs main">
+<div class="boocs main">
+  <% for booc in @boocs %>
     <div class="booc">
       <h1><%= booc.title %></h1>
       <div class="date"><%= booc.created_at %></div>
       <div class="body"><%= booc.content %></div>
       <div class="response">
-        <textarea></textarea><br/>
-        <input type="button" value="responde" /><br/>
-        <% for x in 1..3 %>
-          <div class="body">
-            <%=  "response " * 50 %>
-          </div>
+        <h1>Responses</h1>
+        <% form_for :response, :url => {:action => 'booc_response', :id => booc.id} do |f| %>
+          <div class="no_spam"><%= f.text_area :mime %></div>
+          <label>name:</label><%= f.text_field :title %><br/>
+            <%= f.text_area :content %><br/>
+            <%= f.submit 'respond' %>
         <% end %>
       </div>
       <%= clear %>
       <div class="image">
         <% if booc.attachment(:booc) %>
-<%= image_tag booc.attachment(:booc).public_filename %>
+          <%= image_tag booc.attachment(:booc).public_filename %>
         <% end %>
       </div>
     </div>
-  </div>
-<% end  %>
+  <% end  %>
+</div>

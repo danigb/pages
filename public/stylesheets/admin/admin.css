@@ -44,7 +44,7 @@ td.actions {}
 div.actions { margin: 1em; }
 div.actions .action { border: 1px solid #E7E2DF; background-color: white; float: left; margin: 0 5px 0 0; }
 div.actions a { font-size: 95%; line-height: -1em; display: block; border: 1px solid #E7E2DF;
-    background-color: white; color: #4F4F4F; padding: 4px 10px; margin: 2px;}
+  background-color: white; color: #4F4F4F; padding: 4px 10px; margin: 2px;}
 div.actions a img { float: left; margin: 0px 0 0 -2px;}
 div.actions a:hover { color: black;  background-color: #F4F3F2;}
 
@@ -60,21 +60,27 @@ div.helpBox ul li {width: 16em;}
 
 /*** FORMS ***/
 div.formBox { border:solid 1px #AEA39D; background-color: #E7E2DF; padding: 0.5em 2em 3em 2em;
-    color:#333333; margin: 1em; float: left; }
+  color:#333333; margin: 1em; float: left; }
 div.formBox h1 {  font-size: 120%; color:#000000; margin: 1em 0 1.3em 0;}
 div.formBox p{padding-bottom:14px;}
 div.formBox div { display:block; margin-bottom:10px; color:#555555;}
 div.formBox div label { display:block; float:left; padding-right:6px; width:70px; text-align:right;
-    font-weight:bold;}
+  font-weight:bold;}
 
 div.formBox form .spacer{ margin-left:80px;  margin-bottom: 4em; color:#555555;}
 div.formBox .green{ /*background: url('../../images/green.gif');*/
-    background-color: #8C817B; padding: 3px 1em; margin: 0 10px 1em 0; border-right:1px solid #4F4F4F;
-    border-left:1px solid #F4F3F2; border-top:1px solid #F4F3F2; 
-    border-bottom:1px solid #4F4F4F; height:18px; color:#FFFFFF;  display:inline-block;
-    text-decoration:none; font-size: 14px; clear: both; }
+  background-color: #8C817B; padding: 3px 1em; margin: 0 10px 1em 0; border-right:1px solid #4F4F4F;
+  border-left:1px solid #F4F3F2; border-top:1px solid #F4F3F2;
+  border-bottom:1px solid #4F4F4F; height:18px; color:#FFFFFF;  display:inline-block;
+  text-decoration:none; font-size: 14px; clear: both; }
 div.formBox form p { height: 1.5em; margin: 0.2em 0; }
 div.formBox form input {border: 1px solid #AEA39D; padding: 2px;}
 div.formBox form input .input-text {border:1px solid #3b6e22; color:#666666; width:180px; }
 div.formBox form textarea { border: 1px solid #AEA39D; padding: 2px; width: 46em;}
 
+.attachments {}
+.attachment {margin: 1em; padding: 1em;}
+.attachment.odd {background-color: #E7E2DF;}
+.attachment div.thumb {float: left; width: 200px; height: 150px; overflow: hidden;}
+.attachment .data {margin-left: 230px;}
+.attachment label {font-weight: bold;}
