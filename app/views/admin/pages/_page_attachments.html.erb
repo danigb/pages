@@ -1,5 +1,5 @@
 
-
+<h1>Archivos e imágenes asociadas a esta página</h1>
 
 <% if @page.state != 'locked' && !@attachment.nil? %>
 <div class="formBox">
@@ -23,7 +23,6 @@
 </div>
 <%= clear  %>
 
-<h1>Archivos e imágenes asociadas a esta página</h1>
 <%= render :partial => '/admin/attachments/list', :locals => {:attachments => @page.attachments} %>
 
 <% end %>

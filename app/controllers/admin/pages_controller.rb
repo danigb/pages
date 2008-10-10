@@ -35,6 +35,7 @@ class Admin::PagesController < Admin::AdminController
   def edit
     @page = Page.find(params[:id])
     @attachment = Attachment.new(:page_id => @page.id)
+    @meta = Meta.new(:page_id => @page.id)
   end
   
   def meta

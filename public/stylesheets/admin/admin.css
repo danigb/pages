@@ -35,7 +35,7 @@ h2 { font-size: 150%; margin: 1em 0 0.5em 1em; }
 #page div.info {margin: 0 1em 0 1em; width: 73em; color: #DBC381; text-align: right;}
 
 /*** TABLE ***/
-table {  margin: 1em; width: 73em;}
+table {  margin: 1em; width: 100%;}
 table thead { font-weight: normal; color: white; background-color: #8C817B; border-bottom: 1px solid #6A6460; }
 td { vertical-align: middle; padding: 5px 2px; }
 td.actions {}

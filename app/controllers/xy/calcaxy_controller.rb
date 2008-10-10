@@ -28,7 +28,7 @@ class Xy::CalcaxyController < ApplicationController
     end
   end
   
-  def files
+  def works
     @files = Page.children_of(3)
   end
 
