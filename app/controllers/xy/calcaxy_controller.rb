@@ -4,7 +4,7 @@
 class Xy::CalcaxyController < ApplicationController
   include Xy::Site
   layout 'xy/xy'
-  caches_page :home, :booc, :files
+  #caches_page :home, :booc, :files
 
   before_filter :load_roots
 	
