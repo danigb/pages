@@ -1,4 +1,11 @@
 <%= project_tabs  'Páginas' %>
+
+<div class="quick">
+<% for page in @quicks  -%>
+<%= link_to page.title, :action => 'index', :root => page.id %>
+<% end -%>
+</div>
+
 <h1><%= @page.title %></h1>
 
 <table>

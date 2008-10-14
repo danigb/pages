@@ -1,5 +1,9 @@
 <%= page_tabs(@page, 'Editar')  %>
 
+<div class="quick">
+  <%= link_to @page.parent.title, :action => 'index', :root => @page.parent_id %>
+</div>
+
 <h1>Página '<%= @page.title %>'</h1>
 
 <h2><%= link_to_function 'Contenido', '$("#content").toggle();' %></h2>

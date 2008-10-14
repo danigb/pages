@@ -1,7 +1,7 @@
 
-<tr>
+<tr class="<%= cycle('par', 'impar') -%>">
   <td>
-    <%= image_tag 'page_white.png', :style => "margin-left: #{depth}em;" %>
+    <%= link_to image_tag('page_white.png', :style => "margin-left: #{depth}em;"), :action => 'index', :root => root.id %>
     <%= link_to_edit_page root %> 
   </td>
   <td><%= fecha root.updated_at %></td>
@@ -17,7 +17,6 @@
     <% end %>
     <%= link_to icon(:page_add, 'añadir página hija'), new_admin_page_path(:parent_id => root) %>
     <%= link_to icon(:page_edit, 'editar'), edit_admin_page_path(root) %>
-    <%= link_to icon(:page_meta, 'metadatos'), {:controller => 'pages', :action => 'meta', :id => root} if admin? %>
     <%= link_to(icon(:delete, 'borrar'), [:admin, root], :confirm => 'seguro?', :method => :delete) if root.children.size == 0 %> 
   </td>
 </tr>

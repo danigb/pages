@@ -58,9 +58,9 @@ a:hover {text-decoration: underline;}
 
 /* FILES */
 .files {}
-.files .file {width: 195px; height: 120px; float: left; background-color: #EFF0F1; margin-right: 15px;
+.files .file {width: 195px; height: 130px; float: left; background-color: #EFF0F1; margin-right: 15px;
   margin-bottom: 15px;}
-.files .file .thumb {width: 193px; height: 150px; background-color: white; border: 1px solid #DDDE7A; overflow: hidden;}
+.files .file .thumb {width: 193px; height: 117px; background-color: white; border: 1px solid #DDDE7A; overflow: hidden;}
 .files .file .info {width: 23px; height: 14px; float: left; font-size: 8px; background-color: white;
   border-left: 1px solid #DDDE7A; border-bottom: 1px solid #DDDE7A; text-align: center;}
 .files .file .info.last {border-right: 1px solid #DDDE7A;}

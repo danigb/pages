@@ -2,8 +2,11 @@ class Admin::PagesController < Admin::AdminController
   layout 'admin'
   
   # GET /pages GET /pages.xml
-  def index 
-    @page = Page.find(1)
+  def index
+    @quicks = Page.find_all_by_parent_id(1)
+    @quicks.insert 0, Page.find(1)
+    id = params[:root].nil? || params[:root].to_i == 0 ? 1 : params[:root].to_i
+    @page = Page.find(id)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pages }
