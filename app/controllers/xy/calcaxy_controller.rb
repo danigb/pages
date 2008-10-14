@@ -17,7 +17,7 @@ class Xy::CalcaxyController < ApplicationController
   end
 
   def booc
-    @boocs = Page.children_of(2)
+    @boocs = Page.find_all_by_mime('booc')
   end
 
   def booc_response

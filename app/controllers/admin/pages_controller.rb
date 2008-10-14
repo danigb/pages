@@ -101,5 +101,9 @@ class Admin::PagesController < Admin::AdminController
       format.xml  { head :ok }
     end
   end
+
+  def info
+    
+  end
   
 end
