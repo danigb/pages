@@ -29,7 +29,7 @@ class Xy::CalcaxyController < ApplicationController
   end
   
   def works
-    @files = Page.children_of(3)
+    @files = Page.find_all_by_mime('file')
   end
 
   def cell

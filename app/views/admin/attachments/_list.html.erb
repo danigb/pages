@@ -3,13 +3,15 @@
   <% for attachment in attachments %>
     <div class="attachment <%=cycle('even', 'odd') -%>">
       <div class="thumb">
+        <a href="<%=  attachment.public_filename -%>">
         <% if attachment.image? %>
-          <%= image_tag attachment.public_filename(:thumb), :alt => attachment.filename + '(thumbnail)' %>
+          <%= image_tag(attachment.public_filename(:thumb), :alt => attachment.filename + '(thumbnail)') %>
         <% elsif attachment.pdf? %>
           <%= image_tag('admin/pdf_icon.gif') %>
         <% else %>
           <%= image_tag('admin/file_icon.gif') %>
         <% end %>
+      </a>
       </div>
       <div class="data">
         <div><label>Nombre: </label><%= attachment.filename %></div>

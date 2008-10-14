@@ -37,8 +37,7 @@ module AdminHelper
   def page_tabs(page, current)
     tabs do
       tab('Páginas', admin_pages_path, current) <<
-        tab('Contenido', edit_admin_page_path(page), current) <<
-        (session[:admin] ? tab('Metadatos', {:action => 'meta', :id => page}, current) : '') 
+        tab('Editar', edit_admin_page_path(page), current)
     end
   end
   

@@ -71,7 +71,8 @@ a:hover {text-decoration: underline;}
 .boocs .booc h1 {display: block; font-size: 150%;}
 .boocs .booc .image {width: 825px; height: 30px; background-color: #E3E4E5; margin-top: 10px;}
 .boocs .booc .date {width: 825px; color: red; margin-top: 5px; margin-bottom: 5px;}
-.boocs .booc .body {width: 405px; float: left; line-height: 1.5em;}
+.boocs .booc .body {width: 405px; float: left; line-height: 1.5em; overflow: hidden;}
+.boocs .booc .body p {margin-top: 0.5em; margin-bottom: 1em;}
 .boocs .booc .response {width: 405px; margin-left: 15px; float: left; font-family: monospace;
   font-size: 120%;}
 .boocs .booc input[type=text] {background-color: #E3E4E5; border: 1px dotted black;}
