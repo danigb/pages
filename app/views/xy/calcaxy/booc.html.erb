@@ -4,7 +4,7 @@
     <div class="booc">
       <h1><%= booc.title %></h1>
       <div class="date"><%= booc.created_at %></div>
-      <div class="body"><%= booc.content %></div>
+      <div class="body"><%= textilize booc.content %></div>
       <div class="response">
         <h1>Responses</h1>
         <% form_for :response, :url => {:action => 'booc_response', :id => booc.id} do |f| %>
