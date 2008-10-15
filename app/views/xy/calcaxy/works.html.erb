@@ -1,4 +1,12 @@
 
+<% content_for :header do %>
+  <script>
+      show_image = function(file) {
+          alert(file);
+      }
+  </script>
+<% end %>
+
 <div id="files_browser">
 </div>
 
@@ -6,8 +14,12 @@
   <% for card in @files -%>
     <div class="file">
       <div class="thumb"><%= image_of card, :thumb %> </div>
-      <div class="info">pdf</div>
-      <div class="info last">www</div>
+      <%  if (card.attachment(:link)) %>
+        <div class="info"><%= image_tag 'xy/pdf.gif' %></div>
+        <div class="info last"><%= image_tag 'xy/www.gif' %></div>
+      <% elsif card.attachment(:pdf) %>
+        <div class="info last"><%= link_to image_tag('xy/pdf.gif'), card.public_file(:pdf) %></div>
+      <% end %>
     </div>
   <% end -%>
 </div>

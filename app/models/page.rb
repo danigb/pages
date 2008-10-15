@@ -37,6 +37,10 @@ class Page < ActiveRecord::Base
     Attachment.find_by_page_id_and_label self.id, name.to_s
   end
 
+  def public_file(name)
+    attachment(name).public_filename
+  end
+
   def locked?
     self.state == 'locked'
   end
