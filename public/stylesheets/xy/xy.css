@@ -64,6 +64,8 @@ a:hover {text-decoration: underline;}
 .files .file .info {width: 23px; height: 14px; float: left; font-size: 8px; background-color: white;
   border-left: 1px solid #DDDE7A; border-bottom: 1px solid #DDDE7A; text-align: center;}
 .files .file .info.last {border-right: 1px solid #DDDE7A;}
+#file_preview {position: absolute; left: 10px; top: 10px; width: 1000px; height: 684px; margin: 1em 0;
+  border: 1px solid white; display: none; z-index: 1000; overflow: hidden; background-color: white;}
 
 /* BOOCS */
 .boocs {}
