@@ -1,11 +1,48 @@
 
 <% content_for :header do %>
   <script>
+      $(document).ready(function() {
+          $.fn.center = function(loaded) {
+              var obj = this;
+              if(!loaded) {
+                  obj.css('top', $(window).height()/2-
+                      this.height()/2);
+                  obj.css('left', $(window).width()/2-
+                      this.width()/2);
+                  $(window).resize(function()
+                  { obj.centerScreen(!loaded); });
+              } else {
+                  obj.stop();
+                  obj.animate({ top: $(window).height()/2-
+                          this.height()/2, left: $
+                      (window).width()/2-this.width()/2}, 200, 'linear');
+              }
+          }
+
+          $.fn.image = function(src, f) {
+              return this.each(function() {
+                  var i = new Image();
+                  i.src = src;
+                  i.onload = f;
+                  this.appendChild(i);
+              });
+          }
+      });
+
+
       show_image = function(file) {
-          alert(file);
+          $('#container').fadeOut();
+          $('#file_preview').fadeIn().center();
+          $('#file_preview').image(file, function() {
+              $(this).click(function () {
+                  $('#container').show();
+                  $('#file_preview').fadeOut();
+              });
+          });
       }
   </script>
 <% end %>
+
 
 <div id="files_browser">
 </div>
@@ -13,7 +50,7 @@
 <div class="files main">
   <% for card in @files -%>
     <div class="file">
-      <div class="thumb"><%= image_of card, :thumb %> </div>
+      <div class="thumb"><%= thumb_of card, :thumb %> </div>
       <%  if (card.attachment(:link)) %>
         <div class="info"><%= image_tag 'xy/pdf.gif' %></div>
         <div class="info last"><%= image_tag 'xy/www.gif' %></div>
