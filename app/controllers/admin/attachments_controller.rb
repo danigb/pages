@@ -38,7 +38,9 @@ class Admin::AttachmentsController < Admin::AdminController
 
   # POST /attachments POST /attachments.xml
   def create
+    # FIXME: attachment_fu
     @attachment = Attachment.new(params[:attachment])
+    @attachment.page_id = params[:attachment][:page_id]
 
     respond_to do |format|
       if @attachment.save

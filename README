@@ -24,7 +24,10 @@ rake annotate_models
 ./script/plugin install http://repo.pragprog.com/svn/Public/plugins/annotate_models/
 ./script/plugin install svn://errtheblog.com/svn/plugins/auto_migrations
 ./script/plugin install http://svn.techno-weenie.net/projects/plugins/acts_as_versioned/
+@deprecated
 ./script/plugin install http://svn.techno-weenie.net/projects/plugins/attachment_fu/ 
+./script/plugin install git://github.com/technoweenie/attachment_fu.git
+
 
 EXPORT AND IMPORT DB
 http://www.railslodge.com/plugins/830-yaml-db
