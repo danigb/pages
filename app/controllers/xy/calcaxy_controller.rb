@@ -24,7 +24,7 @@ class Xy::CalcaxyController < ApplicationController
     if (@year < MIN_YEAR || @year > MAX_YEAR)
       redirect_to :action => 'booc', :year => '2008'
     else
-      @years = MAX_YEAR.downto MIN_YEAR
+      @years = (MIN_YEAR..MAX_YEAR).to_a.reverse!
       @parent = Page.find_by_title(@year, :conditions => ['parent_id = ?', 2])
       @boocs = @parent.children
       #@boocs = Page.find_all_by_mime('booc')

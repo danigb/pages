@@ -1,8 +1,10 @@
 <%= page_tabs(@page, 'Editar')  %>
 
+<% if @page.parent -%>
 <div class="quick">
   <%= link_to @page.parent.title, :action => 'index', :root => @page.parent_id %>
 </div>
+<% end -%>
 
 <h1>Página '<%= @page.title %>'</h1>
 
