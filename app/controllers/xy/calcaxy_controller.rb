@@ -6,6 +6,9 @@ class Xy::CalcaxyController < ApplicationController
   layout 'xy/xy'
   #caches_page :home, :booc, :files
 
+  MIN_YEAR = 1990
+  MAX_YEAR = 2008
+
   before_filter :load_roots
 	
   def index
@@ -17,7 +20,15 @@ class Xy::CalcaxyController < ApplicationController
   end
 
   def booc
-    @boocs = Page.find_all_by_mime('booc')
+    @year = params[:year].to_i
+    if (@year < MIN_YEAR || @year > MAX_YEAR)
+      redirect_to :action => 'booc', :year => '2008'
+    else
+      @years = MAX_YEAR.downto MIN_YEAR
+      @parent = Page.find_by_title(@year, :conditions => ['parent_id = ?', 2])
+      @boocs = @parent.children
+      #@boocs = Page.find_all_by_mime('booc')
+    end
   end
 
   def booc_response

@@ -1,9 +1,17 @@
 
+<h1>&nbsp;</h1>
+
+<ul class="years">
+  <% for year in @years -%>
+    <li <%= 'class="active" ' if year == @year %> ><%= link_to_if year != @year, year, :year => year %></li>
+  <% end -%>
+</ul>
+
 <div class="boocs main">
   <% for booc in @boocs %>
     <div class="booc">
       <h1><%= booc.title %></h1>
-      <div class="date"><%= booc.created_at %></div>
+      <div class="date"><%= booc.meta(:year) %></div>
       <div class="body"><%= textilize booc.content %></div>
       <div class="response">
         <h1>Responses</h1>
