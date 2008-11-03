@@ -24,8 +24,8 @@
       </div>
       <%= clear %>
       <div class="image">
-        <% if booc.attachment(:booc) %>
-          <%= image_tag booc.attachment(:booc).public_filename %>
+        <% if booc.attachment(:thumb) %>
+          <%= image_tag booc.attachment(:thumb).public_filename %>
         <% end %>
       </div>
     </div>
