@@ -3,7 +3,8 @@ class Admin::AttachmentsController < Admin::AdminController
 
   # GET /attachments GET /attachments.xml
   def index
-    @attachments = Attachment.find(:all, :conditions => ['parent_id IS NULL'])
+    @attachments = Attachment.paginate :page => params[:page], :per_page => 10,
+      :conditions => ['parent_id IS NULL'], :order => 'updated_at DESC'
 
     respond_to do |format|
       format.html # index.html.erb

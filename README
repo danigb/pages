@@ -27,6 +27,7 @@ rake annotate_models
 @deprecated
 ./script/plugin install http://svn.techno-weenie.net/projects/plugins/attachment_fu/ 
 ./script/plugin install git://github.com/technoweenie/attachment_fu.git
+./script/plugin install git://github.com/mislav/will_paginate.git
 
 
 EXPORT AND IMPORT DB

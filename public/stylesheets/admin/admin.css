@@ -51,6 +51,11 @@ div.actions a { font-size: 95%; line-height: -1em; display: block; border: 1px s
 div.actions a img { float: left; margin: 0px 0 0 -2px;}
 div.actions a:hover { color: black;  background-color: #F4F3F2;}
 
+/** WILL_PAGINATE **/
+.pagination {margin-left: 1em; color: black;}
+.pagination a {border: 1px solid #E7E2DF; padding: 0 3px; color: #4F4F4F;  }
+.pagination .current {border: 1px solid black; padding: 0 3px; color: black; background-color: white;}
+
 /**** TABS ****/
 div.tabs * { display: block; float: left; padding: 0.5em 3em; margin-right: 0.2em; }
 div.tabs a { background-color: #E7E2DF; color: black; }

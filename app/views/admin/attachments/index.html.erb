@@ -6,6 +6,8 @@
         <%= action 'picture_add.png', 'añadir imágen o fichero', new_admin_attachment_path %>
   <% end %>
 
+  <%= will_paginate @attachments, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+
 <%= render :partial => 'list', :locals => {:attachments => @attachments} %>
 <br />
 

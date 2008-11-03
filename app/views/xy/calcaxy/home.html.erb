@@ -1,6 +1,6 @@
 
 <div class="home_image">
-  <%= image_tag @home.public_file(:home) %>
+  <%= image_tag @home.public_file(:home) if @home.attachment(:home) %>
 </div>
 
 <div style="display: none;">
