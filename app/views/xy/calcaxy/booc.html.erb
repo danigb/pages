@@ -55,7 +55,6 @@
   $("form").submit(function() {
     var completed = true;
     $(this).find(".required").each(function() {
-      console.log("enga: " + this.value);
       if ($.trim(this.value) == "") {
         completed = false;
         $(this).addClass("error");
