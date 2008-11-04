@@ -28,9 +28,6 @@ Rails::Initializer.run do |config|
     :secret      => 'ff40357824cc8720077127d8b51f68de0cb7b23fbee8b71095fae30a0a3eaaad9b0ca24380ba58fa4c5b2b70c6d7e1b4e40d23a02c7d3eb59e3106dc61ddabbe'
   }
 
-  config.gem 'mislav-will_paginate', :version => '~> 2.2.3', :lib => 'will_paginate',
-      :source => 'http://gems.github.com'
-
 
   # config.active_record.default_timezone = :utc
 
