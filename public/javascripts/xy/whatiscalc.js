@@ -7,8 +7,6 @@
         });
     })
 
-    isValid = function(text) {
-        return false;
-    };
+
 })(jQuery);
 

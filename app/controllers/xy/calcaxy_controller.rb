@@ -14,7 +14,7 @@ class Xy::CalcaxyController < ApplicationController
   PAGE_TXT = 209
 
 
-  before_filter :load_roots
+  before_filter :load_calc
 	
   def index
     redirect_to :action => 'home'
@@ -22,6 +22,11 @@ class Xy::CalcaxyController < ApplicationController
 
   def home
     @home = Page.find(1)
+    if (params[:cword])
+      @calc = "c#{params[:cword]} a#{params[:aword]} l#{params[:lword]} c#{params[:ccword]}"
+      @home.metas.build(:name => 'calc', :value => @calc).save
+      redirect_to :action => 'home'
+    end
   end
 
   def booc
@@ -82,7 +87,7 @@ class Xy::CalcaxyController < ApplicationController
     end
   end
 
-  def load_roots
-    # @roots = Page.find_all_by_parent_id(1)
+  def load_calc
+    @calc = "casqueiro atlántico laboratorio cultural"
   end
 end

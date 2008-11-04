@@ -14,7 +14,7 @@
       <div id="header">
         <%= link_to ' ', {:action => 'index'}, :id => 'logo'  %>
         <a id="mail" href="mailto: calcies@calcaxy.com"></a>
-        <div id="calc_name">c o l e c t i v o &nbsp; a t í p i c o &nbsp; l a b o r a t o r i o &nbsp; c u l t u r a l </div>
+        <div id="calc_name"><%= @calc %> </div>
       </div>
       <div id="tabs">
         <%= link_to 'H O M E', {:action => 'home'}, :class => (params[:action] == 'home' ? 'active' : '') %>
@@ -29,7 +29,7 @@
 -->
 <%= link_to 'B I O B I B L I O', {:action => 'biobiblio'}, :class => (params[:action] == 'biobiblio' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
-<%= link_to 'T X T \' s', {:action => 'txts'}, :class => (params[:action] == 'txts' ? 'active' : '') %>
+        <%= link_to 'T X T \' s', {:action => 'txts'}, :class => (params[:action] == 'txts' ? 'active' : '') %>
         <div class="space">&nbsp;</div>
         <div class="tab">&nbsp;</div>
         <div class="space">&nbsp;</div>

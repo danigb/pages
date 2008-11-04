@@ -12,7 +12,7 @@ body{font:13px arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
 table {font-size:inherit;font:100%;}
 select, input, textarea {font:99% arial,helvetica,clean,sans-serif;}
 pre, code {font:115% monospace;*font-size:100%;} 
-body * {line-height:1.22em;}
+body  {line-height:1.22em; letter-spacing: 0.2em;}
 
 .no_spam {display:none;}
 .spacer {clear: both;font-size: 0.1%;height: 0;	width: 0;}
@@ -30,7 +30,8 @@ a:hover {text-decoration: underline;}
 #logo { display: block; height: 6em; width: 12em; margin: 1em 0 2em 0; float: left;
   background: url('/images/xy/calclogo.gif') no-repeat center left;}
 #calc_name { position: relative; height: 1em; margin: 42px 6em 2em 127px; padding: 0.2em 1em 0.4em 1em;
-  background-color: #CBCD33; color: white; border: 1px dotted white; width: 790px;}
+  background-color: #CBCD33; color: white; border: 1px dotted white; width: 790px;
+    letter-spacing: 1em;}
 #mail { height: 82px; width: 30px; margin: 1em 0 2em 0; float: right;
   background: url('/images/xy/mailicon.gif') no-repeat center right;}
 #page {border-left: 1px solid black; border-bottom: 1px solid black; border-right: 1px solid black;
@@ -49,7 +50,7 @@ a:hover {text-decoration: underline;}
 .main p {margin-top: 0.5em; margin-bottom: 1em;}
 .selector {display: block; float: left; margin-left: -1px; padding: 0;
       background-color: #EFF0F1;border-bottom: 1px solid black;}
-.selector li {width: 125px; list-style: none; text-align: center;
+.selector li {width: 125px; list-style: none; text-align: center; letter-spacing: 0.1em;
       border-top: 1px solid black; border-right: 1px solid black; border-left: 1px solid black;}
 .selector li.active {font-weight: bold; padding: 3px 0; background-color: #E2E338; border-left: 1px solid #E2E338;}
   .selector li a {color: black; display: block; text-decoration: none; padding: 3px 0;}
@@ -68,6 +69,8 @@ a:hover {text-decoration: underline;}
 #updates h1 {color: #8D8E22; margin: 1em 0;}
 #updates .column {width: 10em; float: left;}
 .home_image {padding: 50px 5px; text-align: center;}
+#calc_form li {letter-spacing: 0.8em; margin: 0.2em; list-style: none;}
+#calc_form li strong {font-weight: bold;}
 
 /* FILES */
 .files {}
