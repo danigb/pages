@@ -2,7 +2,7 @@
 <h1>&nbsp;</h1>
 
 <ul class="selector">
-  <% for text in @texts -%>
+  <% for text in @menu -%>
     <li <%= 'class="active" ' if text.id == @page.id %> ><%= link_to_if text.id != @page.id, text.title, :id => text.id %></li>
   <% end -%>
 </ul>

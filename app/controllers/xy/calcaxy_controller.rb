@@ -53,23 +53,30 @@ class Xy::CalcaxyController < ApplicationController
   end
   
   def biobiblio
-    @page = Page.find(PAGE_BIO)
-    render :action => 'biobiblio'
+    menu(PAGE_BIO)
   end
 
   def txts
+    menu(PAGE_TXT)
+  end
+
+  private
+  def menu(root_id)
     id = params[:id]
-    @texts = Page.find(PAGE_TXT).children
+    @menu = Page.find(root_id).children
     if (id == nil)
-      redirect_to :action => 'txts', :id => @texts.first.id
+      redirect_to  :id => @menu.first.id
     else
       @page = Page.find(id)
-      redirect_to :action => 'txts', :id => @texts.first.id if @page.parent_id != PAGE_TXT
+      if @page.parent_id != root_id
+        redirect_to :id => @menu.first.id
+      else
+        render :action => 'txts'
+      end
     end
   end
-	
-  private
+
   def load_roots
-   # @roots = Page.find_all_by_parent_id(1)
+    # @roots = Page.find_all_by_parent_id(1)
   end
 end
