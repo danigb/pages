@@ -32,15 +32,21 @@ class Xy::CalcaxyController < ApplicationController
       @years = (MIN_YEAR..MAX_YEAR).to_a.reverse!
       @parent = Page.find_by_title(@year, :conditions => ['parent_id = ?', PAGE_BOOC])
       @boocs = @parent.children
+      @comment = Page.new
       #@boocs = Page.find_all_by_mime('booc')
     end
   end
 
   def booc_response
-    if params[:response][:mime].empty?
-      redirect_to :action => 'booc'
+    if params[:name].empty?
+      page = Page.find(params[:id])
+      comment = Page.new(params[:response])
+      comment.mime = 'response'
+      comment.parent_id = page.id
+      comment.save
+      redirect_to :back
     else
-      render :text => 'please, do not spam us!'
+      render :text => "please, do not spam us!, #{params[:name]}"
     end
   end
   

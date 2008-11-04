@@ -6,7 +6,7 @@
     <% if year == @year -%>
       <li class="active"><%= year %>
         <ul><% for booc in @boocs -%>
-          <li><%= link_to booc.meta(:year), "#booc#{booc.id}" %></li>
+            <li><%= link_to booc.meta(:year), "#booc#{booc.id}" %></li>
         <% end -%></ul>
       </li>
     <% else -%>
@@ -21,14 +21,20 @@
       <h1><a name="booc<%= booc.id %>"><%= booc.title %></a></h1>
       <div class="date"><%= booc.meta(:year) %></div>
       <div class="body"><%= redcloth booc.content %></div>
-      <div class="response">
+      <div class="responses">
         <h1>Responses</h1>
         <% form_for :response, :url => {:action => 'booc_response', :id => booc.id} do |f| %>
-          <div class="no_spam"><%= f.text_area :mime %></div>
-          <label>name:</label><%= f.text_field :title %><br/>
-          <%= f.text_area :content %><br/>
+          <div class="no_spam">required:<input type="text" name="name" value="" /></div>
+          <label>name:</label><input type="text" name="response[title]" class="required" /><br/>
+          <textarea cols="40" class="required" name="response[content]" rows="20"></textarea>
+          <br/>
           <%= f.submit 'respond' %>
         <% end %>
+        <% for comment in booc.children -%>
+          <div class="response">
+            <label><%= h comment.title %></label> said: <%= h comment.content %>
+          </div>
+        <% end -%>
       </div>
       <%= clear %>
       <div class="image">
@@ -43,3 +49,21 @@
 
 <%= clear %>
 <br/><br/><br/>
+
+<script type="text/javascript">
+  String.prototype.trim = function() { return this.replace(/^s+|s+$/g, ""); };
+  $("form").submit(function() {
+    var completed = true;
+    $(this).find(".required").each(function() {
+      console.log("enga: " + this.value);
+      if ($.trim(this.value) == "") {
+        completed = false;
+        $(this).addClass("error");
+      } else {
+        $(this).removeClass("error");
+        this.value = $.trim(this.value);
+      }
+    });
+    return completed;
+  });
+</script>

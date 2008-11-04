@@ -89,9 +89,11 @@ a:hover {text-decoration: underline;}
 .boocs .booc .date {width: 825px; color: red; margin-top: 5px; margin-bottom: 5px;}
 .boocs .booc .body {width: 405px; float: left; line-height: 1.5em; overflow: hidden;}
 .boocs .booc .body p {margin-top: 0.5em; margin-bottom: 1em;}
-.boocs .booc .response {width: 405px; margin-left: 15px; float: left; font-family: monospace;
+.boocs .booc .responses {width: 405px; margin-left: 15px; float: left; font-family: monospace;
   font-size: 120%;}
+.boocs .booc .responses .error {border-color: #c00;}
 .boocs .booc input[type=text] {background-color: #E3E4E5; border: 1px dotted black;}
-.boocs .booc .response textarea {width: 403px; height: 100px; margin: 5px 0;
+.boocs .booc .responses textarea {width: 403px; height: 100px; margin: 5px 0;
   background-color: #E3E4E5; border: 1px dotted black;}
-
+.boocs .booc .responses .response {margin-top: 10px; border-bottom: 1px solid black;}
+.boocs .booc .responses .response label {font-weight: bolder;}
