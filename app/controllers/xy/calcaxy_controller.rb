@@ -8,6 +8,11 @@ class Xy::CalcaxyController < ApplicationController
 
   MIN_YEAR = 1990
   MAX_YEAR = 2008
+  PAGE_HOME = 1
+  PAGE_BOOC = 2
+  PAGE_BIO = 216
+  PAGE_TXT = 209
+
 
   before_filter :load_roots
 	
@@ -25,7 +30,7 @@ class Xy::CalcaxyController < ApplicationController
       redirect_to :action => 'booc', :year => '2008'
     else
       @years = (MIN_YEAR..MAX_YEAR).to_a.reverse!
-      @parent = Page.find_by_title(@year, :conditions => ['parent_id = ?', 2])
+      @parent = Page.find_by_title(@year, :conditions => ['parent_id = ?', PAGE_BOOC])
       @boocs = @parent.children
       #@boocs = Page.find_all_by_mime('booc')
     end
@@ -48,15 +53,23 @@ class Xy::CalcaxyController < ApplicationController
   end
   
   def biobiblio
-    render :action => 'home'
+    @page = Page.find(PAGE_BIO)
+    render :action => 'biobiblio'
   end
 
   def txts
-    render :action => 'home'
+    id = params[:id]
+    @texts = Page.find(PAGE_TXT).children
+    if (id == nil)
+      redirect_to :action => 'txts', :id => @texts.first.id
+    else
+      @page = Page.find(id)
+      redirect_to :action => 'txts', :id => @texts.first.id if @page.parent_id != PAGE_TXT
+    end
   end
 	
   private
   def load_roots
-    @roots = Page.find_all_by_parent_id(1)
+   # @roots = Page.find_all_by_parent_id(1)
   end
 end

@@ -1,7 +1,7 @@
 
 <h1>&nbsp;</h1>
 
-<ul class="years">
+<ul class="selector">
   <% for year in @years -%>
     <li <%= 'class="active" ' if year == @year %> ><%= link_to_if year != @year, year, :year => year %></li>
   <% end -%>
