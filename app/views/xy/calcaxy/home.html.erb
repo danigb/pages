@@ -1,16 +1,21 @@
 
+
 <div class="home_image">
   <%= image_tag @home.public_file(:home) if @home.attachment(:home) %>
 </div>
 
-<div style="display: none;">
+<div>
   <div id="calc_form">
-    <div class="label"> c a l c = </div>
     <% form_tag :action => 'index' do %>
-      <%= text_field_tag :calc %>
+      <div id="define-calc">
+        <%= submit_tag 'c a l c = ' %>
+      c<%= text_field_tag :cword %> a<%= text_field_tag :aword %> 
+      l<%= text_field_tag :lword %> c<%= text_field_tag :ccword %>
+      
+      </div>
     <% end %>
   </div>
-  <div id="updates">
+  <div id="updates" style="display:none;">
     <h1>latest updates / uploads / boocings &gt;</h1>
     <div class="column">
       <h1>booc</h1>
@@ -20,3 +25,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag 'xy/whatiscalc.js'  %>

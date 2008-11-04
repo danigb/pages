@@ -3,14 +3,22 @@
 
 <ul class="selector">
   <% for year in @years -%>
-    <li <%= 'class="active" ' if year == @year %> ><%= link_to_if year != @year, year, :year => year %></li>
+    <% if year == @year -%>
+      <li class="active"><%= year %>
+        <ul><% for booc in @boocs -%>
+          <li><%= link_to booc.meta(:year), "#booc#{booc.id}" %></li>
+        <% end -%></ul>
+      </li>
+    <% else -%>
+      <li><%= link_to year, :year=> year %></li>
+    <% end -%>
   <% end -%>
 </ul>
 
 <div class="boocs main">
   <% for booc in @boocs %>
     <div class="booc">
-      <h1><%= booc.title %></h1>
+      <h1><a name="booc<%= booc.id %>"><%= booc.title %></a></h1>
       <div class="date"><%= booc.meta(:year) %></div>
       <div class="body"><%= textilize booc.content %></div>
       <div class="response">
@@ -18,8 +26,8 @@
         <% form_for :response, :url => {:action => 'booc_response', :id => booc.id} do |f| %>
           <div class="no_spam"><%= f.text_area :mime %></div>
           <label>name:</label><%= f.text_field :title %><br/>
-            <%= f.text_area :content %><br/>
-            <%= f.submit 'respond' %>
+          <%= f.text_area :content %><br/>
+          <%= f.submit 'respond' %>
         <% end %>
       </div>
       <%= clear %>
