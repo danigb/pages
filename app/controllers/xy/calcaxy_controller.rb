@@ -45,7 +45,7 @@ class Xy::CalcaxyController < ApplicationController
   end
   
   def works
-    @files = Page.find_all_by_mime('file')
+    @files = Page.find_all_by_mime('file', :order => 'position')
   end
 
   def cell
