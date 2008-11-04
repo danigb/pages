@@ -20,7 +20,7 @@
     <div class="booc">
       <h1><a name="booc<%= booc.id %>"><%= booc.title %></a></h1>
       <div class="date"><%= booc.meta(:year) %></div>
-      <div class="body"><%= textilize booc.content %></div>
+      <div class="body"><%= redcloth booc.content %></div>
       <div class="response">
         <h1>Responses</h1>
         <% form_for :response, :url => {:action => 'booc_response', :id => booc.id} do |f| %>

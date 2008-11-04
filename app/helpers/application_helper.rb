@@ -1,10 +1,14 @@
+#require 'redcloth'
+
 # Methods added to this helper will be available to all templates in the
 # application.
 module ApplicationHelper 
   include AdminHelper
   include ActionView::Helpers::TagHelper
 
-
+def redcloth(text)
+  RedCloth.new(text).to_html
+end
   
   def render_page(page)
     r = $PAGE_RENDERERS[page.mime]
