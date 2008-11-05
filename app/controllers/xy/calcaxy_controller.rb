@@ -21,12 +21,12 @@ class Xy::CalcaxyController < ApplicationController
   end
 
   def home
-    @home = Page.find(1)
     if (params[:cword])
       @calc = "c#{params[:cword]} a#{params[:aword]} l#{params[:lword]} c#{params[:ccword]}"
       @home.metas.build(:name => 'calc', :value => @calc).save
       redirect_to :action => 'home'
     end
+    @home = Page.find(1)
   end
 
   def booc
@@ -35,6 +35,7 @@ class Xy::CalcaxyController < ApplicationController
       redirect_to :action => 'booc', :year => '2008'
     else
       @years = (MIN_YEAR..MAX_YEAR).to_a.reverse!
+      @years.delete 2006
       @parent = Page.find_by_title(@year, :conditions => ['parent_id = ?', PAGE_BOOC])
       @boocs = @parent.children
       @comment = Page.new
@@ -88,6 +89,6 @@ class Xy::CalcaxyController < ApplicationController
   end
 
   def load_calc
-    @calc = "casqueiro atlántico laboratorio cultural"
+    @calc =Meta.find(:last, :conditions => ["page_id = ?", 1]).value
   end
 end

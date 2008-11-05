@@ -12,7 +12,7 @@ body{font:13px arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
 table {font-size:inherit;font:100%;}
 select, input, textarea {font:99% arial,helvetica,clean,sans-serif;}
 pre, code {font:115% monospace;*font-size:100%;} 
-body  {line-height:1.22em; letter-spacing: 0.2em;}
+body  {line-height:1.22em; letter-spacing: 0.15em;}
 
 .no_spam {display:none;}
 .spacer {clear: both;font-size: 0.1%;height: 0;	width: 0;}
@@ -87,16 +87,29 @@ a:hover {text-decoration: underline;}
 /* BOOCS */
 .boocs {}
 .boocs .booc {margin-bottom: 15px;}
-.boocs .booc h1 {display: block; font-size: 150%;}
+.boocs .booc h1 {display: block; font-size: 130%; letter-spacing: 0em; color: #9C9E09;}
 .boocs .booc .image {width: 825px; height: 30px; background-color: #E3E4E5; margin-top: 10px;}
-.boocs .booc .date {width: 825px; color: red; margin-top: 5px; margin-bottom: 5px;}
+.boocs .booc .date {width: 825px; color: #900; margin-top: 5px; margin-bottom: 5px;}
 .boocs .booc .body {width: 405px; float: left; line-height: 1.5em; overflow: hidden;}
 .boocs .booc .body p {margin-top: 0.5em; margin-bottom: 1em;}
 .boocs .booc .responses {width: 405px; margin-left: 15px; float: left; font-family: monospace;
   font-size: 120%;}
+
 .boocs .booc .responses .error {border-color: #c00;}
 .boocs .booc input[type=text] {background-color: #E3E4E5; border: 1px dotted black;}
 .boocs .booc .responses textarea {width: 403px; height: 100px; margin: 5px 0;
   background-color: #E3E4E5; border: 1px dotted black;}
 .boocs .booc .responses .response {margin-top: 10px; border-bottom: 1px solid black;}
 .boocs .booc .responses .response label {font-weight: bolder;}
+.boocs .booc .responses h6 {color: black; font-size: 130%;}
+.boocs .booc strong {font-weight: bold;}
+/* TEXTILE */
+.textile strong {
+       
+        font-weight: bold;
+    }
+.textile { padding: 40px 0 40px 125px;  width: 465px; }
+.textile h1 {color: #9C9E09;}
+.textile h2 {color: #9C9E09; font-weight: bold; font-size: 130%; margin: 10px 0 30px 0;}
+.textile h3 {color: black; font-size: 120%; font-weight: bold; margin-top: 10px;}
+.textile a {color:  #9C9E09;}
