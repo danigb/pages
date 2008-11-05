@@ -1,24 +1,26 @@
 
 <h1>&nbsp;</h1>
 
-<ul class="selector">
-  <% for year in @years -%>
-    <% if year == @year -%>
-      <li class="active"><%= year %>
-        <ul><% for booc in @boocs -%>
-            <li><%= link_to booc.meta(:year), "#booc#{booc.id}" %></li>
-        <% end -%></ul>
-      </li>
-    <% else -%>
-      <li><%= link_to year, :year=> year %></li>
+<a name="selector">
+  <ul class="selector">
+    <% for year in @years -%>
+      <% if year == @year -%>
+        <li class="active"><%= year %>
+          <ul><% for booc in @boocs -%>
+              <li><%= link_to booc.meta(:year), "#booc#{booc.id}" %></li>
+          <% end -%></ul>
+        </li>
+      <% else -%>
+        <li><%= link_to year, :year=> year %></li>
+      <% end -%>
     <% end -%>
-  <% end -%>
-</ul>
+  </ul>
+</a>
 
 <div class="boocs main">
   <% for booc in @boocs %>
     <div class="booc">
-      <h1><a name="booc<%= booc.id %>"><%= booc.title %></a></h1>
+      <h1><a name="booc<%= booc.id %>" href="#selector"><%= booc.title %></a></h1>
       <div class="date"><%= booc.meta(:year) %></div>
       <div class="body"><%= redcloth booc.content %></div>
       <div class="responses">
@@ -37,11 +39,13 @@
         <% end -%>
       </div>
       <%= clear %>
+      <a href="#selector">back to top</a>
       <div class="image">
         <% if booc.attachment(:thumb) %>
           <%= image_tag booc.attachment(:thumb).public_filename %>
         <% end %>
       </div>
+    
     </div>
     <br/>
   <% end  %>
