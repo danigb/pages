@@ -6,7 +6,9 @@
   </thead>
   <tbody>
     <% for meta in @page.metas %>
-      <tr><td><%= meta.name %></td><td><%= meta.value %></td>
+      <tr>
+        <td><%= meta.name %></td>
+      <td><%= meta.value %> </td>
         <td><%= link_to(image_tag('page_white_delete.png'), [:admin, @page, meta], :confirm => 'seguro?',
             :method => :delete, :class => 'action')  %>
         </td>
