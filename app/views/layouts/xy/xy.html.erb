@@ -11,11 +11,12 @@
   <body>
     <div id="file_preview">&nbsp;</div>
     <div id="container">
-      <div id="header">
-        <%= link_to ' ', {:action => 'index'}, :id => 'logo'  %>
-        <a id="mail" href="mailto: calcies@calcaxy.com"></a>
-        <div id="calc_name"><%= @calc %> </div>
-      </div>
+      <table id="header"><tr>
+          <td><%= link_to ' ', {:action => 'index'}, :id => 'logo'  %></td>
+          <td><div id="calc_name"><%= @calc %></div></td>
+          <td><a id="mail" href="mailto: calcies@calcaxy.com"></a></td>
+        </tr>
+      </table>
       <div id="tabs">
         <%= link_to 'H O M E', {:action => 'home'}, :class => (params[:action] == 'home' ? 'active' : '') %>
         <div class="space">&nbsp;</div>

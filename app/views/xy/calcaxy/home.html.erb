@@ -15,8 +15,8 @@
       </div>
     <% end %>
     <ul>
-    <% for @meta in @home.metas.reverse %>
-      <li><%= as_calc @meta.value %></li>
+      <% for @meta in @home.metas.reverse %>
+        <li><%= as_calc @meta.value %></li>
       <% end %>
     </ul>
   </div>
@@ -34,7 +34,6 @@
 
 <script type="text/javascript">
   $(function() {
-    $("#cword").focus();
     $("form").submit(function() {
       var completed = true;
       $(this).find("input[type=text]").each(function() {
@@ -43,8 +42,13 @@
           completed = false;
           return false;
         }
+      }).focus(function() {
+        $(".focused").removeClass("focused");
+        $(this).addClass("focused");
       });
       return completed;
     });
+    $("#cword").focus().addClass("focused");
+
   });
 </script>
