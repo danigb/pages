@@ -22,7 +22,7 @@
       <div class="date"><%= booc.meta(:year) %></div>
       <div class="body"><%= redcloth booc.content %></div>
       <div class="responses">
-        <h1>Responses</h1>
+        <h6>Responses</h6>
         <% form_for :response, :url => {:action => 'booc_response', :id => booc.id} do |f| %>
           <div class="no_spam">required:<input type="text" name="name" value="" /></div>
           <label>name:</label><input type="text" name="response[title]" class="required" /><br/>
