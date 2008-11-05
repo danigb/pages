@@ -3,8 +3,7 @@ class Admin::PagesController < Admin::AdminController
   
   # GET /pages GET /pages.xml
   def index
-    @quicks = Page.find_all_by_parent_id(1)
-    @quicks.insert 0, Page.find(1)
+    quick_list
     id = params[:root].nil? || params[:root].to_i == 0 ? 1 : params[:root].to_i
     @page = Page.find(id)
     respond_to do |format|
@@ -107,8 +106,25 @@ class Admin::PagesController < Admin::AdminController
     end
   end
 
+  def search
+    @term = params[:term]
+    if @term == nil || @term.empty?
+      redirect_to :back
+    else
+      quick_list
+      @pages = Page.db_search(@term)
+    end
+  end
+
   def info
     
   end
-  
+
+  private
+  def quick_list
+    @quicks = Page.find_all_by_parent_id(1)
+    @quicks.insert 0, Page.find(1)
+  end
 end
+  
+  

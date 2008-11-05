@@ -10,6 +10,9 @@
   </head>
   <body>    
     <div id="header">
+      <div class="search">
+        <% form_tag :action => 'search'  do -%><%= text_field_tag :term -%><% end -%>
+        </div>
       <h1><a href="/"><%= @site.title %></a></h1>
       <div class="flash"><%= flash[:notice] %>&nbsp;</div>
     </div>
