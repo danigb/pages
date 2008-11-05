@@ -23,7 +23,7 @@ class Xy::CalcaxyController < ApplicationController
   def home
     if (params[:cword])
       @calc = "c#{params[:cword]} a#{params[:aword]} l#{params[:lword]} c#{params[:ccword]}"
-      @home.metas.build(:name => 'calc', :value => @calc).save
+      Meta.new(:page_id => 1, :name => 'calc', :value => @calc).save
       redirect_to :action => 'home'
     end
     @home = Page.find(1)

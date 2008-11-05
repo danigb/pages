@@ -1,21 +1,24 @@
 
 <h1>&nbsp;</h1>
 
-<a name="selector">
-  <ul class="selector">
-    <% for year in @years -%>
+<a name="selector">&nbsp;</a>
+
+<ul class="selector">
+  <% for year in @years -%>
+    <li>
       <% if year == @year -%>
-        <li class="active"><%= year %>
+        <div class="active">
+          <div class="head"><%= year %></div>
           <ul><% for booc in @boocs -%>
               <li><%= link_to booc.meta(:year), "#booc#{booc.id}" %></li>
           <% end -%></ul>
-        </li>
+        </div>
       <% else -%>
-        <li><%= link_to year, :year=> year %></li>
+        <%= link_to year, :year=> year %>
       <% end -%>
-    <% end -%>
-  </ul>
-</a>
+    </li>
+  <% end -%>
+</ul>
 
 <div class="boocs main">
   <% for booc in @boocs %>
@@ -45,7 +48,7 @@
           <%= image_tag booc.attachment(:thumb).public_filename %>
         <% end %>
       </div>
-    
+
     </div>
     <br/>
   <% end  %>

@@ -3,7 +3,14 @@
 
 <ul class="selector">
   <% for text in @menu -%>
-    <li <%= 'class="active" ' if text.id == @page.id %> ><%= link_to_if text.id != @page.id, text.title, :id => text.id %></li>
+    <li>
+
+      <%  if text.id == @page.id -%>
+        <div class="active"><div class="head"><%= text.title %></div></div>
+      <% else -%>
+        <%= link_to text.title, :id => text.id  %>
+      <% end  -%>
+    </li>
   <% end -%>
 </ul>
 
