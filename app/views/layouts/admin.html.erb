@@ -6,7 +6,8 @@
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title>Administración <%= "de la web " + @project.title if !@project.nil? %> </title>
     <%= stylesheet_link_tag 'reset', 'admin/admin.css', :cache => false %>
-    <%= javascript_include_tag 'admin/jquery-1.2.6.pack.js', :cache => false %>
+    <%= javascript_include_tag 'admin/jquery-1.2.6.pack.js', 'admin/jquery.inplace.min.js' ,:cache => false %>
+    <%= yield :head %>
   </head>
   <body>    
     <div id="header">
