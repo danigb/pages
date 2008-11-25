@@ -65,7 +65,7 @@ a:hover {text-decoration: underline;}
 
 
 /* HOME */
-#calc_form {text-align: center; font-size: 150%; }
+#calc_form {text-align: center; font-size: 110%; }
 #define-calc {width: 683px; margin-left: 15px; padding: 0.2em; background-color: #E3E4E5;
   border: 1px dotted black; font-weight: bold; margin: 20px auto;}
 #define-calc input[type=text] {border: 0; background-color: #E3E4E5; width: 120px; font-weight: normal;}
