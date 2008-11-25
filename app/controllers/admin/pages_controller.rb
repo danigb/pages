@@ -1,6 +1,7 @@
 class Admin::PagesController < Admin::AdminController
   layout 'admin'
-  
+  protect_from_forgery :only => [:create, :update, :destroy]
+
   # GET /pages GET /pages.xml
   def index
     quick_list
@@ -81,6 +82,14 @@ class Admin::PagesController < Admin::AdminController
         format.xml  { render :xml => @page.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def update_meta
+    id = params[:element_id][0..-6].to_i
+    meta = Meta.find(id)
+    value = params[:update_value]
+    meta.update_attribute(:value, value)
+    render :text => value
   end
   
   def move_up
