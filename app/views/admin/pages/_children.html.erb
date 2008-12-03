@@ -2,7 +2,10 @@
 <tr class="<%= cycle('par', 'impar') -%>">
   <td>
     <%= link_to image_tag('page_white.png', :style => "margin-left: #{depth}em;"), :action => 'index', :root => root.id %>
-    <%= link_to_edit_page root %> 
+    <%= link_to_edit_page root %>
+    <% if params[:show_metas] %>
+      <span class="inline-metas"><% for meta in root.metas -%><label><%= meta.name %>: </label> <%= meta.value%> <% end %></span>
+    <% end  %>
   </td>
   <td><%= fecha root.updated_at %></td>
   <% if admin? -%>

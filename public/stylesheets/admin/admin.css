@@ -44,6 +44,8 @@ table thead { font-weight: normal; color: white; background-color: #8C817B; bord
 td { vertical-align: middle; padding: 5px 2px; }
 td.actions {}
 tr.impar {background-color: #E7E2DF;}
+td .inline-metas {display: block;  color: silver; font-size: 80%; text-align: right;}
+td .inline-metas label {color: gray;}
 
 /*** ACTIONS ***/
 div.actions { margin: 1em; }
@@ -64,7 +66,8 @@ div.tabs a { background-color: #E7E2DF; color: black; }
 div.tabs .active { background-color: #4F4F4F; color: white; }
 
 /**** QUICK LINKS ****/
-.quick {}
+.quick {overflow: hidden; margin: 1em; padding: 0.5em;}
+.quick h1 {font-size: 100%; font-weight: bold; color: gray; margin: 0.2em 0 0.3em 0; display: block; float: left;}
 .quick a {display: block; float: left; padding: 0.2em 1em; margin-right: 0.1em; background-color: #E7E2DF;}
 .quick a:hover {color: white; background-color: #8C817B;}
 
