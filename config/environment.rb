@@ -32,5 +32,5 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 
   config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache/"
-  config.load_paths += %W( #{RAILS_ROOT}/app/sweepers )
+  #config.load_paths += %W( #{RAILS_ROOT}/app/sweepers )
 end
