@@ -3,15 +3,15 @@
 # Table name: pages
 #
 #  id         :integer(11)     not null, primary key
-#  parent_id  :integer(11)     
+#  parent_id  :integer(11)
 #  title      :string(255)     not null
-#  position   :integer(11)     
-#  depth      :integer(5)      
-#  state      :string(12)      
-#  created_at :datetime        
-#  updated_at :datetime        
-#  content    :text            
-#  mime       :string(12)      
+#  position   :integer(11)
+#  depth      :integer(5)
+#  state      :string(12)
+#  created_at :datetime
+#  updated_at :datetime
+#  content    :text
+#  mime       :string(12)
 #
 
 class Page < ActiveRecord::Base
@@ -28,6 +28,10 @@ class Page < ActiveRecord::Base
   before_create :calculate_depth
   belongs_to :parent, :class_name => 'Page'
   searches_on :title, :content
+
+
+  has_many :rev_children, :class_name => 'Page', :foreign_key => 'parent_id', :order => "position DESC", :dependent => :destroy
+
 
   def self.children_of(id)
     Page.find_all_by_parent_id(id)

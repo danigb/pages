@@ -37,7 +37,7 @@ class Xy::CalcaxyController < ApplicationController
       @years = (MIN_YEAR..MAX_YEAR).to_a.reverse!
       @years.delete 2006
       @parent = Page.find_by_title(@year, :conditions => ['parent_id = ?', PAGE_BOOC])
-      @boocs = @parent.children
+      @boocs = @parent.rev_children
       @comment = Page.new
       #@boocs = Page.find_all_by_mime('booc')
     end
