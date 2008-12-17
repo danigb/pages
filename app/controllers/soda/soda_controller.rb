@@ -3,7 +3,7 @@ class Soda::SodaController < ApplicationController
   layout 'soda/soda'
   
   def index
-    redirect_to :action => 'pagina', :id => 1
+    render :action => 'sodauc', :layout => false
   end
   
   def pagina

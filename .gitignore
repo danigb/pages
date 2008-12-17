@@ -5,4 +5,6 @@ imagineria
 .idea
 .project
 db/test.sqlite3
+.loadpath
+
 
