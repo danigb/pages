@@ -46,8 +46,8 @@ class Page < ActiveRecord::Base
   end
   
   def meta(name)
-    meta = metas.find_by_name(name.to_s)
-    meta.nil? ? nil : meta.value
+    m = metas.find_by_name(name.to_s)
+    m.nil? ? nil : m.value
   end
 
   def published?

@@ -3,3 +3,6 @@ tmp
 log
 imagineria
 .idea
+.project
+db/test.sqlite3
+

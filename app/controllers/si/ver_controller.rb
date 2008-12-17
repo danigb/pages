@@ -42,8 +42,8 @@ class Si::VerController < ApplicationController
   
   # Crea un nuevo asunto en el foro
   def crear_tema
-    foro = page_of :foro
-    @tema = foro.children.build(:title => params[:title], :state => 'locked', :mime => 'tema')
+    f = page_of :foro
+    @tema = f.children.build(:title => params[:title], :state => 'locked', :mime => 'tema')
     add_response(@tema, params[:name], params[:text])
     if @tema.save
       @nota = "Tu tema '#{@tema.title}' aparecerá próximamente publicado en el foro."
