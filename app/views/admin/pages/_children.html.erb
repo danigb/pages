@@ -6,7 +6,7 @@
   </td>
   <td><%= fecha root.updated_at %></td>
   <% if admin? -%>
-  <td><%= icon root.state, root.state %></td>
+  <td><%= icon(root.state, root.state) unless root.state.blank? %></td>
   <td><%=  root.id %></td>
   <td><%= root.mime %></td>
   <% end %>

@@ -28,7 +28,7 @@ h2 a {color: white;}
 
 /**** LAYOUT ***/
 #page { width: 75em; margin: 0px auto; background-color: #F4F3F2; text-align: left; padding: 0em 0em 5em 0em; }
-#header { background-color: #4F4F4F; color: white; text-align: left; padding: 1em 1em 0 1em; }
+#header { background-color: #5B253D; color: white; text-align: left; padding: 1em 1em 0 1em; }
 #header h1 {margin: 0.2em 0;}
 #header div.search {float: right;}
 #header div.search input {border: 0px; padding: 2px 5px; color: #999;}
@@ -40,7 +40,7 @@ h2 a {color: white;}
 
 /*** TABLE ***/
 table {  margin: 1em; width: 97%;}
-table thead { font-weight: normal; color: white; background-color: #8C817B; border-bottom: 1px solid #6A6460; }
+table thead { font-weight: normal; color: white; background-color: #A84572; border-bottom: 1px solid #6A6460; }
 td { vertical-align: middle; padding: 5px 2px; }
 td.actions {}
 tr.impar {background-color: #E7E2DF;}
@@ -49,24 +49,24 @@ tr.impar {background-color: #E7E2DF;}
 div.actions { margin: 1em; }
 div.actions .action { border: 1px solid #E7E2DF; background-color: white; float: left; margin: 0 5px 0 0; }
 div.actions a { font-size: 95%; line-height: -1em; display: block; border: 1px solid #E7E2DF;
-  background-color: white; color: #4F4F4F; padding: 4px 10px; margin: 2px;}
+  background-color: white; color: #5B253D; padding: 4px 10px; margin: 2px;}
 div.actions a img { float: left; margin: 0px 0 0 -2px;}
-div.actions a:hover { color: black;  background-color: #F4F3F2;}
+div.actions a:hover { color: black;  background-color: #A84572;}
 
 /** WILL_PAGINATE **/
 .pagination {margin-left: 1em; color: black;}
-.pagination a {border: 1px solid #E7E2DF; padding: 0 3px; color: #4F4F4F;  }
+.pagination a {border: 1px solid #E7E2DF; padding: 0 3px; color: #5B253D;  }
 .pagination .current {border: 1px solid black; padding: 0 3px; color: black; background-color: white;}
 
 /**** TABS ****/
 div.tabs * { display: block; float: left; padding: 0.5em 3em; margin-right: 0.2em; }
 div.tabs a { background-color: #E7E2DF; color: black; }
-div.tabs .active { background-color: #4F4F4F; color: white; }
+div.tabs .active { background-color: #5B253D; color: white; }
 
 /**** QUICK LINKS ****/
 .quick {}
 .quick a {display: block; float: left; padding: 0.2em 1em; margin-right: 0.1em; background-color: #E7E2DF;}
-.quick a:hover {color: white; background-color: #8C817B;}
+.quick a:hover {color: white; background-color: #A84572;}
 
 /**** HELP ****/
 div.helpBox {border: 1px solid #AEA39D; float: right; padding: 1em; margin: 1em 1em 0 0; background-color: #E7E2DF;}
@@ -84,9 +84,9 @@ div.formBox div label { display:block; float:left; padding-right:6px; width:70px
 
 div.formBox form .spacer{ margin-left:80px;  margin-bottom: 4em; color:#555555;}
 div.formBox .green{ /*background: url('../../images/green.gif');*/
-  background-color: #8C817B; padding: 3px 1em; margin: 0 10px 1em 0; border-right:1px solid #4F4F4F;
+  background-color: #8C817B; padding: 3px 1em; margin: 0 10px 1em 0; border-right:1px solid #5B253D;
   border-left:1px solid #F4F3F2; border-top:1px solid #F4F3F2;
-  border-bottom:1px solid #4F4F4F; height:18px; color:#FFFFFF;  display:inline-block;
+  border-bottom:1px solid #5B253D; height:18px; color:#FFFFFF;  display:inline-block;
   text-decoration:none; font-size: 14px; clear: both; }
 div.formBox form p { height: 1.5em; margin: 0.2em 0; }
 div.formBox form input {border: 1px solid #AEA39D; padding: 2px;}
