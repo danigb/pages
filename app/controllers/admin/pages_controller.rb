@@ -86,9 +86,9 @@ class Admin::PagesController < Admin::AdminController
 
   def update_meta
     id = params[:element_id][0..-6].to_i
-    meta = Meta.find(id)
+    m = Meta.find(id)
     value = params[:update_value]
-    meta.update_attribute(:value, value)
+    m.update_attribute(:value, value)
     render :text => value
   end
   

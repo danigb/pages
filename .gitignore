@@ -4,5 +4,6 @@ log
 imagineria
 .idea
 db/data.yml
-
-
+.project
+db/test.sqlite3
+.loadpath
