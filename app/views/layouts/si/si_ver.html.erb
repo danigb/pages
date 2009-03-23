@@ -1,95 +1,98 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title>SOLIDARIDAD INTERNACIONAL - El Magreb con ojos de mujer</title>
-    <%= javascript_include_tag 'si/jquery-1.2.6.pack.js'  %>
-    <%= stylesheet_link_tag  'si/si_ver.css', 'si/items.css' %>
-  </head>
-  <body>
-    <div id="page">
-      <div id="top">
-        <div id="logo"><a href="http://www.solidaridad.org/" target="_blank"><%= image_tag('solidaridad/logo.gif') %></a></div>
-        <a href="<%= url_for :action => 'index'  %>"><div id="banner">&nbsp;</div></a>
-        <div id="sections">
-          <div id="areas">
-            <%= link_to img_nav('foro', @name), :action => 'foro' %>
-            <%= link_to img_nav('agenda', @name), :action => 'la', :id => 'agenda' %>
-            <%= link_to img_nav('actualidad', @name), :action => 'la', :id => 'actualidad'  %>
-            <%= link_to img_nav('materiales', @name), :action => 'los', :id => 'materiales'  %>
-            <%= link_to img_nav('videos', @name), :action => 'los', :id => 'videos'  %>
-            <%= link_to img_nav('enlaces', @name), {:action => 'los', :id => 'enlaces'},
-              :id => 'last' %>
-            <%= clear %>
-          </div>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>SOLIDARIDAD INTERNACIONAL - El Magreb con ojos de mujer</title>
+  <%= javascript_include_tag 'si/jquery-1.2.6.pack.js'  %>
+  <%= stylesheet_link_tag  'si/si_ver.css', 'si/items.css' %>
+</head>
+<body>
+  <div id="page">
+    <div id="top">
+      <div id="logo"><a href="http://www.solidaridad.org/" target="_blank"><%= image_tag('solidaridad/logo.gif') %></a></div>
+      <a href="<%= url_for :action => 'index'  %>"><div id="banner">&nbsp;</div></a>
+      <div id="sections">
+        <div id="areas">
+          <%= link_to img_nav('foro', @name), :action => 'foro' %>
+          <%= link_to img_nav('agenda', @name), :action => 'la', :id => 'agenda' %>
+          <%= link_to img_nav('actualidad', @name), :action => 'la', :id => 'actualidad'  %>
+          <%= link_to img_nav('materiales', @name), :action => 'los', :id => 'materiales'  %>
+          <%= link_to img_nav('videos', @name), :action => 'los', :id => 'videos'  %>
+          <%= link_to img_nav('enlaces', @name), {:action => 'los', :id => 'enlaces'},
+            :id => 'last' %>
+          <%= clear %>
         </div>
-        <%= clear %>
       </div>
-      <div id="menu" >
-        <% for area in @content.children -%>
-          <div class="area"><%= area.title %></div>
-          <% for item in area.children -%>
-            <div class="item <%= 'selected' if !@page.nil? && item.id == @page.id %> "><%= link_to item.title, {:action => :pagina, :id => item} %></div>
-          <% end -%>
+      <%= clear %>
+    </div>
+    <div id="menu" >
+      <% for area in @content.children -%>
+        <div class="area"><%= area.title %></div>
+        <% for item in area.children -%>
+          <div class="item <%= 'selected' if !@page.nil? && item.id == @page.id %> "><%= link_to item.title, {:action => :pagina, :id => item} %></div>
         <% end -%>
-        <div style="height: 5em;">&nbsp;</div>
-      </div>
+      <% end -%>
+      <div style="height: 5em;">&nbsp;</div>
+    </div>
 
-      <div id="content" >
-        <%= yield  %>
-      </div>
+    <div id="content" >
+      <%= yield  %>
+    </div>
 
-      <div id="news">
-        <div class="actualidad" style="background-color: #377292;" >
-          <h1 style="background-color: #2D5D77;">actualidad</h1>
-          <div class="content">
-            <%= link_to @actualidad.content + ' ' + @actualidad.title, :action => 'la', :id => 'actualidad' %>
-          </div>
+    <div id="news">
+      <div class="actualidad" style="background-color: #377292;" >
+        <h1 style="background-color: #2D5D77;">actualidad</h1>
+        <div class="content">
+          <%= link_to @actualidad.content + ' ' + @actualidad.title, :action => 'la', :id => 'actualidad' %>
         </div>
-        <div class="agenda" style="background-color: #3A8722;" >
-          <h1 style="background-color: #32741D;">agenda</h1>
-          <div class="content">
-            <%= link_to @agenda.first_line + ' ' + @agenda.title, :action => 'la', :id => 'agenda' %>
-          </div>
+      </div>
+      <div class="agenda" style="background-color: #3A8722;" >
+        <h1 style="background-color: #32741D;">agenda</h1>
+        <div class="content">
+          <%= link_to @agenda.first_line + ' ' + @agenda.title, :action => 'la', :id => 'agenda' %>
         </div>
-        <% if !@ultimo_tema.nil? %>
+      </div>
+      <% if !@ultimo_tema.nil? %>
         <div class="foro" style="background-color: #D07E11;" >
           <h1 style="background-color: #A9660E;">foro</h1>
           <div class="content">
             <%= link_to( (@ultimo_tema.content.nil? ? '' : @ultimo_tema.content), :action => 'foro') %>
           </div>
         </div>
-        <% end %>
-        <div class="contrata" style="background-color: white; margin: 10em 0 0 0;">
-          <div class="content"><a href="#" onClick="javascript: window.open('/si/solicita.html', 'cont', 'width=400,height=300,screenX=50,left=50,screenY=50,top=50,status=no,menubar=no'); return false;" style="color: #66063E;">Solicita la exposici&oacute;n didáctica</a></div>
-        </div>
-        <br/>
-        <div id="sponsors">
-          Financiado por:
-          <a href="http://www.aecid.es/" target="_blank">
-          <img id="sponsor1" class="sponsor" src="/images/solidaridad/patrocinador1.gif" /></a>
-          <a href="http://www.migualdad.es/mujer/" target="_blank">
-          <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador2.gif" /></a>
-        </div>
-          <a href="http://www.gva.es" target="_blank">
-          <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador3.png" /></a>
-        </div>
-
+      <% end %>
+      <div class="contrata" style="background-color: white; margin: 10em 0 0 0;">
+        <div class="content"><a href="#" onClick="javascript: window.open('/si/solicita.html', 'cont', 'width=400,height=300,screenX=50,left=50,screenY=50,top=50,status=no,menubar=no'); return false;" style="color: #66063E;">Solicita la exposici&oacute;n didáctica</a></div>
       </div>
-      <%= clear %>
+      <br/>
+      <div id="sponsors">
+        Financiado por:
+        <a href="http://www.aecid.es/" target="_blank">
+        <img id="sponsor1" class="sponsor" src="/images/solidaridad/patrocinador1.gif" /></a>
+        <a href="http://www.migualdad.es/mujer/" target="_blank">
+        <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador2.gif" /></a>
+      </div>
+      <a href="http://www.gva.es" target="_blank">
+      <img id="sponsor2" class="sponsor" src="/images/solidaridad/patrocinador3.png" /></a>
+      <a href="http://www.interhost.es/" target="_blank">
+      <img id="sponsor3" class="sponsor" src="/images/solidaridad/patrocinador4.png" /></a>
 
     </div>
-    <div id="foot">
-    </div>
-    <script type="text/javascript">
-        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-        var pageTracker = _gat._getTracker("UA-3241357-8");
-        pageTracker._initData();
-        pageTracker._trackPageview();
-    </script>
-  </body>
+
+  </div>
+  <%= clear %>
+
+  </div>
+  <div id="foot">
+  </div>
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3241357-8");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  </script>
+</body>
 </html>

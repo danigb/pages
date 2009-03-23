@@ -31,6 +31,8 @@ h1 {font-size: 130%; margin: 0 0 0.25em 0;  }
 #banner { border: 0; width: 870px; height: 62px; margin: 0; float: left;
   background: url('../../images/solidaridad/banner.gif') no-repeat ; overflow: hidden;}
 
+#top_banner {text-align: center; }
+
 #sections {float: left; width: 730px; height: 31px; overflow: hidden; background-color: white;}
 #areas {width: 800px;}
 #areas img { float: left; margin-right: 2px; }
