@@ -3,9 +3,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Apy &mdash; <%=  @page.title if !@page.nil? -%></title>
+    <link rel="icon" href="/images/apyweb.ico" type="image/x-icon" />
     <%= javascript_include_tag 'apy/jquery-1.2.6.pack.js' -%>
-    <% # stylesheet_link_tag 'blueprint/screen.css', :media => 'screen, projection'  -%>
-    <% #  stylesheet_link_tag 'blueprint/print.css', :media => 'print'  -%>
     <%= stylesheet_link_tag 'apy/apy.css' -%>
     <%= yield :header -%>
   </head>
@@ -46,5 +45,6 @@
 
       <%= clear -%>
     </div>
+    <%= render :partial => '/layouts/apy/ga_apy' %>
   </body>
 </html>
