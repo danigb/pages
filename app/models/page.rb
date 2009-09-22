@@ -32,6 +32,10 @@ class Page < ActiveRecord::Base
 
   has_many :rev_children, :class_name => 'Page', :foreign_key => 'parent_id', :order => "position DESC", :dependent => :destroy
 
+     def to_param
+       "#{id}-#{title.gsub(/ /, '-')}"
+          #"#{id}-#{title.downcase.gsub(/[^[:alnum:]]/,'-')}".gsub(/-{2,}/,'-')
+        end 
 
   def self.children_of(id)
     Page.find_all_by_parent_id(id)
